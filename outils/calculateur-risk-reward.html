@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur Risk/Reward — Ratio R:R | Guide Trading</title>
+  <meta name="description" content="Calcule ton ratio Risk/Reward (R:R) instantanement. Entre ton prix d'entree, stop loss et take profit pour evaluer si ton trade en vaut la peine.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/outils/calculateur-risk-reward.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Calculateur Risk/Reward — Ratio R:R | Guide Trading">
+  <meta property="og:description" content="Calcule ton ratio Risk/Reward (R:R) instantanement. Entre ton prix d'entree, stop loss et take profit pour evaluer si ton trade en vaut la peine.">
+  <meta property="og:url" content="https://guide-trading.fr/outils/calculateur-risk-reward.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Outils","item":"https://guide-trading.fr/outils/"},{"@type":"ListItem","position":3,"name":"Calculateur Risk/Reward"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Calculateur Risk/Reward — Ratio R:R","description":"Calcule ton ratio Risk/Reward (R:R) instantanement. Entre ton prix d'entree, stop loss et take profit pour evaluer si ton trade en vaut la peine.","mainEntityOfPage":{"@type":"WebPage","@id":"https://guide-trading.fr/outils/calculateur-risk-reward.html"},"publisher":{"@type":"Organization","name":"Guide Trading","url":"https://guide-trading.fr"}}
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link navbar__link--active">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À propos</a>
+      </div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher"></div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a>
+    </div>
+  </nav>
+  <div class="container"><nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/outils/" class="breadcrumb__link">Outils</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Risk/Reward</span></nav></div>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h1>Calculateur Risk/Reward</h1>
+          <p class="section-header__subtitle">Calcule instantanement ton ratio risque/gain pour savoir si ton trade en vaut la peine.</p>
+        </div>
+
+        <div class="card fade-in" style="max-width:640px;margin:0 auto 2rem">
+          <div class="tool-form">
+            <div class="tool-form__group">
+              <label for="rr-entree" class="tool-form__label">Prix d'entree</label>
+              <input type="number" id="rr-entree" class="tool-form__input" placeholder="1.1050" step="0.0001">
+            </div>
+            <div class="tool-form__group">
+              <label for="rr-stop" class="tool-form__label">Stop loss</label>
+              <input type="number" id="rr-stop" class="tool-form__input" placeholder="1.1000" step="0.0001">
+            </div>
+            <div class="tool-form__group">
+              <label for="rr-tp" class="tool-form__label">Take profit</label>
+              <input type="number" id="rr-tp" class="tool-form__input" placeholder="1.1150" step="0.0001">
+            </div>
+          </div>
+
+          <div id="rr-bar" style="display:flex;height:32px;border-radius:6px;overflow:hidden;margin:1rem 0">
+            <div id="rr-bar-risk" style="background:var(--color-danger);transition:width 0.3s"></div>
+            <div id="rr-bar-reward" style="background:var(--color-secondary);transition:width 0.3s"></div>
+          </div>
+
+          <div class="tool-results" style="margin-top:1.5rem">
+            <div class="tool-result">
+              <span class="tool-result__label">Distance SL</span>
+              <span class="tool-result__value" id="rr-sl-dist">— pips</span>
+            </div>
+            <div class="tool-result">
+              <span class="tool-result__label">Distance TP</span>
+              <span class="tool-result__value" id="rr-tp-dist">— pips</span>
+            </div>
+            <div class="tool-result" style="margin-top:1rem">
+              <span class="tool-result__label">Ratio R:R</span>
+              <span class="tool-result__value" id="rr-ratio" style="font-size:1.75rem;font-weight:700">—</span>
+            </div>
+          </div>
+
+          <div id="rr-verdict" style="text-align:center;font-weight:600;margin-top:1rem;min-height:1.5em"></div>
+        </div>
+
+        <article class="article-body fade-in">
+          <h2>Comprendre le Risk/Reward Ratio</h2>
+
+          <p>Le ratio Risk/Reward (R:R) est l'un des concepts les plus fondamentaux en trading. Il mesure la relation entre ce que tu risques de perdre (la distance entre ton prix d'entree et ton stop loss) et ce que tu esperes gagner (la distance entre ton prix d'entree et ton take profit). Un ratio de 1:2 signifie que pour chaque euro risque, tu vises un gain de deux euros. C'est un outil de decision indispensable avant de prendre n'importe quel trade.</p>
+
+          <p>Beaucoup de traders debutants se focalisent uniquement sur leur taux de reussite (winrate). Ils veulent avoir raison le plus souvent possible. Pourtant, un trader qui gagne 40 % de ses trades peut etre largement rentable si son ratio R:R est suffisamment eleve. A l'inverse, un trader qui gagne 70 % de ses trades peut perdre de l'argent si ses pertes sont systematiquement plus importantes que ses gains. Le R:R remet les choses en perspective : ce n'est pas la frequence qui compte, mais l'asymetrie entre gains et pertes.</p>
+
+          <h3>Winrate, R:R et esperance de gain</h3>
+
+          <p>L'esperance mathematique d'un systeme de trading depend de deux variables : le winrate et le ratio R:R. Le tableau ci-dessous montre la valeur attendue par trade (en unite de risque) pour differentes combinaisons. Une valeur positive signifie que le systeme est rentable sur le long terme.</p>
+
+          <div style="overflow-x:auto">
+            <table class="table">
+              <thead>
+                <tr>
+                  <th>Winrate</th>
+                  <th>R:R 1:1</th>
+                  <th>R:R 1:1.5</th>
+                  <th>R:R 1:2</th>
+                  <th>R:R 1:3</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>30 %</td>
+                  <td style="color:var(--color-danger)">-0.40</td>
+                  <td style="color:var(--color-danger)">-0.25</td>
+                  <td style="color:var(--color-danger)">-0.10</td>
+                  <td style="color:var(--color-secondary)">+0.20</td>
+                </tr>
+                <tr>
+                  <td>40 %</td>
+                  <td style="color:var(--color-danger)">-0.20</td>
+                  <td>0.00</td>
+                  <td style="color:var(--color-secondary)">+0.20</td>
+                  <td style="color:var(--color-secondary)">+0.60</td>
+                </tr>
+                <tr>
+                  <td>50 %</td>
+                  <td>0.00</td>
+                  <td style="color:var(--color-secondary)">+0.25</td>
+                  <td style="color:var(--color-secondary)">+0.50</td>
+                  <td style="color:var(--color-secondary)">+1.00</td>
+                </tr>
+                <tr>
+                  <td>60 %</td>
+                  <td style="color:var(--color-secondary)">+0.20</td>
+                  <td style="color:var(--color-secondary)">+0.50</td>
+                  <td style="color:var(--color-secondary)">+0.80</td>
+                  <td style="color:var(--color-secondary)">+1.40</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <p>La formule utilisee est : <strong>Esperance = (Winrate x Reward) - ((1 - Winrate) x Risk)</strong>. Par exemple, avec un winrate de 40 % et un R:R de 1:2, l'esperance vaut (0.40 x 2) - (0.60 x 1) = +0.20. Cela signifie qu'en moyenne, chaque trade te rapporte 0.20 unite de risque. Sur 100 trades avec un risque de 50 EUR, cela represente un gain net de 1 000 EUR.</p>
+
+          <div class="tip-box">
+            <p><strong>A retenir :</strong> Avec un R:R de 2:1, tu peux perdre 60 % de tes trades et rester rentable. Le R:R est plus important que le winrate. Vise systematiquement un ratio minimum de 1:1.5, et idealement 1:2 ou plus, avant d'entrer en position.</p>
+          </div>
+
+          <h3>Comment utiliser ce calculateur</h3>
+
+          <p>Entre simplement le prix auquel tu prevois d'entrer en position, le niveau de ton stop loss et celui de ton take profit. Le calculateur affiche instantanement la distance en pips pour chaque niveau, le ratio R:R correspondant, ainsi qu'une barre visuelle qui te permet de comparer rapidement le risque et le gain potentiel. Le verdict colore te donne une indication immediate : vert pour un excellent ratio, rouge si tu risques plus que ce que tu peux gagner.</p>
+
+          <p>Ce calculateur fonctionne pour toutes les paires de devises cotees en 4 decimales (EUR/USD, GBP/USD, etc.). Pour les paires en yen (USD/JPY, EUR/JPY), la conversion en pips sera differente, mais le ratio R:R reste identique puisqu'il s'agit d'un rapport entre deux distances.</p>
+
+          <h3>Integrer le R:R dans ta routine de trading</h3>
+
+          <p>Avant chaque trade, pose-toi la question : "Est-ce que le gain potentiel justifie le risque ?" Si ton analyse technique te donne un stop loss a 30 pips mais que le prochain niveau de resistance est seulement a 20 pips, le ratio est de 1:0.67 — tu risques plus que tu ne peux gagner. Meme si le setup semble parfait, les mathematiques sont contre toi. Passe ton tour et attends une meilleure opportunite.</p>
+
+          <p>Combine ce calculateur avec le <a href="/outils/calculateur-taille-position.html">calculateur de taille de position</a> pour gerer ton risque de maniere complete. Une fois ton R:R valide, calcule la taille de lot appropriee pour ne jamais risquer plus de 1 a 2 % de ton capital par trade. Pour approfondir ces concepts, consulte notre <a href="/guides/gestion-du-risque.html">guide complet sur la gestion du risque</a>.</p>
+
+          <p>En resume, le ratio Risk/Reward est ton filet de securite mathematique. Il transforme le trading d'un jeu de hasard en une activite ou les probabilites jouent en ta faveur, a condition de respecter la discipline d'accepter uniquement les trades dont le potentiel de gain depasse significativement le risque encouru.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en français.</p></div>
+        <div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">À propos</a></li></ul></div>
+        <div><h4 class="footer__heading">Écosystème</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — IA, communauté & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div>
+    </div>
+  </footer>
+  <script defer src="../js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    ['rr-entree','rr-stop','rr-tp'].forEach(function(id) {
+      document.getElementById(id).addEventListener('input', calcRR);
+    });
+    function calcRR() {
+      var e = parseFloat(document.getElementById('rr-entree').value);
+      var s = parseFloat(document.getElementById('rr-stop').value);
+      var t = parseFloat(document.getElementById('rr-tp').value);
+      if (!e || !s || !t || e===s) return;
+      var risk = Math.abs(e - s);
+      var reward = Math.abs(t - e);
+      var ratio = reward / risk;
+      var riskPips = (risk * 10000).toFixed(1);
+      var rewardPips = (reward * 10000).toFixed(1);
+
+      document.getElementById('rr-sl-dist').textContent = riskPips + ' pips';
+      document.getElementById('rr-tp-dist').textContent = rewardPips + ' pips';
+      document.getElementById('rr-ratio').textContent = '1:' + ratio.toFixed(2);
+
+      // Update bar
+      var total = risk + reward;
+      document.getElementById('rr-bar-risk').style.width = (risk/total*100) + '%';
+      document.getElementById('rr-bar-reward').style.width = (reward/total*100) + '%';
+
+      // Verdict
+      var v = document.getElementById('rr-verdict');
+      var rc = document.getElementById('rr-ratio').closest('.tool-result');
+      rc.classList.remove('result-good','result-warning','result-danger');
+      if (ratio >= 2) { v.textContent='Excellent \u2014 ce trade a un bon potentiel'; v.style.color='var(--color-secondary)'; rc.classList.add('result-good'); }
+      else if (ratio >= 1.5) { v.textContent='Acceptable \u2014 ratio correct'; v.style.color='var(--color-accent-gold)'; rc.classList.add('result-warning'); }
+      else if (ratio >= 1) { v.textContent='Limite \u2014 risqu\u00e9 par rapport au gain'; v.style.color='#F97316'; rc.classList.add('result-warning'); }
+      else { v.textContent='Mauvais \u2014 tu risques plus que tu ne peux gagner'; v.style.color='var(--color-danger)'; rc.classList.add('result-danger'); }
+    }
+  });
+  </script>
+</body>
+</html>

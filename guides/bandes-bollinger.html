@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Bandes de Bollinger : Guide et Stratégies (2026)</title>
+  <meta name="description" content="Tout sur les Bandes de Bollinger : volatilité, squeeze, breakout. Stratégies concrètes pour les utiliser en trading.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/bandes-bollinger.html">
+
+  <meta property="og:title" content="Les Bandes de Bollinger : Guide et Stratégies (2026)">
+  <meta property="og:description" content="Tout sur les Bandes de Bollinger : volatilité, squeeze, breakout. Stratégies concrètes pour les utiliser en trading.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/bandes-bollinger.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Les Bandes de Bollinger : Guide et Stratégies (2026)">
+  <meta name="twitter:description" content="Volatilité, squeeze, breakout : maîtrise les Bandes de Bollinger en trading.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Les Bandes de Bollinger : Guide et Stratégies",
+    "description": "Tout sur les Bandes de Bollinger : volatilité, squeeze, breakout. Stratégies concrètes pour les utiliser en trading.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/bandes-bollinger.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Bandes de Bollinger"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Comment paramétrer les Bandes de Bollinger ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les paramètres par défaut sont une SMA de 20 périodes avec 2 écarts-types. C'est le réglage recommandé par John Bollinger lui-même et le plus utilisé. Pour le scalping, certains traders réduisent à SMA 10 avec 1.5 écarts-types pour plus de réactivité. Pour le swing trading, une SMA 50 avec 2.5 écarts-types lisse davantage les données. Commence avec les réglages standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Que signifie un squeeze Bollinger ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Un squeeze Bollinger se produit quand les bandes se resserrent fortement, indiquant une très faible volatilité. C'est une phase de compression du marché. Le squeeze signale qu'une explosion de volatilité est imminente — le prix va faire un mouvement fort dans une direction. Le squeeze ne te dit pas dans quelle direction, seulement que le mouvement arrive. Utilise d'autres indicateurs pour déterminer la direction probable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les bandes marchent-elles sur le Forex ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Oui, les Bandes de Bollinger fonctionnent très bien sur le Forex. Le marché des devises alterne régulièrement entre phases de range (retour à la moyenne) et phases de tendance (breakout des bandes), ce qui rend les deux stratégies Bollinger principales très applicables. Elles sont particulièrement efficaces sur les paires majeures comme EUR/USD, GBP/USD et USD/JPY en raison de leur liquidité."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Bandes de Bollinger</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h1 style="font-style: normal;">Les Bandes de Bollinger : Guide et Stratégies</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 13 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Les Bandes de Bollinger sont l'un des indicateurs les plus visuels et intuitifs de l'analyse technique. Créées par John Bollinger dans les années 1980, elles mesurent la <strong>volatilité</strong> du marché et s'adaptent en temps réel aux conditions. Quand la volatilité augmente, les bandes s'écartent. Quand elle diminue, elles se resserrent. Simple en apparence, redoutablement efficace quand tu sais les lire.</p>
+
+      <p>Ce guide va t'apprendre à comprendre les Bandes de Bollinger, à repérer les squeezes et les breakouts, et à combiner cet outil avec le <a href="/guides/rsi-indicateur.html">RSI</a> pour des setups solides. On couvrira aussi les erreurs classiques et les paramètres avancés.</p>
+
+      <!-- ======================== -->
+      <h2 id="definition-bollinger" style="font-style: normal;">Qu'est-ce que les Bandes de Bollinger ?</h2>
+
+      <p>Les Bandes de Bollinger sont composées de trois lignes tracées directement sur le graphique de prix.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Les 3 composantes</p>
+        <p><strong>Bande médiane</strong> : une <a href="/guides/moyennes-mobiles.html">moyenne mobile simple</a> (SMA) de 20 périodes. C'est le "centre de gravité" du prix. <strong>Bande supérieure</strong> : SMA 20 + 2 écarts-types. <strong>Bande inférieure</strong> : SMA 20 - 2 écarts-types. Statistiquement, environ 95% des prix restent à l'intérieur des bandes.</p>
+      </div>
+
+      <p>L'écart-type est une mesure statistique de la dispersion des données. Quand les prix bougent beaucoup (forte volatilité), l'écart-type augmente et les bandes s'écartent. Quand les prix sont calmes (faible volatilité), l'écart-type diminue et les bandes se resserrent. C'est ce mécanisme d'adaptation automatique qui rend les Bandes de Bollinger si utiles.</p>
+
+      <p>Concrètement, les bandes te donnent un cadre visuel : le prix est-il "cher" (proche de la bande supérieure) ou "pas cher" (proche de la bande inférieure) par rapport à sa moyenne récente ? Et la volatilité est-elle en expansion ou en contraction ?</p>
+
+      <p>C'est un outil polyvalent. Tu peux l'utiliser pour identifier des retournements (retour à la moyenne), des breakouts (sortie de compression), et des conditions de marché (range ou tendance). La plupart des plateformes comme TradingView ou MetaTrader l'incluent par défaut.</p>
+
+      <!-- ======================== -->
+      <h2 id="bollinger-squeeze" style="font-style: normal;">Le Bollinger Squeeze : la compression avant l'explosion</h2>
+
+      <p>Le squeeze est le signal Bollinger le plus connu et le plus puissant. Quand les bandes se resserrent à un niveau extrême, ça signifie que la volatilité est tombée très bas. Le marché est en phase de <strong>compression</strong> -- comme un ressort qu'on comprime.</p>
+
+      <p>Et quand un ressort est comprimé, il finit toujours par se détendre violemment. La règle en trading : <strong>une période de faible volatilité est toujours suivie d'une période de forte volatilité</strong>. Le squeeze te prévient que l'explosion est imminente.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le squeeze ne donne pas la direction</p>
+        <p>Le squeeze te dit QUAND un mouvement va se produire, mais PAS dans quelle direction. Le breakout peut aller vers le haut ou vers le bas. Tu as besoin d'autres éléments (tendance, niveaux clés, indicateurs) pour déterminer la direction probable. Ne parie jamais sur la direction d'un squeeze sans confirmation.</p>
+      </div>
+
+      <p>Comment repérer un squeeze ? Visuellement, les bandes deviennent très étroites, presque parallèles. Quantitativement, tu peux utiliser l'indicateur "Bollinger Band Width" qui mesure l'écart entre les bandes. Quand il atteint un plus bas de 6 mois, tu as un squeeze significatif.</p>
+
+      <p>Exemple concret : le <a href="/lexique/forex.html">GBP/USD</a> est en range serré depuis 2 semaines. Les Bandes de Bollinger se sont resserrées au maximum. Un jour, une bougie haussière massive casse la bande supérieure avec du volume. C'est le breakout post-squeeze. La direction est donnée : hausse. Tu peux entrer long avec un stop loss sous la bande inférieure du squeeze.</p>
+
+      <!-- ======================== -->
+      <h2 id="breakout-bandes" style="font-style: normal;">Breakout des bandes : force, pas retournement</h2>
+
+      <p>Quand le prix sort des Bandes de Bollinger (clôture au-dessus de la bande supérieure ou en dessous de la bande inférieure), beaucoup de débutants pensent que c'est un signal de retournement. "Le prix est sorti des bandes, il va revenir." C'est <strong>faux</strong> dans la plupart des cas.</p>
+
+      <p>Une sortie des bandes est avant tout un signe de <strong>force</strong>. Si le prix casse la bande supérieure en tendance haussière, cela signifie que le momentum est tellement fort que le prix dépasse les 2 écarts-types. Ce n'est pas le moment de vendre -- c'est le moment de chercher des achats sur repli.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">La règle du "walking the bands"</p>
+        <p>En tendance forte, le prix peut "marcher le long de la bande" supérieure (ou inférieure) pendant des jours, voire des semaines. Les bougies clôturent régulièrement au-dessus de la bande supérieure ou très proche. C'est un signe de tendance puissante, pas un signal de vente. Ne te mets jamais contre un prix qui marche le long d'une bande.</p>
+      </div>
+
+      <p>La distinction est cruciale : en <strong>range</strong>, une sortie des bandes a tendance à être suivie d'un retour vers la moyenne (stratégie de retour à la moyenne). En <strong>tendance</strong>, une sortie des bandes confirme la force de la tendance (stratégie de continuation). Encore une fois, le contexte détermine tout.</p>
+
+      <!-- ======================== -->
+      <h2 id="retour-moyenne" style="font-style: normal;">Retour à la moyenne : la stratégie de range</h2>
+
+      <p>La stratégie de retour à la moyenne (mean reversion) est la plus intuitive avec les Bandes de Bollinger. Le principe : quand le prix touche une bande et montre des signes de rejet, il a tendance à revenir vers la SMA 20 (la bande médiane).</p>
+
+      <p><strong>Setup achat</strong> : le prix touche (ou perce) la bande inférieure, un <a href="/guides/chandeliers-japonais.html">chandelier de retournement</a> se forme (marteau, englobante haussière), et le prix repart vers la SMA 20. Objectif : la bande médiane. Stop loss : sous le plus bas de la mèche.</p>
+
+      <p><strong>Setup vente</strong> : le prix touche la bande supérieure, un chandelier de retournement baissier apparaît (étoile filante, englobante baissière), et le prix redescend vers la SMA 20. Objectif : la bande médiane. Stop loss : au-dessus du plus haut.</p>
+
+      <p>Cette stratégie fonctionne <strong>uniquement en range</strong>. En tendance, le prix peut toucher la bande et continuer dans la même direction sans revenir vers la moyenne. Assure-toi que le marché est bien en consolidation avant d'appliquer cette approche.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Range vs Tendance : comment identifier ?</p>
+        <p>Si la SMA 20 est plate et que le prix oscille de bande en bande, tu es en <strong>range</strong> -- utilise le retour à la moyenne. Si la SMA 20 est clairement orientée (hausse ou baisse) et que les bandes sont en expansion, tu es en <strong>tendance</strong> -- utilise la stratégie de continuation/breakout. La pente de la SMA 20 est ton premier filtre.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="bollinger-rsi" style="font-style: normal;">Combiner Bollinger + RSI : le duo efficace</h2>
+
+      <p>Les Bandes de Bollinger + le <a href="/guides/rsi-indicateur.html">RSI</a> forment une combinaison redoutable, surtout pour les stratégies de retour à la moyenne.</p>
+
+      <p><strong>Setup de confluence</strong> : le prix touche la bande inférieure ET le RSI est en zone de survente (sous 30). Double signal de survente. Si un chandelier de retournement confirme, tu as un setup solide. Le RSI te dit que le momentum baissier est exagéré, les Bandes te disent que le prix est statistiquement bas par rapport à sa moyenne.</p>
+
+      <p>Inversement : prix sur la bande supérieure + RSI en surachat (au-dessus de 70) = double signal de surachat. Attention toutefois en tendance forte -- on l'a vu, le RSI peut rester en surachat longtemps et le prix peut marcher le long de la bande.</p>
+
+      <p>Le cas idéal : prix sur la bande inférieure + RSI en survente + <a href="/lexique/divergence.html">divergence</a> haussière RSI + <a href="/lexique/support.html">support</a> horizontal. Quatre éléments de confluence. Ce type de setup ne se présente pas tous les jours, mais quand il apparaît, c'est du velours.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">L'astuce du double bottom Bollinger</p>
+        <p>Quand le prix touche la bande inférieure deux fois de suite en formant un double bottom, et que le RSI fait un higher low au deuxième toucher, c'est un des setups les plus fiables que tu puisses trouver. Le premier toucher teste le niveau, le deuxième confirme que les acheteurs défendent la zone. Combiné avec un RSI divergent, c'est de l'or.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="parametres-avances" style="font-style: normal;">Paramètres avancés</h2>
+
+      <p>Les paramètres standards (SMA 20, 2 écarts-types) fonctionnent pour la majorité des situations. Mais voici les ajustements possibles selon ton style.</p>
+
+      <p><strong>Période de la SMA</strong> : une SMA plus courte (10) rend les bandes plus réactives -- utile en scalping. Une SMA plus longue (50) lisse davantage -- utile en swing trading ou pour identifier les tendances de fond. John Bollinger recommande de ne pas descendre en dessous de 10 périodes.</p>
+
+      <p><strong>Nombre d'écarts-types</strong> : 2 est le standard. Passer à 2.5 ou 3 élargit les bandes -- le prix les touche moins souvent, mais quand il les touche, le signal est plus fort. Réduire à 1.5 resserre les bandes -- plus de signaux mais moins fiables.</p>
+
+      <p><strong>Type de moyenne mobile</strong> : certains traders utilisent une EMA (exponentielle) au lieu de la SMA pour la bande médiane. L'EMA donne plus de poids aux prix récents. En pratique, la différence est minime sur 20 périodes. Reste avec la SMA pour la compatibilité avec les autres traders.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">N'optimise pas à l'excès</p>
+        <p>Changer les paramètres des Bandes de Bollinger pour qu'ils "collent" parfaitement aux données passées est de l'overfitting. Les paramètres standards marchent parce que des millions de traders les utilisent. Ce consensus crée des niveaux de prix autoréalisateurs. Dévie du standard seulement si tu as une raison solide.</p>
+      </div>
+
+      <p>Pour approfondir ta compréhension de la volatilité et des indicateurs techniques, consulte notre guide pilier sur l'<a href="/guides/analyse-technique.html">analyse technique</a>. Et si tu veux combiner les Bandes avec des indicateurs de momentum, lis nos guides sur le <a href="/guides/rsi-indicateur.html">RSI</a> et le <a href="/guides/macd-indicateur.html">MACD</a>.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Comment paramétrer les Bandes de Bollinger ?</strong></summary>
+          <p>Les paramètres par défaut sont une SMA de 20 périodes avec 2 écarts-types. C'est le réglage recommandé par John Bollinger lui-même. Pour le scalping, certains réduisent à SMA 10 avec 1.5 écarts-types. Pour le swing trading, SMA 50 avec 2.5 écarts-types. Commence toujours avec les réglages standards.</p>
+        </details>
+
+        <details>
+          <summary><strong>Que signifie un squeeze Bollinger ?</strong></summary>
+          <p>Un squeeze se produit quand les bandes se resserrent fortement, indiquant une très faible volatilité. C'est une phase de compression : le marché accumule de l'énergie pour un mouvement violent. Le squeeze ne donne pas la direction du breakout, seulement le timing. Utilise d'autres indicateurs pour la direction.</p>
+        </details>
+
+        <details>
+          <summary><strong>Les bandes marchent-elles sur le Forex ?</strong></summary>
+          <p>Oui, très bien. Le Forex alterne entre range et tendance, ce qui rend les deux stratégies Bollinger (retour à la moyenne et breakout) très applicables. Elles sont particulièrement efficaces sur les paires majeures (EUR/USD, GBP/USD, USD/JPY) grâce à leur liquidité élevée.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#definition-bollinger" class="toc__link">Définition des Bandes</a></li>
+          <li><a href="#bollinger-squeeze" class="toc__link">Le Bollinger Squeeze</a></li>
+          <li><a href="#breakout-bandes" class="toc__link">Breakout des bandes</a></li>
+          <li><a href="#retour-moyenne" class="toc__link">Retour à la moyenne</a></li>
+          <li><a href="#bollinger-rsi" class="toc__link">Bollinger + RSI</a></li>
+          <li><a href="#parametres-avances" class="toc__link">Paramètres avancés</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Le squeeze annonce un mouvement fort (mais pas la direction)</li>
+          <li>Sortie de bande = force, pas nécessairement retournement</li>
+          <li>Retour à la moyenne = uniquement en range</li>
+          <li>Bollinger + RSI = combo puissant pour les retournements</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/analyse-technique.html">Analyse technique : le guide complet</a></li>
+          <li><a href="/guides/rsi-indicateur.html">Le RSI : guide complet</a></li>
+          <li><a href="/guides/moyennes-mobiles.html">Les Moyennes Mobiles</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/analyse-technique.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Analyse technique : le guide complet</h3>
+        <p class="card-article__excerpt">Chandeliers, indicateurs, figures chartistes : tout pour lire les graphiques comme un pro.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+      <a href="/guides/rsi-indicateur.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Le RSI : guide complet</h3>
+        <p class="card-article__excerpt">Surachat, survente, divergences : maîtrise l'indicateur RSI de A à Z.</p>
+        <div class="card-article__meta"><span>&#9201; 14 min</span></div>
+      </a>
+      <a href="/guides/fibonacci-trading.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Fibonacci en trading</h3>
+        <p class="card-article__excerpt">Retracements, extensions, golden ratio : utilise Fibonacci comme les pros.</p>
+        <div class="card-article__meta"><span>&#9201; 14 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

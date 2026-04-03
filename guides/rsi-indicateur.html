@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le RSI (Relative Strength Index) : Guide Complet (2026)</title>
+  <meta name="description" content="Apprends à utiliser le RSI en trading : réglages, divergences, zones de surachat/survente, et stratégies concrètes. Guide complet gratuit.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/rsi-indicateur.html">
+
+  <meta property="og:title" content="Le RSI (Relative Strength Index) : Guide Complet (2026)">
+  <meta property="og:description" content="Apprends à utiliser le RSI en trading : réglages, divergences, zones de surachat/survente, et stratégies concrètes.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/rsi-indicateur.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le RSI (Relative Strength Index) : Guide Complet (2026)">
+  <meta name="twitter:description" content="Apprends à utiliser le RSI en trading : réglages, divergences, surachat/survente et stratégies.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le RSI (Relative Strength Index) : Guide Complet",
+    "description": "Apprends à utiliser le RSI en trading : réglages, divergences, zones de surachat/survente, et stratégies concrètes. Guide complet gratuit.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/rsi-indicateur.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "RSI Indicateur"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quel réglage pour le RSI ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le réglage par défaut de 14 périodes convient à la majorité des situations. Pour le scalping, un RSI à 7 périodes offre plus de réactivité mais génère plus de faux signaux. Pour le swing trading, un RSI à 21 périodes lisse les données et donne des signaux moins fréquents mais plus fiables. Commence avec 14 et ajuste ensuite selon ton style."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le RSI est-il fiable ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le RSI est fiable quand il est utilisé correctement, c'est-à-dire en contexte et combiné avec d'autres éléments d'analyse. Utilisé seul, il génère de nombreux faux signaux, surtout en tendance forte où il peut rester en zone extrême pendant longtemps. Les divergences RSI sont la fonctionnalité la plus fiable de l'indicateur. Ne l'utilise jamais comme seul critère de décision."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment repérer une divergence RSI ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Une divergence haussière se produit quand le prix fait un plus bas plus bas (lower low) tandis que le RSI fait un plus bas plus haut (higher low). C'est un signal que le momentum baissier s'essouffle. Inversement, une divergence baissière apparaît quand le prix fait un plus haut plus haut mais le RSI fait un plus haut plus bas. Compare les creux ou sommets successifs du prix avec ceux du RSI pour les repérer."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">RSI Indicateur</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h1 style="font-style: normal;">Le RSI (Relative Strength Index) : Guide Complet</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 14 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le RSI est probablement l'indicateur le plus populaire au monde -- et pour cause. Créé par J. Welles Wilder en 1978, il mesure la vitesse et l'ampleur des mouvements de prix pour déterminer si un actif est en surachat ou en survente. Mais mal utilisé, il peut te coûter très cher. Ce guide va t'apprendre à l'utiliser correctement.</p>
+
+      <p>On va couvrir les bases, les réglages optimaux, les fameuses divergences, les stratégies concrètes, et surtout les erreurs que font 90% des traders avec cet indicateur. Accroche-toi, c'est du lourd.</p>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-que-le-rsi" style="font-style: normal;">Qu'est-ce que le RSI ?</h2>
+
+      <p>Le RSI (Relative Strength Index, ou Indice de Force Relative) est un <strong>oscillateur</strong> qui évolue entre 0 et 100. Il mesure la force relative des mouvements haussiers par rapport aux mouvements baissiers sur une période donnée.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Formule du RSI simplifiée</p>
+        <p>RSI = 100 - (100 / (1 + RS)), où RS = Moyenne des hausses sur N périodes / Moyenne des baisses sur N périodes. Si les hausses récentes sont plus fortes que les baisses, le RSI monte. Si les baisses dominent, le RSI descend. C'est aussi simple que ça.</p>
+      </div>
+
+      <p>Concrètement, un RSI à 80 signifie que les hausses récentes sont nettement plus fortes que les baisses -- le marché est en "surachat". Un RSI à 20 signifie que les baisses dominent largement -- le marché est en "survente". Un RSI à 50, c'est l'équilibre parfait.</p>
+
+      <p>Le RSI fait partie de la famille des oscillateurs, comme le <a href="/guides/macd-indicateur.html">MACD</a> ou le stochastique. Il s'affiche sous le graphique de prix et te donne une lecture complémentaire du <a href="/lexique/momentum.html">momentum</a>. Tu le trouveras sur toutes les plateformes de trading sans exception.</p>
+
+      <!-- ======================== -->
+      <h2 id="parametres-reglages" style="font-style: normal;">Paramètres et réglages du RSI</h2>
+
+      <p>Le réglage par défaut du RSI est de <strong>14 périodes</strong>. C'est le choix de Wilder lui-même, et il reste le plus utilisé par les traders professionnels et institutionnels. Mais tu peux l'ajuster selon ton style de trading.</p>
+
+      <p><strong>RSI 7 périodes</strong> : plus réactif, idéal pour le <a href="/lexique/scalping.html">scalping</a> et le day trading. Il te donnera des signaux plus fréquents, mais aussi plus de faux signaux. Utilise-le sur des timeframes courts (M1 à M15).</p>
+
+      <p><strong>RSI 14 périodes</strong> : le standard. Bon équilibre entre réactivité et fiabilité. C'est celui que tu dois maîtriser en premier. Parfait pour le day trading et le <a href="/lexique/swing-trading.html">swing trading</a> sur H1 à D1.</p>
+
+      <p><strong>RSI 21 périodes</strong> : plus lissé, moins de bruit. Idéal pour le swing trading et les positions sur plusieurs jours. Moins de signaux, mais quand il en donne, ils sont généralement plus fiables.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Mon conseil concret</p>
+        <p>Commence avec le RSI 14 et ne change rien pendant au moins 3 mois. La pire erreur est de passer son temps à optimiser les paramètres. Le RSI 14 est utilisé par des millions de traders -- c'est précisément parce que tout le monde regarde les mêmes niveaux qu'ils fonctionnent (self-fulfilling prophecy).</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="surachat-survente" style="font-style: normal;">Surachat et survente : la vérité</h2>
+
+      <p>La règle classique dit : RSI au-dessus de 70 = surachat (signal de vente), RSI en dessous de 30 = survente (signal d'achat). C'est ce qu'on enseigne partout. Et c'est <strong>à moitié faux</strong>.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Un RSI en surachat ne signifie PAS qu'il faut vendre</p>
+        <p>En tendance haussière forte, le RSI peut rester au-dessus de 70 pendant des semaines, voire des mois. Si tu vends systématiquement quand le RSI dépasse 70, tu vas te faire écraser par la tendance. Le S&P 500 en bull run peut maintenir un RSI à 75-80 pendant des semaines entières. Vendre dans ces conditions, c'est du suicide.</p>
+      </div>
+
+      <p>La réalité est plus nuancée. En <strong>range</strong> (marché latéral), les zones 30/70 fonctionnent bien. Le prix oscille, et le RSI te donne des points d'entrée corrects. Mais en <strong>tendance</strong>, les règles changent complètement.</p>
+
+      <p>En tendance haussière, le RSI a tendance à osciller entre 40 et 80. La zone 40-50 devient ta zone de "survente relative" -- c'est là que tu cherches des achats, pas à 30. En tendance baissière, le RSI oscille entre 20 et 60. La zone 50-60 devient ta zone de "surachat relative".</p>
+
+      <p>Exemple concret : le Nasdaq est en tendance haussière claire. Le RSI descend de 75 à 45 pendant un pullback. C'est ta zone d'achat. Si tu attends que le RSI touche 30, tu ne rentreras jamais -- le marché sera déjà reparti à la hausse.</p>
+
+      <!-- ======================== -->
+      <h2 id="divergences-rsi" style="font-style: normal;">Les divergences RSI : le signal le plus puissant</h2>
+
+      <p>Si tu ne devais retenir qu'une seule utilisation du RSI, ce serait les <a href="/lexique/divergence.html">divergences</a>. C'est de loin le signal le plus fiable que cet indicateur peut te donner.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Divergence haussière (bullish divergence)</p>
+        <p>Le prix fait un <strong>lower low</strong> (plus bas plus bas) tandis que le RSI fait un <strong>higher low</strong> (plus bas plus haut). Traduction : le prix descend encore, mais le momentum baissier s'essouffle. Les vendeurs perdent de la force. C'est un signal puissant de retournement haussier imminent.</p>
+      </div>
+
+      <p><strong>Divergence baissière</strong> : le prix fait un higher high (plus haut plus haut) tandis que le RSI fait un lower high (plus haut plus bas). Le prix monte encore, mais le momentum haussier faiblit. Les acheteurs s'essoufflent. Signal de retournement baissier potentiel.</p>
+
+      <p>Exemple concret : l'EUR/USD fait un premier creux à 1.0750 avec un RSI à 25. Puis il remonte, redescend et fait un nouveau creux à 1.0720 (lower low). Mais cette fois, le RSI est à 32 (higher low). Divergence haussière. Le marché te dit : "oui le prix est plus bas, mais les vendeurs n'ont plus la même conviction". C'est souvent le début d'un retournement.</p>
+
+      <p>Les divergences sont encore plus puissantes quand elles apparaissent sur un niveau clé de <a href="/lexique/support.html">support</a> ou de <a href="/lexique/resistance.html">résistance</a>. Une divergence haussière sur un support majeur, c'est de l'or en barre.</p>
+
+      <p>Attention : les divergences peuvent prendre du temps à se matérialiser. Le marché peut continuer dans la direction initiale pendant plusieurs bougies avant de retourner. Utilise toujours un <a href="/lexique/stop-loss.html">stop loss</a> et attends une confirmation (cassure de structure, chandelier de retournement).</p>
+
+      <!-- ======================== -->
+      <h2 id="rsi-tendance-vs-range" style="font-style: normal;">RSI en tendance vs en range</h2>
+
+      <p>C'est ici que la plupart des traders se plantent. Le RSI ne s'utilise pas de la même façon selon le contexte de marché.</p>
+
+      <p><strong>En range (marché latéral)</strong> : c'est le terrain de jeu idéal du RSI. Le prix oscille entre un support et une résistance. Tu achètes quand le RSI passe sous 30 et tu vends quand il dépasse 70. Simple, efficace, et ça marche bien dans un range propre.</p>
+
+      <p><strong>En tendance haussière</strong> : oublie le 30/70. Le RSI rebondit sur la zone 40-50 et monte jusqu'à 70-80. Ta stratégie : acheter quand le RSI redescend vers 40-50 (pullback dans la tendance). Vendre quand le RSI dépasse 70 est une erreur -- tu te mets contre la tendance.</p>
+
+      <p><strong>En tendance baissière</strong> : le RSI oscille entre 20-30 et 50-60. Tu cherches des ventes quand le RSI remonte vers 50-60 (pullback baissier). Acheter quand le RSI touche 30 en tendance baissière, c'est attraper un couteau qui tombe.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Astuce pro : le RSI 50 comme pivot</p>
+        <p>Le niveau 50 du RSI est souvent négligé mais extrêmement utile. En tendance haussière, le RSI rebondit régulièrement sur 50 comme un support. En tendance baissière, le RSI est rejeté par 50 comme une résistance. Trace une ligne horizontale à 50 sur ton RSI et observe : c'est un filtre de tendance gratuit.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="strategies-concretes" style="font-style: normal;">Stratégies concrètes avec le RSI</h2>
+
+      <p>Passons à la pratique. Voici deux stratégies que tu peux appliquer dès aujourd'hui.</p>
+
+      <p><strong>Stratégie 1 : RSI + Support/Résistance.</strong> Identifie un niveau de support ou résistance clé sur ton graphique. Attends que le prix arrive sur ce niveau. Vérifie le RSI : s'il est en zone extrême (sous 30 sur un support, au-dessus de 70 sur une résistance) et qu'un <a href="/guides/chandeliers-japonais.html">chandelier de retournement</a> se forme, tu as un setup. Place ton stop loss de l'autre côté du niveau clé.</p>
+
+      <p><strong>Stratégie 2 : RSI + VWAP.</strong> Le <a href="/lexique/vwap.html">VWAP</a> (Volume Weighted Average Price) est le prix moyen pondéré par le volume. Quand le prix revient sur le VWAP en tendance haussière ET que le RSI est en zone 40-50, c'est un point d'entrée de qualité. Le VWAP agit comme un "aimant" et le RSI confirme que le pullback est suffisant sans être excessif.</p>
+
+      <p>Dans les deux cas, la clé est la <strong>confluence</strong>. Le RSI seul ne suffit jamais. Il confirme ce que le prix et les niveaux techniques te disent déjà. C'est un outil de confirmation, pas un outil de décision.</p>
+
+      <!-- ======================== -->
+      <h2 id="erreurs-courantes" style="font-style: normal;">Erreurs courantes avec le RSI</h2>
+
+      <p><strong>Erreur 1 : Vendre systématiquement à RSI 70.</strong> On l'a vu, en tendance forte, le RSI peut rester en zone extrême longtemps. Si tu vends à chaque RSI 70 en bull market, tu accumules les pertes.</p>
+
+      <p><strong>Erreur 2 : Ignorer le contexte de marché.</strong> Le RSI en range et le RSI en tendance sont deux outils différents. Si tu appliques les mêmes règles dans les deux contextes, tu perds.</p>
+
+      <p><strong>Erreur 3 : Utiliser le RSI seul.</strong> Aucun indicateur ne fonctionne seul. Le RSI doit être combiné avec l'analyse des prix, les niveaux clés, et idéalement un autre indicateur complémentaire comme le <a href="/guides/macd-indicateur.html">MACD</a> ou les <a href="/guides/bandes-bollinger.html">Bandes de Bollinger</a>.</p>
+
+      <p><strong>Erreur 4 : Changer les paramètres sans cesse.</strong> Si un setup ne marche pas avec le RSI 14, il ne marchera probablement pas mieux avec un RSI 9 ou 21. Le problème vient rarement des paramètres -- il vient de ta lecture du contexte.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le piège du backtesting sélectif</p>
+        <p>Beaucoup de traders "optimisent" leur RSI en trouvant les paramètres qui marchent le mieux sur les données passées. C'est de l'overfitting. Un RSI 11.3 qui marche parfaitement sur l'EUR/USD de janvier à mars ne garantit rien pour avril. Reste sur les standards (7, 14, 21) -- ils ont fait leurs preuves sur des décennies.</p>
+      </div>
+
+      <p>Pour approfondir l'<a href="/guides/analyse-technique.html">analyse technique</a> et combiner le RSI avec d'autres outils, consulte notre guide pilier. Tu peux aussi lire la <a href="/lexique/rsi.html">définition du RSI</a> dans notre lexique pour un rappel rapide des concepts clés.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Quel réglage pour le RSI ?</strong></summary>
+          <p>Le réglage par défaut de 14 périodes convient à la majorité des situations. Pour le scalping, un RSI à 7 donne plus de réactivité mais plus de faux signaux. Pour le swing trading, un RSI à 21 est plus lissé et fiable. Commence avec 14 et ajuste après plusieurs mois de pratique.</p>
+        </details>
+
+        <details>
+          <summary><strong>Le RSI est-il fiable ?</strong></summary>
+          <p>Le RSI est fiable quand il est utilisé en contexte et combiné avec d'autres éléments. Utilisé seul, il génère de nombreux faux signaux, surtout en tendance forte. Les divergences RSI sont la fonctionnalité la plus fiable. Ne l'utilise jamais comme seul critère de décision.</p>
+        </details>
+
+        <details>
+          <summary><strong>Comment repérer une divergence RSI ?</strong></summary>
+          <p>Compare les creux (ou sommets) successifs du prix avec ceux du RSI. Si le prix fait un nouveau plus bas mais que le RSI fait un plus bas plus haut, c'est une divergence haussière. Si le prix fait un nouveau plus haut mais que le RSI fait un plus haut plus bas, c'est une divergence baissière.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-que-le-rsi" class="toc__link">Qu'est-ce que le RSI ?</a></li>
+          <li><a href="#parametres-reglages" class="toc__link">Paramètres et réglages</a></li>
+          <li><a href="#surachat-survente" class="toc__link">Surachat et survente</a></li>
+          <li><a href="#divergences-rsi" class="toc__link">Les divergences RSI</a></li>
+          <li><a href="#rsi-tendance-vs-range" class="toc__link">RSI en tendance vs range</a></li>
+          <li><a href="#strategies-concretes" class="toc__link">Stratégies concrètes</a></li>
+          <li><a href="#erreurs-courantes" class="toc__link">Erreurs courantes</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>RSI > 70 ne veut pas dire "vends" en tendance forte</li>
+          <li>Les divergences sont le signal RSI le plus fiable</li>
+          <li>RSI 14 par défaut -- ne change pas sans raison</li>
+          <li>Toujours combiner le RSI avec le contexte de prix</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/analyse-technique.html">Analyse technique : le guide complet</a></li>
+          <li><a href="/guides/macd-indicateur.html">Le MACD : guide complet</a></li>
+          <li><a href="/guides/bandes-bollinger.html">Les Bandes de Bollinger</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/analyse-technique.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Analyse technique : le guide complet</h3>
+        <p class="card-article__excerpt">Chandeliers, indicateurs, figures chartistes : tout pour lire les graphiques comme un pro.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+      <a href="/guides/macd-indicateur.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Le MACD : guide complet de l'indicateur</h3>
+        <p class="card-article__excerpt">Signal line, histogramme, divergences : maîtrise le MACD pour confirmer tes entrées.</p>
+        <div class="card-article__meta"><span>&#9201; 13 min</span></div>
+      </a>
+      <a href="/guides/bandes-bollinger.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Les Bandes de Bollinger</h3>
+        <p class="card-article__excerpt">Squeeze, breakout, retour à la moyenne : les stratégies Bollinger qui marchent.</p>
+        <div class="card-article__meta"><span>&#9201; 13 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

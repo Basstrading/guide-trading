@@ -1,0 +1,655 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Gestion du Risque en Trading : Le Guide Essentiel (2026)</title>
+  <meta name="description" content="La gestion du risque est LE facteur qui sépare les traders gagnants des perdants. Taille de position, stop loss, drawdown, money management — guide complet.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/gestion-du-risque.html">
+
+  <meta property="og:title" content="Gestion du Risque en Trading : Le Guide Essentiel (2026)">
+  <meta property="og:description" content="La gestion du risque est LE facteur qui sépare les traders gagnants des perdants. Taille de position, stop loss, drawdown, money management — guide complet.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/gestion-du-risque.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Gestion du Risque en Trading : Le Guide Essentiel (2026)">
+  <meta name="twitter:description" content="La gestion du risque est LE facteur qui sépare les traders gagnants des perdants. Stop loss, taille de position, drawdown.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Gestion du Risque en Trading : Le Guide Essentiel",
+    "description": "La gestion du risque est LE facteur qui sépare les traders gagnants des perdants. Taille de position, stop loss, drawdown, money management — guide complet.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/gestion-du-risque.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Gestion du Risque"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quel pourcentage risquer par trade ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Entre 0,5% et 1% de ton capital par trade pour la majorité des traders. 2% est un maximum absolu. Jamais plus. Avec 0,5% de risque par trade, tu peux encaisser 20 pertes consécutives et ne perdre que 10% de ton compte. C'est ça, la survie en trading."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Faut-il toujours mettre un stop loss ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "OUI. Toujours. Sans exception. Un trade sans stop loss n'est pas du trading, c'est du gambling déguisé. Le stop loss est ton assurance vie sur les marchés. Ne pas en mettre, c'est conduire à 200 km/h sans ceinture en espérant ne jamais avoir d'accident."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment revenir d'un gros drawdown ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Réduis ta taille de position de 50%. Concentre-toi sur l'exécution, pas sur la récupération. Ne tente surtout pas de 'te refaire vite' — c'est du revenge trading, et ça ne fait qu'aggraver le drawdown. Il t'a fallu du temps pour descendre, il te faudra du temps pour remonter. Patience et discipline."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "C'est quoi le money management ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le money management est l'ensemble des règles qui gouvernent ton allocation de capital : risque par trade, perte maximale journalière, taille de position, limites de drawdown. C'est le système d'exploitation de ton trading — sans lui, rien ne fonctionne correctement."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Gestion du Risque</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h1>Gestion du Risque en Trading : Le Guide Essentiel</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 22 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">La gestion du risque, c'est le sujet le moins sexy du trading. Personne ne veut en parler. Tout le monde veut parler de stratégie, de setups magiques, de gains spectaculaires. Et c'est exactement pour ça que 90% des traders particuliers perdent de l'argent.</p>
+
+      <p>Ce guide va te donner les règles concrètes, les chiffres réels et les méthodes que les traders professionnels utilisent pour protéger leur capital. Pas de théorie vague. Des règles précises, applicables dès ton prochain trade.</p>
+
+      <!-- ======================== -->
+      <h2 id="pourquoi-risk-management">Pourquoi la gestion du risque est le facteur n°1</h2>
+
+      <p>Voici une vérité que la plupart des "formateurs" ne te diront jamais : <strong>la majorité des traders qui perdent de l'argent n'ont pas un problème de stratégie. Ils ont un problème de gestion du risque.</strong></p>
+
+      <p>Les statistiques sont brutales. 90% des traders particuliers perdent de l'argent. Et quand tu analyses pourquoi, le schéma est toujours le même : positions trop grosses, pas de stop loss, pas de limite de pertes journalières, revenge trading après une perte. La stratégie est rarement le problème. La discipline et le money management, si.</p>
+
+      <p>Réfléchis à ça : un trader avec une stratégie médiocre mais une gestion du risque excellente va survivre. Il va être là dans 6 mois, dans 1 an, dans 5 ans. Il aura le temps d'améliorer sa stratégie, de s'adapter, de progresser. Un trader avec la meilleure stratégie du monde mais aucune gestion du risque va exploser son compte. C'est une question de temps, pas de "si".</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Réalité brutale</p>
+        <p>Un trader sans gestion du risque, c'est un pilote sans ceinture à 200 km/h. La question n'est pas SI tu vas avoir un accident, mais QUAND. Et quand ça arrive sans protection, c'est ton compte entier qui y passe.</p>
+      </div>
+
+      <p>La gestion du risque n'est pas un bonus, un "nice to have", un truc à apprendre "plus tard quand tu seras meilleur". C'est la fondation. Sans elle, tout le reste s'effondre. Tu peux avoir la meilleure lecture de marché de la planète — une seule position trop grosse sans stop loss peut effacer des mois de gains en quelques minutes.</p>
+
+      <!-- ======================== -->
+      <h2 id="regle-or-risque-par-trade">La règle d'or : combien risquer par trade ?</h2>
+
+      <p>C'est LA question fondamentale. Et la réponse va te surprendre par sa simplicité.</p>
+
+      <p><strong>Les traders professionnels risquent entre 0,5% et 1% de leur capital par trade.</strong> Pas 5%. Pas 3%. Entre 0,5% et 1%. C'est tout. 2% est déjà considéré comme agressif dans la plupart des desks de trading institutionnels.</p>
+
+      <p>Prenons un exemple concret avec un compte de 10 000 € :</p>
+
+      <ul>
+        <li><strong>0,5% de risque</strong> = 50 € de perte maximale par trade</li>
+        <li><strong>1% de risque</strong> = 100 € de perte maximale par trade</li>
+        <li><strong>2% de risque</strong> = 200 € de perte maximale par trade</li>
+      </ul>
+
+      <p>Tu trouves ça petit ? C'est exactement le point. Pourquoi les pros risquent si peu ? Parce qu'ils comprennent une chose fondamentale : <strong>la survie prime sur la performance</strong>. Avec 0,5% de risque par trade, tu peux encaisser 20 pertes consécutives et n'avoir perdu que 10% de ton capital. Ton compte est intact. Tu es toujours dans le jeu. Tu peux te relever.</p>
+
+      <p>Maintenant, compare avec le trader amateur qui risque 5% par trade. Cinq pertes consécutives — ce qui arrive plus souvent qu'on ne le croit — et son compte est amputé de 25%. Et comme tu vas le voir dans la section sur le <a href="#drawdown-tueur-silencieux">drawdown</a>, remonter de -25% demande un gain de +33%. Les maths sont cruelles.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Ce que font les vrais pros</p>
+        <p>Les traders pros risquent souvent 0,5% par trade. Si tu risques 5%, tu n'es pas agressif — tu es inconscient. Avec 5 pertes consécutives à 5%, ton compte est amputé de 25%. Avec 5 pertes consécutives à 0,5%, tu as perdu 2,5%. Qui dort mieux la nuit ?</p>
+      </div>
+
+      <p>Voici l'impact concret de différents niveaux de risque après 5 pertes consécutives :</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Risque par trade</th>
+              <th>Capital initial</th>
+              <th>Après 5 pertes</th>
+              <th>Perte totale</th>
+              <th>Gain nécessaire pour revenir</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>0,5%</td>
+              <td>10 000 €</td>
+              <td>9 752 €</td>
+              <td>-2,5%</td>
+              <td>+2,5%</td>
+            </tr>
+            <tr>
+              <td>1%</td>
+              <td>10 000 €</td>
+              <td>9 510 €</td>
+              <td>-4,9%</td>
+              <td>+5,2%</td>
+            </tr>
+            <tr>
+              <td>2%</td>
+              <td>10 000 €</td>
+              <td>9 039 €</td>
+              <td>-9,6%</td>
+              <td>+10,6%</td>
+            </tr>
+            <tr>
+              <td>5%</td>
+              <td>10 000 €</td>
+              <td>7 738 €</td>
+              <td>-22,6%</td>
+              <td>+29,2%</td>
+            </tr>
+            <tr>
+              <td>10%</td>
+              <td>10 000 €</td>
+              <td>5 905 €</td>
+              <td>-41%</td>
+              <td>+69,4%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Regarde bien la dernière colonne. Plus tu perds gros, plus il est exponentiellement difficile de revenir. C'est pour ça que le contrôle du risque par trade est la règle n°1 absolue.</p>
+
+      <!-- ======================== -->
+      <h2 id="calculer-taille-position">Comment calculer sa taille de position</h2>
+
+      <p>Connaître le pourcentage de risque, c'est bien. Savoir le transformer en taille de position concrète, c'est indispensable. Voici LA formule que tout trader doit connaître par cœur.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">La formule du position sizing</p>
+        <p><strong>Taille de position = (Capital × % de risque) / (Distance du stop en points × Valeur du point)</strong></p>
+      </div>
+
+      <p>Ça a l'air abstrait ? Prenons deux exemples concrets.</p>
+
+      <h3>Exemple 1 : Forex (EUR/USD)</h3>
+
+      <ul>
+        <li>Capital : 10 000 €</li>
+        <li>Risque : 1% = 100 €</li>
+        <li>Stop loss : 20 pips</li>
+        <li>Valeur d'un pip (lot standard EUR/USD) : 10 €/pip</li>
+      </ul>
+
+      <p><strong>Taille = 100 / (20 × 10) = 0,5 lot</strong></p>
+
+      <p>Tu ouvres donc une position de 0,5 lot. Si le marché touche ton stop à 20 pips, tu perds exactement 100 € — soit 1% de ton capital. Pas plus.</p>
+
+      <h3>Exemple 2 : Futures (Nasdaq - NQ/MNQ)</h3>
+
+      <ul>
+        <li>Capital : 25 000 €</li>
+        <li>Risque : 0,5% = 125 €</li>
+        <li>Stop loss : 10 points</li>
+        <li>Valeur d'un point (NQ) : 20 $/point — valeur d'un point (MNQ) : 2 $/point</li>
+      </ul>
+
+      <p><strong>Taille = 125 / (10 × 20) = 0,625 contrats NQ</strong></p>
+
+      <p>Tu ne peux pas trader 0,625 contrats NQ. Tu arrondis vers le bas : impossible de prendre 1 NQ sans dépasser ton risque. Solution : utilise le Micro Nasdaq (MNQ) à 2 $/point. 125 / (10 × 2) = 6,25 → <strong>6 contrats MNQ</strong>. Ton risque réel : 120 € au lieu de 125 €. Parfait.</p>
+
+      <p>Tu vois le principe : <strong>c'est ton risque qui détermine ta taille, jamais l'inverse</strong>. Tu ne choisis pas d'abord combien de lots tu veux prendre. Tu calcules combien tu PEUX prendre en fonction de ton risque maximal et de la distance de ton stop.</p>
+
+      <p><a href="/outils/calculateur-taille-position.html">Utilise notre calculateur gratuit de taille de position</a> pour ne jamais faire ce calcul de tête en pleine session. Une erreur de calcul sous pression peut te coûter cher.</p>
+
+      <!-- ======================== -->
+      <h2 id="risk-reward-ratio">Le Risk/Reward Ratio</h2>
+
+      <p>Le ratio Risk/Reward (R:R) mesure combien tu espères gagner par rapport à ce que tu risques. Un R:R de 2:1 signifie que tu risques 50 € pour potentiellement gagner 100 €. Un R:R de 1.5:1 signifie que tu risques 100 € pour viser 150 €.</p>
+
+      <p><strong>Le minimum acceptable pour un trader sérieux : 1.5:1.</strong> En dessous, les maths jouent contre toi sauf si ton taux de réussite est exceptionnellement élevé.</p>
+
+      <p>Et voici le concept qui change tout : <strong>tu n'as pas besoin de gagner la majorité de tes trades pour être rentable.</strong> Lis ça deux fois. Le R:R fait tout le travail.</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Taux de réussite</th>
+              <th>R:R</th>
+              <th>Résultat sur 10 trades (100 € risqué)</th>
+              <th>Verdict</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>40%</td>
+              <td>2:1</td>
+              <td>4 × 200 € - 6 × 100 € = <strong>+200 €</strong></td>
+              <td>Rentable</td>
+            </tr>
+            <tr>
+              <td>50%</td>
+              <td>1.5:1</td>
+              <td>5 × 150 € - 5 × 100 € = <strong>+250 €</strong></td>
+              <td>Rentable</td>
+            </tr>
+            <tr>
+              <td>60%</td>
+              <td>1:1</td>
+              <td>6 × 100 € - 4 × 100 € = <strong>+200 €</strong></td>
+              <td>Rentable mais fragile</td>
+            </tr>
+            <tr>
+              <td>40%</td>
+              <td>1:1</td>
+              <td>4 × 100 € - 6 × 100 € = <strong>-200 €</strong></td>
+              <td>Perdant</td>
+            </tr>
+            <tr>
+              <td>50%</td>
+              <td>1:1</td>
+              <td>5 × 100 € - 5 × 100 € = <strong>0 €</strong></td>
+              <td>Breakeven (perdant avec les frais)</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Regarde la première ligne : 40% de réussite seulement, mais un R:R de 2:1, et tu es rentable. Tu perds 6 trades sur 10 et tu gagnes quand même de l'argent. C'est la puissance du Risk/Reward.</p>
+
+      <p>À l'inverse, un trader avec 60% de réussite et un R:R de 1:1 est en profit — mais il suffit que son winrate baisse de quelques points pour qu'il passe dans le rouge. C'est fragile. Un bon R:R te donne une marge de sécurité que le winrate seul ne peut pas offrir.</p>
+
+      <p>Avant chaque trade, tu dois connaître ton R:R. Si le setup ne te donne pas au moins 1.5:1, tu passes ton tour. Pas de négociation. <a href="/outils/calculateur-risk-reward.html">Notre calculateur Risk/Reward</a> t'aide à évaluer chaque trade en quelques secondes.</p>
+
+      <!-- ======================== -->
+      <h2 id="stop-loss-assurance">Le Stop Loss — ton assurance vie</h2>
+
+      <p>Le <a href="/lexique/stop-loss.html">stop loss</a> est un ordre automatique qui ferme ta position si le prix atteint un niveau prédéfini. C'est ta protection contre les pertes catastrophiques. Et c'est non négociable — chaque trade doit en avoir un.</p>
+
+      <h3>Les trois types de stop loss</h3>
+
+      <p><strong>Le stop fixe</strong> : un nombre de points/pips défini à l'avance. Par exemple, tu places toujours ton stop à 15 pips de ton entrée. Simple mais pas toujours optimal — le marché se moque de tes chiffres ronds.</p>
+
+      <p><strong>Le stop technique</strong> : placé derrière un niveau de structure — un <a href="/lexique/support.html">support</a>, une <a href="/lexique/resistance.html">résistance</a>, un swing high/low. C'est le plus intelligent. Ton stop est là où le marché te prouve que tu as tort, pas à un chiffre arbitraire.</p>
+
+      <p><strong>Le stop suiveur (trailing stop)</strong> : il suit le prix quand celui-ci évolue en ta faveur. Tu verrouilles tes gains progressivement. Utile en tendance, mais attention au bruit de marché qui peut te sortir prématurément.</p>
+
+      <h3>Où placer ton stop ?</h3>
+
+      <p>Derrière un niveau logique. Si tu achètes sur un support, ton stop va juste en dessous de ce support. Si tu vends sous une résistance, ton stop va juste au-dessus. L'idée : ton stop est touché uniquement si ta lecture de marché est invalidée.</p>
+
+      <p><strong>Évite les chiffres ronds</strong> (1.1000, 15 000, etc.). Les gros acteurs du marché savent que les stops des particuliers s'accumulent sur ces niveaux. Ils vont les chercher. Place ton stop quelques points au-delà pour éviter ce piège classique.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">La règle la plus violée — et la plus coûteuse</p>
+        <p>Ne déplace JAMAIS ton stop loss dans le mauvais sens. C'est la règle la plus violée et la plus coûteuse en trading. Si tu sens le besoin de l'éloigner, c'est que ta taille de position est trop grosse ou que ton analyse est fausse. Dans les deux cas, éloigner le stop ne résout rien — ça aggrave le problème.</p>
+      </div>
+
+      <p><strong>La règle du breakeven</strong> : quand le prix a atteint un ratio de 1:1 en ta faveur (tu risquais 50 €, le trade est à +50 € de gain latent), déplace ton stop au point d'entrée (breakeven). Tu élimines tout risque sur ce trade. C'est non négociable. À 1:1, tu passes en "free trade" — tu ne peux plus perdre d'argent.</p>
+
+      <!-- ======================== -->
+      <h2 id="drawdown-tueur-silencieux">Le drawdown — le tueur silencieux</h2>
+
+      <p>Le <a href="/lexique/drawdown.html">drawdown</a>, c'est la baisse entre le point le plus haut de ton capital et son point le plus bas actuel. C'est la mesure de ta douleur financière. Et c'est le chiffre que tout trader devrait surveiller de plus près que ses gains.</p>
+
+      <p>Pourquoi ? Parce que les mathématiques du drawdown sont impitoyables. Regarde ce tableau et imprime-le. Sérieusement. Colle-le à côté de ton écran.</p>
+
+      <div class="table-responsive">
+        <table>
+          <thead>
+            <tr>
+              <th>Drawdown (perte)</th>
+              <th>Gain nécessaire pour revenir à l'équilibre</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>-5%</td>
+              <td>+5,3%</td>
+            </tr>
+            <tr>
+              <td>-10%</td>
+              <td>+11,1%</td>
+            </tr>
+            <tr>
+              <td>-20%</td>
+              <td>+25%</td>
+            </tr>
+            <tr>
+              <td>-30%</td>
+              <td>+42,9%</td>
+            </tr>
+            <tr>
+              <td>-40%</td>
+              <td>+66,7%</td>
+            </tr>
+            <tr>
+              <td>-50%</td>
+              <td>+100%</td>
+            </tr>
+            <tr>
+              <td>-70%</td>
+              <td>+233%</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p>Regarde bien : à -50%, tu dois <strong>doubler</strong> ton capital restant juste pour revenir à zéro. À -70%, tu dois faire +233%. C'est quasi impossible. C'est pour ça que chaque pourcentage de perte supplémentaire est exponentiellement plus dangereux que le précédent.</p>
+
+      <p>Le message est limpide : <strong>coupe tes pertes petit.</strong> Un drawdown de 5-10% est gérable. Un drawdown de 30%+ est un trou dont la plupart des traders ne remontent jamais — pas parce que c'est mathématiquement impossible, mais parce que la pression psychologique devient insoutenable et pousse au revenge trading.</p>
+
+      <h3>Les règles de drawdown en prop firm</h3>
+
+      <p>Les <a href="/guides/prop-firms.html">prop firms</a> (sociétés de trading financé) connaissent ces maths par cœur. C'est pour ça qu'elles imposent des règles strictes :</p>
+
+      <ul>
+        <li><strong>Drawdown journalier maximum</strong> : 4% à 5% selon la firme</li>
+        <li><strong>Drawdown total maximum</strong> : 8% à 12% selon la firme</li>
+      </ul>
+
+      <p>Si tu dépasses ces limites, ton compte est fermé. Point. Pas de seconde chance. Et tu sais quoi ? Ces limites ne sont pas arbitraires — elles reflètent les standards de risk management professionnel. Si les pros respectent ces règles, tu devrais les adopter toi aussi, même sur ton compte personnel.</p>
+
+      <p><a href="/outils/simulateur-drawdown.html">Notre simulateur de drawdown</a> te permet de visualiser l'impact d'une série de pertes sur ton capital. Utilise-le avant de décider de ton risque par trade.</p>
+
+      <!-- ======================== -->
+      <h2 id="money-management-quotidien">Le Money Management au quotidien</h2>
+
+      <p>Le risk management ne s'arrête pas au calcul de la taille de position. C'est un système complet de règles que tu appliques CHAQUE JOUR, sans exception. Voici les règles concrètes.</p>
+
+      <h3>Règle 1 : la perte maximale journalière — 1,5%</h3>
+
+      <p>Si tu perds 1,5% de ton capital dans la journée, c'est terminé. Tu fermes ta plateforme. Tu éteins tes écrans. Tu vas marcher, faire du sport, lire un livre. La journée est finie. Pas "encore un trade". Pas "je vais me refaire". Fini.</p>
+
+      <p>Sur un compte de 10 000 €, ça représente 150 €. Tu penses que c'est trop strict ? Les traders institutionnels ont des limites encore plus serrées. Cette règle existe pour une raison : les pires dégâts arrivent quand un trader refuse d'accepter une mauvaise journée.</p>
+
+      <h3>Règle 2 : la règle des 3 strikes</h3>
+
+      <p>3 trades perdants dans la journée = session terminée. Pas d'exception. Pas de "le prochain sera le bon". Quand tu enchaînes 3 pertes, quelque chose ne va pas. Soit le marché ne correspond pas à ta stratégie aujourd'hui, soit tu n'es pas dans le bon état mental. Dans les deux cas, continuer ne fera qu'aggraver les choses.</p>
+
+      <h3>Règle 3 : la pause après 2 pertes consécutives</h3>
+
+      <p>Après 2 pertes d'affilée, tu fais une pause de 30 minutes minimum. Pas de screens. Tu te lèves, tu respires, tu te recentres. Deux pertes consécutives commencent à activer le mode "récupération" dans ton cerveau — cette partie primitive qui veut "se refaire" à tout prix. La pause interrompt ce cercle vicieux avant qu'il ne s'installe.</p>
+
+      <h3>Règle 4 : le nombre maximal de trades par jour</h3>
+
+      <p>3 à 5 trades par jour maximum. L'overtrading est l'ennemi silencieux de la rentabilité. Chaque trade supplémentaire augmente tes frais, dilue ta concentration et t'expose à des erreurs de fatigue. Les meilleurs traders au monde prennent souvent 1 à 3 trades par jour. La qualité bat toujours la quantité.</p>
+
+      <h3>Règle 5 : le plan AVANT la session</h3>
+
+      <p>Avant d'ouvrir ta plateforme, tu définis par écrit : ta perte maximale du jour, tes setups recherchés, les niveaux clés, le nombre maximal de trades. Tu fais ça à froid, avant que le marché ne t'influence. Définir tes limites dans le feu de l'action, c'est comme décider de ta consommation d'alcool une fois déjà au bar.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le truc qui marche vraiment</p>
+        <p>Écris tes règles de risk management sur un post-it collé sur ton écran. Pas dans un fichier que tu n'ouvriras jamais — SUR TON ÉCRAN. "Max 1,5% de perte/jour. Max 3 trades. Stop obligatoire. 2 pertes = pause." Tu dois voir ces règles à chaque seconde de ta session.</p>
+      </div>
+
+      <p>Pour automatiser ta gestion du risque en prop firm, <a href="https://x-trade.ai" target="_blank" rel="noopener">X-Trade.ai</a> applique tes règles automatiquement — max daily loss, taille de position, stop loss obligatoire — et coupe tes positions avant que tu dépasses les limites. Quand la discipline humaine atteint ses limites, l'automatisation prend le relais.</p>
+
+      <!-- ======================== -->
+      <h2 id="journal-de-trading">Le journal de trading — l'outil que personne n'utilise</h2>
+
+      <p>Demande à 100 traders débutants s'ils tiennent un journal de trading. 95 te diront non. Demande à 100 traders rentables. 95 te diront oui. Coïncidence ? Pas du tout.</p>
+
+      <p>Le journal de trading est l'outil le plus puissant et le plus sous-estimé en trading. C'est lui qui transforme tes erreurs en leçons et tes intuitions en données exploitables.</p>
+
+      <h3>Que noter pour chaque trade ?</h3>
+
+      <ul>
+        <li><strong>Date et heure</strong> d'entrée et de sortie</li>
+        <li><strong>Type de setup</strong> : breakout, pullback, reversal, etc.</li>
+        <li><strong>Prix d'entrée</strong>, <strong>stop loss</strong>, <strong>take profit</strong></li>
+        <li><strong>R:R planifié</strong> vs <strong>R:R réel</strong></li>
+        <li><strong>Résultat</strong> : gain ou perte en € et en R</li>
+        <li><strong>Règles respectées ?</strong> Oui ou non, sans nuance</li>
+        <li><strong>État émotionnel</strong> : calme, anxieux, confiant, frustré, en revenge mode</li>
+        <li><strong>Leçon apprise</strong> : une phrase, maximum deux</li>
+      </ul>
+
+      <h3>Le score de discipline</h3>
+
+      <p>Voici un exercice qui va transformer ton trading : après chaque trade, note-toi de 1 à 10 sur le respect de tes règles — AVANT de regarder si le trade est gagnant ou perdant. Est-ce que tu as respecté ton plan ? Ton stop était-il au bon endroit ? Ta taille de position était-elle correcte ? As-tu attendu ton signal ?</p>
+
+      <p>Ce score est plus important que ton P&L du jour. Pourquoi ? Parce qu'un trade gagnant où tu violes tes règles te coûtera plus cher à long terme qu'un trade perdant où tu les as respectées.</p>
+
+      <div class="callout key-takeaway">
+        <p class="callout__title">La vérité que tu ne veux pas entendre</p>
+        <p>Un trade gagnant où tu as violé tes règles est PIRE qu'un trade perdant où tu les as respectées. Le premier t'enseigne de mauvaises habitudes et renforce des comportements dangereux. Le second construit ta discipline — le seul asset qui compte vraiment à long terme.</p>
+      </div>
+
+      <h3>Comment analyser ton journal</h3>
+
+      <p>Chaque semaine, prends 30 minutes pour analyser tes trades. Cherche des patterns :</p>
+
+      <ul>
+        <li>Quel type de setup te rapporte le plus ?</li>
+        <li>À quelle heure tes meilleurs trades ont-ils lieu ?</li>
+        <li>Quel est ton état émotionnel quand tu prends tes pires décisions ?</li>
+        <li>Tes trades du lundi sont-ils meilleurs que ceux du vendredi ?</li>
+        <li>Respectes-tu mieux tes règles le matin ou l'après-midi ?</li>
+      </ul>
+
+      <p>Ce sont ces données qui vont te rendre rentable. Pas un indicateur magique. Pas un signal Telegram. Tes propres données, analysées honnêtement et régulièrement.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Quel pourcentage risquer par trade ?</strong></summary>
+          <p>Entre 0,5% et 1% de ton capital par trade pour la majorité des traders. 2% est un maximum absolu. Jamais plus. Avec 0,5% de risque par trade, tu peux encaisser 20 pertes consécutives et ne perdre que 10% de ton compte. C'est cette marge de survie qui te permet de rester dans le jeu assez longtemps pour devenir rentable.</p>
+        </details>
+
+        <details>
+          <summary><strong>Faut-il toujours mettre un stop loss ?</strong></summary>
+          <p>OUI. Toujours. Sans exception. Un trade sans stop loss, ce n'est pas du trading — c'est du gambling avec des étapes supplémentaires. "Je surveille mon trade" n'est pas un plan. Tes émotions te trahiront au pire moment. Le stop loss est la seule protection qui fonctionne quand TOI tu ne fonctionnes plus.</p>
+        </details>
+
+        <details>
+          <summary><strong>Comment revenir d'un gros drawdown ?</strong></summary>
+          <p>Réduis ta taille de position de 50%. Concentre-toi sur l'exécution de ton plan, pas sur la récupération de tes pertes. Ne tente surtout pas de "te refaire vite" — c'est du revenge trading, et ça ne fait qu'aggraver la situation. Il t'a fallu du temps pour descendre, il te faudra du temps pour remonter. La patience et la discipline sont les seules armes qui fonctionnent.</p>
+        </details>
+
+        <details>
+          <summary><strong>C'est quoi le money management ?</strong></summary>
+          <p>Le money management est l'ensemble des règles qui gouvernent ton allocation de capital : risque par trade, perte maximale journalière, taille de position, limites de drawdown. C'est le système d'exploitation de ton trading. Sans money management, ta stratégie ne vaut rien — comme un logiciel qui tourne sans OS.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#pourquoi-risk-management" class="toc__link">Pourquoi c'est le facteur n°1</a></li>
+          <li><a href="#regle-or-risque-par-trade" class="toc__link">Combien risquer par trade ?</a></li>
+          <li><a href="#calculer-taille-position" class="toc__link">Calculer sa taille de position</a></li>
+          <li><a href="#risk-reward-ratio" class="toc__link">Le Risk/Reward Ratio</a></li>
+          <li><a href="#stop-loss-assurance" class="toc__link">Le Stop Loss</a></li>
+          <li><a href="#drawdown-tueur-silencieux" class="toc__link">Le drawdown</a></li>
+          <li><a href="#money-management-quotidien" class="toc__link">Money Management quotidien</a></li>
+          <li><a href="#journal-de-trading" class="toc__link">Le journal de trading</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Risque 0,5% à 1% par trade — jamais plus de 2%</li>
+          <li>Toujours un stop loss, toujours. Breakeven à 1:1.</li>
+          <li>R:R minimum de 1.5:1 — tu n'as pas besoin de gagner souvent pour être rentable</li>
+          <li>3 pertes dans la journée = session terminée, sans exception</li>
+          <li>Tiens un journal et note ta discipline AVANT de regarder ton P&L</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/debuter-en-trading.html">Débuter en trading : le guide complet</a></li>
+          <li><a href="/guides/psychologie-du-trading.html">Psychologie du trader</a></li>
+          <li><a href="/guides/prop-firms.html">Tout savoir sur les prop firms</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/debuter-en-trading.html" class="card card-article fade-in">
+        <span class="tag tag-debutant">Débutant</span>
+        <h3 class="card-article__title">Débuter en trading : le guide complet</h3>
+        <p class="card-article__excerpt">Marchés, ordres, vocabulaire, erreurs fatales : tout ce qu'il faut savoir avant ton premier trade.</p>
+        <div class="card-article__meta"><span>&#9201; 18 min</span></div>
+      </a>
+      <a href="/guides/psychologie-du-trading.html" class="card card-article fade-in">
+        <span class="tag tag-psycho">Psychologie</span>
+        <h3 class="card-article__title">Psychologie du trader</h3>
+        <p class="card-article__excerpt">Discipline, émotions, routine : le mental du trader gagnant.</p>
+        <div class="card-article__meta"><span>&#9201; 15 min</span></div>
+      </a>
+      <a href="/guides/prop-firms.html" class="card card-article fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h3 class="card-article__title">Tout savoir sur les Prop Firms</h3>
+        <p class="card-article__excerpt">Comment décrocher un compte financé et trader le capital d'une firme.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

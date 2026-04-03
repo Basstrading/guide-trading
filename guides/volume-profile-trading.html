@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Volume Profile : Guide Complet pour Trader (2026)</title>
+  <meta name="description" content="Maîtrise le Volume Profile : POC, Value Area, zones HVN et LVN. Comprends où les institutionnels ont agi. Guide complet.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/volume-profile-trading.html">
+
+  <meta property="og:title" content="Le Volume Profile : Guide Complet pour Trader (2026)">
+  <meta property="og:description" content="Maîtrise le Volume Profile : POC, Value Area, zones HVN et LVN. Comprends où les institutionnels ont agi.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/volume-profile-trading.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Volume Profile : Guide Complet pour Trader (2026)">
+  <meta name="twitter:description" content="POC, Value Area, HVN, LVN : tout comprendre sur le Volume Profile.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le Volume Profile : Guide Complet pour Trader",
+    "description": "Maîtrise le Volume Profile : POC, Value Area, zones HVN et LVN. Comprends où les institutionnels ont agi. Guide complet.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/volume-profile-trading.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Volume Profile"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le Volume Profile est-il gratuit ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cela dépend de la plateforme. Sur TradingView, le Volume Profile est disponible uniquement avec les plans payants (Premium ou supérieur). Sur Sierra Chart, il est inclus dans les packages de base (à partir de 26$/mois). Quantower propose une version gratuite avec des limitations. ATAS offre un essai de 14 jours. Pour un usage sérieux en order flow, prévois un budget de 30 à 80$ par mois pour la plateforme et les données."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle différence entre le Volume Profile et le volume classique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le volume classique (barres en bas du graphique) montre le volume échangé PAR PÉRIODE DE TEMPS — combien de contrats ont été échangés pendant chaque bougie. Le Volume Profile montre le volume échangé PAR NIVEAU DE PRIX — combien de contrats ont été échangés à chaque prix. C'est une vision radicalement différente : le volume classique te dit QUAND l'activité a eu lieu, le Volume Profile te dit OÙ. Pour un trader, savoir OÙ les institutionnels ont concentré leur activité est beaucoup plus actionnable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le Volume Profile fonctionne-t-il sur le Forex ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le Volume Profile sur le Forex spot est limité car le Forex est un marché décentralisé (OTC) — il n'y a pas de volume centralisé. Les données de volume que tu vois sur les plateformes Forex ne représentent qu'une fraction du marché réel. Pour un Volume Profile fiable, privilégie les futures (NQ, ES, CL, 6E pour l'EUR/USD futures) où le volume est centralisé sur le CME. Si tu trades le Forex, tu peux utiliser le volume tick comme approximation, mais ce n'est pas la même précision."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">&Agrave;&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">&Agrave; propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Volume Profile</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h1>Le Volume Profile : Guide Complet pour Trader</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 16 min de lecture</span>
+          <span>&#x1F4C5; Mis &agrave; jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le Volume Profile est l'un des outils les plus puissants que tu puisses ajouter &agrave; ton arsenal de trader. Contrairement au volume classique qui te montre QUAND l'activit&eacute; a eu lieu, le Volume Profile te montre O&Ugrave;. Et dans un march&eacute; domin&eacute; par les institutionnels, savoir o&ugrave; ils ont concentr&eacute; leur activit&eacute; change compl&egrave;tement ta lecture du march&eacute;.</p>
+
+      <p>Dans ce guide, on va d&eacute;cortiquer chaque composante : le POC, la Value Area, les zones HVN et LVN, la diff&eacute;rence entre session et composite profile, et surtout comment utiliser tout &ccedil;a dans des strat&eacute;gies concr&egrave;tes.</p>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-que-le-volume-profile">Qu'est-ce que le Volume Profile ?</h2>
+
+      <p>Le <a href="/lexique/volume-profile.html">Volume Profile</a> est un histogramme horizontal qui affiche le volume &eacute;chang&eacute; &agrave; chaque niveau de prix sur une p&eacute;riode donn&eacute;e. Chaque barre horizontale repr&eacute;sente la quantit&eacute; de contrats (ou de lots) &eacute;chang&eacute;s &agrave; ce prix pr&eacute;cis.</p>
+
+      <p>Visuellement, c'est un graphique &agrave; barres tourn&eacute; de 90 degr&eacute;s et plaqu&eacute; sur ton graphique de prix. Les barres longues = beaucoup de volume &agrave; ce prix. Les barres courtes = peu de volume. C'est aussi simple que &ccedil;a en th&eacute;orie.</p>
+
+      <p>Mais ne confonds pas avec le volume classique (les barres en bas de ton graphique). Le volume classique est bas&eacute; sur le <strong>temps</strong> : il te dit combien de contrats ont &eacute;t&eacute; &eacute;chang&eacute;s pendant chaque bougie. Le Volume Profile est bas&eacute; sur le <strong>prix</strong> : il te dit combien de contrats ont &eacute;t&eacute; &eacute;chang&eacute;s &agrave; chaque niveau de prix, ind&eacute;pendamment du temps.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Volume Profile vs Volume classique</p>
+        <p><strong>Volume classique</strong> : volume par p&eacute;riode de temps (combien pendant cette bougie ?). <strong>Volume Profile</strong> : volume par niveau de prix (combien &agrave; ce prix ?). Le Volume Profile r&eacute;v&egrave;le les zones o&ugrave; le march&eacute; a trouv&eacute; un &eacute;quilibre (beaucoup de volume) et celles o&ugrave; il est pass&eacute; rapidement (peu de volume).</p>
+      </div>
+
+      <p>Pourquoi c'est important ? Parce que le volume refl&egrave;te l'activit&eacute; des participants du march&eacute;. L&agrave; o&ugrave; il y a beaucoup de volume, il y a eu un consensus : acheteurs et vendeurs se sont mis d'accord sur un prix. L&agrave; o&ugrave; il y a peu de volume, le march&eacute; est pass&eacute; vite — personne ne voulait trader &agrave; ce niveau. Ces informations sont de l'or pour un trader.</p>
+
+      <!-- ======================== -->
+      <h2 id="poc">Le POC — Point of Control</h2>
+
+      <p>Le <a href="/lexique/poc.html">POC</a> (Point of Control) est le niveau de prix o&ugrave; le volume est le plus &eacute;lev&eacute; sur la p&eacute;riode analys&eacute;e. C'est la barre la plus longue de l'histogramme du Volume Profile. Concr&egrave;tement, c'est le prix o&ugrave; le plus grand nombre de contrats a &eacute;t&eacute; &eacute;chang&eacute;.</p>
+
+      <p>Le POC repr&eacute;sente le "prix juste" du march&eacute; — le niveau o&ugrave; acheteurs et vendeurs &eacute;taient le plus en accord. C'est un aimant naturel pour le prix.</p>
+
+      <p>Observe ce ph&eacute;nom&egrave;ne sur n'importe quel graphique du NQ avec un Volume Profile session : quand le prix s'&eacute;loigne significativement du POC de la veille, il a une tendance naturelle &agrave; y revenir. C'est le fondement m&ecirc;me des strat&eacute;gies de mean reversion.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le POC comme aimant</p>
+        <p>Le POC est le "prix juste" du march&eacute;. Quand le prix s'en &eacute;loigne trop, il a tendance &agrave; y revenir — c'est le fondement de la mean reversion. Sur le NQ, le POC de la session pr&eacute;c&eacute;dente est l'un des niveaux les plus fiables pour anticiper un retour. Trace-le chaque matin avant l'ouverture.</p>
+      </div>
+
+      <p>En pratique, le POC fonctionne comme un support/r&eacute;sistance puissant. Si le prix est au-dessus du POC, celui-ci agit comme support. Si le prix est en dessous, le POC agit comme r&eacute;sistance. Mais contrairement &agrave; un support classique, le POC a un fondement concret : c'est le prix o&ugrave; le maximum de transactions a eu lieu.</p>
+
+      <!-- ======================== -->
+      <h2 id="value-area">La Value Area — VAH et VAL</h2>
+
+      <p>La <a href="/lexique/value-area.html">Value Area</a> est la zone de prix qui contient 70% du volume total &eacute;chang&eacute; sur la p&eacute;riode. Elle est d&eacute;limit&eacute;e par deux niveaux : le <strong>VAH</strong> (Value Area High — limite haute) et le <strong>VAL</strong> (Value Area Low — limite basse).</p>
+
+      <p>Pense &agrave; la Value Area comme la zone o&ugrave; le march&eacute; a consid&eacute;r&eacute; que le prix &eacute;tait "acceptable". 70% de l'activit&eacute; s'est concentr&eacute;e dans cette fourchette. En dehors de la Value Area, le prix &eacute;tait consid&eacute;r&eacute; comme trop cher (au-dessus du VAH) ou trop bon march&eacute; (en dessous du VAL).</p>
+
+      <p>L'interpr&eacute;tation est directe :</p>
+
+      <p><strong>Prix &agrave; l'int&eacute;rieur de la Value Area</strong> = march&eacute; &eacute;quilibr&eacute;, range, rotations. Le prix oscille entre VAH et VAL. C'est un environnement de mean reversion.</p>
+
+      <p><strong>Prix &agrave; l'ext&eacute;rieur de la Value Area</strong> = march&eacute; en d&eacute;s&eacute;quilibre, potentiel de tendance. Si le prix ouvre au-dessus du VAH de la veille, les acheteurs ont pris le contr&ocirc;le. Si il ouvre en dessous du VAL, les vendeurs dominent.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">La r&egrave;gle 80/20 de la Value Area</p>
+        <p>Si le prix ouvre &agrave; l'int&eacute;rieur de la Value Area de la veille et tente d'en sortir mais &eacute;choue, il y a 80% de chances qu'il traverse toute la Value Area pour aller tester l'autre extr&eacute;mit&eacute;. C'est la "80% Rule" — l'un des setups les plus fiables du Volume Profile.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="hvn-lvn">HVN vs LVN : zones d'acceptation et de rejet</h2>
+
+      <p>Au-del&agrave; du POC et de la Value Area, le Volume Profile r&eacute;v&egrave;le deux types de zones essentielles.</p>
+
+      <p><strong>HVN (High Volume Node)</strong> : une zone o&ugrave; le volume est anormalement &eacute;lev&eacute;. Le march&eacute; a pass&eacute; beaucoup de temps &agrave; ce niveau — c'est une zone d'acceptation, de consensus. Le prix a tendance &agrave; ralentir et &agrave; consolider dans les HVN. Ces zones fonctionnent comme des "zones aimant" qui attirent et retiennent le prix.</p>
+
+      <p><strong>LVN (Low Volume Node)</strong> : une zone o&ugrave; le volume est anormalement faible. Le march&eacute; est pass&eacute; tr&egrave;s vite &agrave; ce niveau — c'est une zone de rejet, o&ugrave; ni les acheteurs ni les vendeurs ne voulaient rester. Le prix traverse les LVN rapidement. Ce sont des zones de transition.</p>
+
+      <p>Exemple concret : sur le NQ, tu identifies un LVN &agrave; 18 500 entre deux HVN (&agrave; 18 450 et 18 550). Si le prix arrive &agrave; 18 500, il ne va pas s'y attarder — il va acc&eacute;l&eacute;rer vers l'un des deux HVN. C'est un mouvement rapide, pr&eacute;visible, et tradeable.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">HVN et LVN en pratique</p>
+        <p><strong>HVN</strong> = support/r&eacute;sistance solide. Le prix ralentit, consolide, et a du mal &agrave; traverser. Trade les rebonds. <strong>LVN</strong> = zone de transition rapide. Le prix acc&eacute;l&egrave;re &agrave; travers. Utilise comme target (objectif) ou comme zone d'entr&eacute;e en breakout.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="session-vs-composite">Session Profile vs Composite Profile</h2>
+
+      <p>Il existe deux fa&ccedil;ons principales d'afficher le Volume Profile, et chacune a un usage diff&eacute;rent.</p>
+
+      <p><strong>Le Session Profile</strong> affiche le Volume Profile d'une seule session de trading (un jour). Chaque jour a son propre histogramme, son propre POC, sa propre Value Area. C'est l'outil du day trader — tu vois exactement ce qui s'est pass&eacute; hier pour pr&eacute;parer aujourd'hui.</p>
+
+      <p><strong>Le Composite Profile</strong> (ou Fixed Range) cumule le volume sur plusieurs sessions. Tu choisis une p&eacute;riode (une semaine, un mois, un trimestre) et le profil agr&egrave;ge tout le volume. C'est l'outil du swing trader — tu vois la "big picture", les zones de volume majeures qui influencent le march&eacute; sur des p&eacute;riodes plus longues.</p>
+
+      <p>En pratique, utilise les deux. Le composite te donne le contexte (o&ugrave; sont les grosses zones de volume sur les 20 derniers jours ?), le session te donne la micro-structure (qu'est-ce qui s'est pass&eacute; hier ?).</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Erreur classique du d&eacute;butant</p>
+        <p>Ne te fie pas uniquement au Session Profile d'un seul jour. Un POC isol&eacute; sur une session de faible volume (vendredi apr&egrave;s-midi, veille de f&eacute;ri&eacute;) n'a pas la m&ecirc;me valeur qu'un POC form&eacute; sur une session de forte activit&eacute;. Toujours contextualiser avec le Composite Profile.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="strategies">Strat&eacute;gies concr&egrave;tes avec le Volume Profile</h2>
+
+      <p>Maintenant que tu comprends les composantes, passons aux strat&eacute;gies actionables.</p>
+
+      <p><strong>1. Trading depuis le POC (Mean Reversion)</strong> — Le matin, identifie le POC de la session pr&eacute;c&eacute;dente. Si le prix ouvre loin du POC et qu'il n'y a pas de catalyst majeur (news, earnings), anticipe un retour vers le POC. Sur le NQ, ce setup est particuli&egrave;rement fiable les jours de faible volatilit&eacute;.</p>
+
+      <p><strong>2. Fade aux extr&eacute;mit&eacute;s de la Value Area</strong> — Si le prix touche le VAH ou le VAL et montre des signes de rejet (m&egrave;che, absorption visible au <a href="/guides/footprint-chart.html">footprint</a>), prends un trade en direction du POC. L'id&eacute;e : le march&eacute; revient toujours vers la zone d'&eacute;quilibre. Stop loss juste au-del&agrave; de la VA extr&eacute;mit&eacute;, target au POC.</p>
+
+      <p><strong>3. Breakout de Value Area</strong> — Si le prix sort de la Value Area avec du volume et de la conviction (delta fort, pas de m&egrave;che de rejet), c'est un signal de tendance. L'ancienne VAH devient support (en cas de breakout haussier) ou l'ancien VAL devient r&eacute;sistance (en cas de breakout baissier).</p>
+
+      <p><strong>4. LVN comme objectifs</strong> — Quand tu entres en trade, utilise les LVN identifi&eacute;s sur le composite comme objectifs. Le prix a tendance &agrave; acc&eacute;l&eacute;rer &agrave; travers ces zones — c'est l&agrave; que tu veux prendre tes profits partiels ou d&eacute;placer ton stop.</p>
+
+      <p><strong>5. Confluence POC + <a href="/guides/vwap-trading.html">VWAP</a></strong> — Quand le POC de la session pr&eacute;c&eacute;dente co&iuml;ncide avec le VWAP du jour, tu as une zone de support/r&eacute;sistance extr&ecirc;mement forte. Les deux outils mesurent le "prix juste" de mani&egrave;re diff&eacute;rente, et quand ils convergent, la zone est quasi infranchissable sans volume majeur.</p>
+
+      <p>Pour approfondir les strat&eacute;gies d'<a href="/guides/order-flow.html">order flow</a> et mettre en pratique le Volume Profile avec des exercices guid&eacute;s, <a href="https://hubtrading.fr" target="_blank" rel="noopener">les modules de formation HubTrading</a> d&eacute;di&eacute;s &agrave; l'order flow sont un excellent compl&eacute;ment &agrave; ce guide.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Setup du matin en 5 minutes</p>
+        <p>Chaque matin avant l'ouverture US : 1) Note le POC, VAH et VAL de la session pr&eacute;c&eacute;dente. 2) Note le POC du composite 20 jours. 3) Identifie les LVN entre les niveaux. 4) Combine avec le VWAP du jour. Tu as maintenant une carte pr&eacute;cise des niveaux o&ugrave; le march&eacute; va probablement r&eacute;agir.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions fr&eacute;quentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Le Volume Profile est-il gratuit ?</strong></summary>
+          <p>Cela d&eacute;pend de la plateforme. TradingView le r&eacute;serve aux plans payants. Sierra Chart l'inclut d&egrave;s 26$/mois. Quantower propose une version gratuite limit&eacute;e. ATAS offre un essai de 14 jours. Pour un usage s&eacute;rieux, pr&eacute;vois 30 &agrave; 80$ par mois pour la plateforme et les donn&eacute;es de march&eacute;.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quelle diff&eacute;rence avec le volume classique ?</strong></summary>
+          <p>Le volume classique montre le volume par p&eacute;riode de temps (combien pendant cette bougie). Le Volume Profile montre le volume par niveau de prix (combien &agrave; ce prix). Le volume classique te dit QUAND l'activit&eacute; a eu lieu, le Volume Profile te dit O&Ugrave;. Savoir o&ugrave; les institutionnels ont concentr&eacute; leur activit&eacute; est beaucoup plus actionnable.</p>
+        </details>
+
+        <details>
+          <summary><strong>Le Volume Profile fonctionne-t-il sur le Forex ?</strong></summary>
+          <p>Le Volume Profile sur le Forex spot est limit&eacute; car c'est un march&eacute; d&eacute;centralis&eacute; (OTC) — il n'y a pas de volume centralis&eacute;. Pour un Volume Profile fiable, privil&eacute;gie les futures (NQ, ES, CL, 6E) o&ugrave; le volume est centralis&eacute; sur le CME. Sur le Forex, le volume tick est une approximation acceptable mais moins pr&eacute;cise.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-que-le-volume-profile" class="toc__link">Qu'est-ce que le Volume Profile ?</a></li>
+          <li><a href="#poc" class="toc__link">POC — Point of Control</a></li>
+          <li><a href="#value-area" class="toc__link">Value Area — VAH et VAL</a></li>
+          <li><a href="#hvn-lvn" class="toc__link">HVN vs LVN</a></li>
+          <li><a href="#session-vs-composite" class="toc__link">Session vs Composite</a></li>
+          <li><a href="#strategies" class="toc__link">Strat&eacute;gies</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; &Agrave; retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Le POC est le "prix juste" — un aimant naturel pour le prix</li>
+          <li>La Value Area contient 70% du volume — dedans = range, dehors = tendance</li>
+          <li>HVN = zones lentes (support/r&eacute;sistance), LVN = zones rapides (targets)</li>
+          <li>Combine session profile (micro) et composite (macro) pour le contexte complet</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles li&eacute;s</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/order-flow.html">Order Flow : le guide complet</a></li>
+          <li><a href="/guides/vwap-trading.html">Le VWAP en trading</a></li>
+          <li><a href="/lexique/volume-profile.html">Lexique : Volume Profile</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/vwap-trading.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le VWAP en Trading</h3>
+        <p class="card-article__excerpt">Le benchmark des institutionnels. Apprends &agrave; l'utiliser comme support/r&eacute;sistance dynamique.</p>
+        <div class="card-article__meta"><span>&#9201; 15 min</span></div>
+      </a>
+      <a href="/guides/footprint-chart.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le Footprint Chart</h3>
+        <p class="card-article__excerpt">L'outil le plus puissant de l'order flow. Lis le delta, l'absorption et les d&eacute;s&eacute;quilibres.</p>
+        <div class="card-article__meta"><span>&#9201; 16 min</span></div>
+      </a>
+      <a href="/guides/order-flow.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Order Flow : le guide complet</h3>
+        <p class="card-article__excerpt">Comprends le flux d'ordres pour trader comme les institutionnels.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en fran&ccedil;ais. Apprends &agrave; trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">&Agrave; propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Cat&eacute;gories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">D&eacute;buter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">&Eacute;cosyst&egrave;me</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communaut&eacute;, IA &amp; formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits r&eacute;serv&eacute;s</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions l&eacute;gales</a><a href="/politique-confidentialite.html">Confidentialit&eacute;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

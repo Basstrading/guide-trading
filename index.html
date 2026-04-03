@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Guide Trading — Le Guide Trading 100% Gratuit en Français</title>
+  <meta name="description" content="Apprends à trader gratuitement avec nos guides complets, un lexique de 200+ termes et des outils gratuits. Analyse technique, price action, order flow, gestion du risque.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Guide Trading — Le Guide Trading 100% Gratuit en Français">
+  <meta property="og:description" content="Apprends à trader gratuitement avec nos guides complets, un lexique de 200+ termes et des outils gratuits.">
+  <meta property="og:url" content="https://guide-trading.fr/">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Guide Trading — Le Guide Trading 100% Gratuit en Français">
+  <meta name="twitter:description" content="Apprends à trader gratuitement avec nos guides complets, un lexique de 200+ termes et des outils gratuits.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Source+Sans+3:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap" media="print" onload="this.media='all'">
+  <style>
+    /* Critical CSS — above the fold */
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+    html{scroll-behavior:smooth}
+    body{background:#0A0E17;color:#F9FAFB;font-family:'Source Sans 3',sans-serif;font-size:1.125rem;line-height:1.7;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+    a{color:#60A5FA;text-decoration:none}
+    .navbar{position:sticky;top:0;z-index:1000;background:rgba(10,14,23,0.88);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid #1F2937}
+    .navbar__inner{display:flex;align-items:center;justify-content:space-between;max-width:1140px;margin:0 auto;padding:0 1rem;height:60px}
+    .navbar__logo{display:flex;align-items:center;gap:0.5rem;font-family:'Plus Jakarta Sans',sans-serif;font-size:1rem;font-weight:700;color:#F9FAFB;text-decoration:none}
+    .navbar__logo-mark{width:28px;height:28px;background:#3B82F6;border-radius:6px;display:grid;place-items:center;font-size:0.65rem;font-weight:800;color:#fff}
+    .navbar__logo-text span{color:#9CA3AF;font-weight:400}
+    .navbar__nav{display:none;align-items:center}
+    .navbar__hamburger{display:flex;flex-direction:column;gap:4px;padding:0.5rem}
+    .navbar__hamburger span{width:18px;height:1.5px;background:#9CA3AF;border-radius:1px}
+    .hero{padding:3rem 0 2rem;border-bottom:1px solid #1F2937}
+    .hero__inner{max-width:1140px;margin:0 auto;padding:0 1rem}
+    h1,h2{font-family:'Plus Jakarta Sans',sans-serif;font-weight:700;line-height:1.25;color:#F9FAFB}
+    h1{font-size:clamp(1.75rem,4vw,2.5rem);font-weight:800;margin-bottom:1.5rem}
+    @media(min-width:1024px){.navbar__nav{display:flex}.navbar__hamburger{display:none}}
+  </style>
+  <link rel="stylesheet" href="css/style.css" media="print" onload="this.media='all'">
+  <noscript><link rel="stylesheet" href="css/style.css"></noscript>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"WebSite","name":"Guide Trading","url":"https://guide-trading.fr/","description":"Le guide trading 100% gratuit en français.","inLanguage":"fr","potentialAction":{"@type":"SearchAction","target":"https://guide-trading.fr/lexique/?q={search_term_string}","query-input":"required name=search_term_string"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Guide Trading","url":"https://guide-trading.fr/","parentOrganization":{"@type":"EducationalOrganization","name":"BassTrading","url":"https://basstrading.fr"}}
+  </script>
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search"><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher"></div>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- HERO -->
+    <section class="hero">
+      <div class="hero__inner">
+        <p class="hero__eyebrow fade-in">Encyclopédie gratuite du trading</p>
+        <h1 class="hero__title fade-in">Le guide trading <span style="color:var(--color-primary-glow)">100% gratuit</span></h1>
+        <p class="hero__desc fade-in">Des guides complets écrits par des traders, pour des traders. Analyse technique, order flow, gestion du risque, prop firms — tout ce qu'il faut pour progresser, sans paywall.</p>
+        <div class="hero__actions fade-in">
+          <a href="/guides/" class="btn btn-primary btn-lg">Explorer les guides</a>
+          <a href="/lexique/" class="btn btn-secondary btn-lg">Lexique A-Z</a>
+        </div>
+        <div class="hero__stats fade-in">
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count-to="500" data-count-suffix="+">0</span>
+            <span class="hero__stat-label">Articles</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count-to="200" data-count-suffix="+">0</span>
+            <span class="hero__stat-label">Définitions</span>
+          </div>
+          <div class="hero__stat">
+            <span class="hero__stat-value" data-count-to="4" data-count-duration="1000">0</span>
+            <span class="hero__stat-label">Outils gratuits</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- PAR OU COMMENCER -->
+    <section class="section" aria-labelledby="start-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-header__overline">Par où commencer</p>
+          <h2 id="start-heading" class="section-header__title">Choisis ton parcours</h2>
+          <p class="section-header__subtitle">Quatre points d'entrée selon ton niveau et tes objectifs.</p>
+        </div>
+
+        <div class="grid-2">
+          <a href="/guides/debuter-en-trading.html" class="card card-start fade-in" data-delay="1">
+            <span class="card-start__num">01</span>
+            <div class="card-start__content">
+              <span class="tag tag-debutant">Débutant</span>
+              <h3 class="card-start__title">Les fondamentaux du trading</h3>
+              <p class="card-start__desc">Marchés, ordres, vocabulaire essentiel. Le point de départ si tu pars de zéro.</p>
+            </div>
+          </a>
+          <a href="/guides/analyse-technique.html" class="card card-start fade-in" data-delay="2">
+            <span class="card-start__num">02</span>
+            <div class="card-start__content">
+              <span class="tag tag-at">Analyse Technique</span>
+              <h3 class="card-start__title">Lire les graphiques</h3>
+              <p class="card-start__desc">Chandeliers, indicateurs, figures chartistes, supports et résistances.</p>
+            </div>
+          </a>
+          <a href="/guides/psychologie-du-trading.html" class="card card-start fade-in" data-delay="3">
+            <span class="card-start__num">03</span>
+            <div class="card-start__content">
+              <span class="tag tag-psycho">Psychologie</span>
+              <h3 class="card-start__title">Le mental du trader</h3>
+              <p class="card-start__desc">Discipline, émotions, routine. Le facteur qui fait 80% de la performance.</p>
+            </div>
+          </a>
+          <a href="/guides/prop-firms.html" class="card card-start fade-in" data-delay="4">
+            <span class="card-start__num">04</span>
+            <div class="card-start__content">
+              <span class="tag tag-propfirm">Prop Firms</span>
+              <h3 class="card-start__title">Trader du capital</h3>
+              <p class="card-start__desc">Challenges, funded accounts, drawdown. Décrocher un compte financé.</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- GUIDES POPULAIRES -->
+    <section class="section" aria-labelledby="popular-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-header__overline">Les plus lus</p>
+          <h2 id="popular-heading" class="section-header__title">Guides populaires</h2>
+        </div>
+
+        <div class="grid-3">
+          <a href="/guides/rsi-indicateur.html" class="card card-article fade-in">
+            <span class="tag tag-at">Analyse Technique</span>
+            <h3 class="card-article__title">Le RSI expliqué simplement</h3>
+            <p class="card-article__excerpt">Surachat, survente, divergences — comprendre le RSI et l'utiliser concrètement.</p>
+            <div class="card-article__meta">8 min de lecture</div>
+          </a>
+          <a href="/guides/taille-de-position.html" class="card card-article fade-in">
+            <span class="tag tag-risk">Risk Management</span>
+            <h3 class="card-article__title">Calculer sa taille de position</h3>
+            <p class="card-article__excerpt">La formule pour ne jamais risquer plus que ce que tu peux te permettre.</p>
+            <div class="card-article__meta">6 min de lecture</div>
+          </a>
+          <a href="/guides/chandeliers-japonais.html" class="card card-article fade-in">
+            <span class="tag tag-at">Analyse Technique</span>
+            <h3 class="card-article__title">Les chandeliers japonais</h3>
+            <p class="card-article__excerpt">Doji, marteau, englobante, étoile du soir — le guide complet des patterns.</p>
+            <div class="card-article__meta">15 min de lecture</div>
+          </a>
+          <a href="/guides/prop-firms.html" class="card card-article fade-in">
+            <span class="tag tag-propfirm">Prop Firms</span>
+            <h3 class="card-article__title">Qu'est-ce qu'une prop firm ?</h3>
+            <p class="card-article__excerpt">Fonctionnement, challenges, et comment décrocher un compte funded.</p>
+            <div class="card-article__meta">10 min de lecture</div>
+          </a>
+          <a href="/guides/order-flow.html" class="card card-article fade-in">
+            <span class="tag tag-orderflow">Order Flow</span>
+            <h3 class="card-article__title">L'order flow décrypté</h3>
+            <p class="card-article__excerpt">DOM, volume profile, footprint, VWAP — lire le marché comme un pro.</p>
+            <div class="card-article__meta">20 min de lecture</div>
+          </a>
+          <a href="/guides/gestion-du-risque.html" class="card card-article fade-in">
+            <span class="tag tag-risk">Risk Management</span>
+            <h3 class="card-article__title">La gestion du risque</h3>
+            <p class="card-article__excerpt">Le facteur n°1 qui sépare les traders gagnants des perdants.</p>
+            <div class="card-article__meta">10 min de lecture</div>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- OUTILS -->
+    <section class="section" aria-labelledby="tools-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-header__overline">Calculateurs</p>
+          <h2 id="tools-heading" class="section-header__title">Outils de trading gratuits</h2>
+          <p class="section-header__subtitle">Les calculateurs que tout trader devrait avoir sous la main.</p>
+        </div>
+
+        <div class="grid-4">
+          <a href="/outils/calculateur-taille-position.html" class="card card-tool fade-in" data-delay="1">
+            <div class="card-tool__icon">TP</div>
+            <h3 class="card-tool__title">Taille de position</h3>
+            <p class="card-tool__desc">Calcule le nombre de lots en fonction de ton risque.</p>
+          </a>
+          <a href="/outils/calculateur-risk-reward.html" class="card card-tool fade-in" data-delay="2">
+            <div class="card-tool__icon">RR</div>
+            <h3 class="card-tool__title">Risk / Reward</h3>
+            <p class="card-tool__desc">Évalue si le trade en vaut la peine.</p>
+          </a>
+          <a href="/outils/calculateur-pip.html" class="card card-tool fade-in" data-delay="3">
+            <div class="card-tool__icon">$</div>
+            <h3 class="card-tool__title">Valeur du pip</h3>
+            <p class="card-tool__desc">Valeur exacte d'un pip selon ta paire et ton lot.</p>
+          </a>
+          <a href="/outils/simulateur-drawdown.html" class="card card-tool fade-in" data-delay="4">
+            <div class="card-tool__icon">DD</div>
+            <h3 class="card-tool__title">Simulateur drawdown</h3>
+            <p class="card-tool__desc">Visualise l'impact d'une série de pertes sur ton capital.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEXIQUE -->
+    <section class="section" aria-labelledby="lexique-heading">
+      <div class="container">
+        <div class="section-header fade-in">
+          <p class="section-header__overline">200+ termes</p>
+          <h2 id="lexique-heading" class="section-header__title">Lexique du trading</h2>
+          <p class="section-header__subtitle">Tape un mot, trouve sa définition.</p>
+        </div>
+
+        <div style="max-width:var(--container-narrow)">
+          <div class="search-bar fade-in">
+            <span class="search-bar__icon" aria-hidden="true">&#128269;</span>
+            <input type="search" class="search-bar__input" placeholder="Cherche un terme de trading..." aria-label="Rechercher un terme">
+          </div>
+
+          <div class="fade-in" style="display:flex;flex-wrap:wrap;gap:0.3rem;margin-top:var(--spacing-sm)">
+            <a href="/lexique/stop-loss.html" class="btn btn-ghost btn-sm">Stop Loss</a>
+            <a href="/lexique/take-profit.html" class="btn btn-ghost btn-sm">Take Profit</a>
+            <a href="/lexique/spread.html" class="btn btn-ghost btn-sm">Spread</a>
+            <a href="/lexique/pip.html" class="btn btn-ghost btn-sm">Pip</a>
+            <a href="/lexique/lot.html" class="btn btn-ghost btn-sm">Lot</a>
+            <a href="/lexique/marge.html" class="btn btn-ghost btn-sm">Marge</a>
+            <a href="/lexique/levier.html" class="btn btn-ghost btn-sm">Levier</a>
+            <a href="/lexique/drawdown.html" class="btn btn-ghost btn-sm">Drawdown</a>
+            <a href="/lexique/scalping.html" class="btn btn-ghost btn-sm">Scalping</a>
+            <a href="/lexique/day-trading.html" class="btn btn-ghost btn-sm">Day Trading</a>
+            <a href="/lexique/swing-trading.html" class="btn btn-ghost btn-sm">Swing Trading</a>
+            <a href="/lexique/support.html" class="btn btn-ghost btn-sm">Support</a>
+            <a href="/lexique/resistance.html" class="btn btn-ghost btn-sm">Résistance</a>
+            <a href="/lexique/rsi.html" class="btn btn-ghost btn-sm">RSI</a>
+            <a href="/lexique/macd.html" class="btn btn-ghost btn-sm">MACD</a>
+            <a href="/lexique/fibonacci.html" class="btn btn-ghost btn-sm">Fibonacci</a>
+            <a href="/lexique/order-flow.html" class="btn btn-ghost btn-sm">Order Flow</a>
+            <a href="/lexique/vwap.html" class="btn btn-ghost btn-sm">VWAP</a>
+            <a href="/lexique/prop-firm.html" class="btn btn-ghost btn-sm">Prop Firm</a>
+            <a href="/lexique/risk-reward.html" class="btn btn-ghost btn-sm">Risk/Reward</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" aria-label="Guide Trading">
+            <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+            <span class="navbar__logo-text">Guide <span>Trading</span></span>
+          </a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Contenu expert, outils concrets, zéro paywall.</p>
+          <p class="footer__brand-desc" style="margin-top:0.4rem">Un projet <a href="https://basstrading.fr" target="_blank" rel="noopener" style="color:var(--color-primary-glow)">BassTrading.fr</a></p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Risk management</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — IA, communauté & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal">
+          <a href="/mentions-legales.html">Mentions légales</a>
+          <a href="/politique-confidentialite.html">Confidentialité</a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="js/main.js"></script>
+</body>
+</html>

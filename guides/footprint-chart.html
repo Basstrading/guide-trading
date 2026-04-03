@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Footprint Chart : Lire le Volume par Niveau de Prix (2026)</title>
+  <meta name="description" content="Le footprint chart est l'outil le plus puissant de l'order flow. Apprends à lire le delta, l'absorption et les déséquilibres.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/footprint-chart.html">
+
+  <meta property="og:title" content="Le Footprint Chart : Lire le Volume par Niveau de Prix (2026)">
+  <meta property="og:description" content="Le footprint chart est l'outil le plus puissant de l'order flow. Apprends à lire le delta, l'absorption et les déséquilibres.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/footprint-chart.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Footprint Chart : Lire le Volume par Niveau de Prix (2026)">
+  <meta name="twitter:description" content="Lis le delta, l'absorption et les déséquilibres avec le footprint chart.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le Footprint Chart : Lire le Volume par Niveau de Prix",
+    "description": "Le footprint chart est l'outil le plus puissant de l'order flow. Apprends à lire le delta, l'absorption et les déséquilibres.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/footprint-chart.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Footprint Chart"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Quel logiciel pour le footprint chart ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sierra Chart est le gold standard pour le footprint sur les futures (NQ, ES). C'est la plateforme utilisée par la majorité des traders professionnels d'order flow — rapide, stable, personnalisable. ATAS est une bonne alternative pour les débutants avec une interface plus intuitive. Bookmap offre une visualisation unique du carnet d'ordres en heatmap. Quantower est une option gratuite avec des fonctionnalités de base correctes. Pour commencer, ATAS ou Quantower sont les plus accessibles. Pour un usage avancé, Sierra Chart est incontournable."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le footprint chart est-il pour les débutants ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, pas directement. Le footprint est un outil avancé qui nécessite une solide compréhension du VWAP, du Volume Profile et des mécaniques de marché. Commencer par le footprint sans ces bases, c'est comme lire une radiographie sans avoir étudié l'anatomie. Recommandation : maîtrise le VWAP (1-2 mois), puis le Volume Profile (2-3 mois), puis seulement le footprint. Au total, compte 6 mois de pratique préalable minimum."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Comment repérer l'absorption sur un footprint ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'absorption se repère quand tu vois un volume agressif important (par exemple, beaucoup de market sell) à un niveau de prix, mais le prix NE DESCEND PAS. Cela signifie que quelqu'un absorbe toute la pression vendeuse avec des ordres limites acheteurs. Sur le footprint, tu verras : colonne gauche (bid) avec des chiffres élevés, colonne droite (ask) avec des chiffres faibles, mais le prix reste stable ou monte légèrement. C'est le signe qu'un gros acteur défend ce niveau — signal très haussier."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">&Agrave;&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">&Agrave; propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Footprint Chart</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h1>Le Footprint Chart : Lire le Volume par Niveau de Prix</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 16 min de lecture</span>
+          <span>&#x1F4C5; Mis &agrave; jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le footprint chart est la radiographie d'une bougie. L&agrave; o&ugrave; un chandelier classique te montre l'ouverture, la cl&ocirc;ture, le plus haut et le plus bas, le footprint te r&eacute;v&egrave;le <strong>tout ce qui se passe &agrave; l'int&eacute;rieur</strong> : combien de contrats ont &eacute;t&eacute; achet&eacute;s et vendus de mani&egrave;re agressive &agrave; chaque niveau de prix.</p>
+
+      <p>C'est l'outil ultime de l'<a href="/guides/order-flow.html">order flow</a>. Mais c'est aussi le plus complexe. Ce guide va te donner les bases pour le lire, l'interpr&eacute;ter, et surtout savoir quand l'utiliser — et quand ne PAS l'utiliser.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Pr&eacute;requis indispensable</p>
+        <p>Le footprint est puissant mais complexe. Commence par le <a href="/guides/vwap-trading.html">VWAP</a> et le <a href="/guides/volume-profile-trading.html">Volume Profile</a> (6 mois de pratique minimum) avant de te lancer dans le footprint. Sauter les &eacute;tapes, c'est garantir la confusion et la frustration. Le footprint n'est pas un raccourci — c'est un outil avanc&eacute; qui n&eacute;cessite des fondations solides.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-quun-footprint">Qu'est-ce qu'un footprint chart ?</h2>
+
+      <p>Un <a href="/lexique/footprint.html">footprint chart</a> affiche, pour chaque bougie, le volume bid (ventes agressives) et le volume ask (achats agressifs) &agrave; CHAQUE niveau de prix. C'est comme ouvrir une bougie et voir exactement ce qui s'est pass&eacute; &agrave; l'int&eacute;rieur.</p>
+
+      <p>Concr&egrave;tement, pour chaque tick de prix dans la bougie, tu vois deux colonnes :</p>
+
+      <p><strong>Colonne gauche (Bid)</strong> : le nombre de contrats vendus de mani&egrave;re agressive (market sell orders qui frappent le bid). Ce sont les vendeurs qui disent "je veux vendre MAINTENANT, peu importe le prix exact".</p>
+
+      <p><strong>Colonne droite (Ask)</strong> : le nombre de contrats achet&eacute;s de mani&egrave;re agressive (market buy orders qui frappent l'ask). Ce sont les acheteurs qui disent "je veux acheter MAINTENANT".</p>
+
+      <p>Exemple : sur une bougie 5 minutes du NQ &agrave; 19 250, tu lis "350 x 820". Cela signifie que 350 contrats ont &eacute;t&eacute; vendus de mani&egrave;re agressive (hitting the bid) et 820 contrats ont &eacute;t&eacute; achet&eacute;s de mani&egrave;re agressive (lifting the ask) &agrave; ce prix exact. Le <a href="/lexique/delta.html">delta</a> &agrave; ce niveau est de +470 (820 - 350). Les acheteurs dominent largement.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Le footprint en une image</p>
+        <p>Imagine une bougie classique. Maintenant, &eacute;clate-la en 20 niveaux de prix (un par tick). &Agrave; chaque niveau, affiche le nombre de vendeurs agressifs (gauche) et d'acheteurs agressifs (droite). Tu as un footprint. C'est la radiographie, le scanner, l'IRM du march&eacute;.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="delta-par-bougie">Lire le delta par bougie</h2>
+
+      <p>Le delta cumul&eacute; d'une bougie est la somme de tous les deltas individuels &agrave; chaque niveau de prix. Un delta global positif (vert) signifie que les acheteurs agressifs ont domin&eacute; sur l'ensemble de la bougie. Un delta n&eacute;gatif (rouge) signifie que les vendeurs ont domin&eacute;.</p>
+
+      <p>Mais — et c'est crucial — le delta seul ne suffit pas. Le <strong>contexte</strong> est tout.</p>
+
+      <p><strong>Sc&eacute;nario 1 : delta positif + prix qui monte</strong> = situation normale. Les acheteurs agressifs poussent le prix vers le haut. Rien de surprenant. La tendance est saine.</p>
+
+      <p><strong>Sc&eacute;nario 2 : delta positif + prix qui ne monte PAS</strong> = divergence. Les acheteurs sont agressifs mais le prix stagne. Quelqu'un absorbe tous ces achats avec des ordres limites de vente. C'est souvent le signe qu'un gros vendeur d&eacute;fend ce niveau — signal baissier potentiel.</p>
+
+      <p><strong>Sc&eacute;nario 3 : delta n&eacute;gatif + prix qui ne baisse PAS</strong> = absorption acheteuse. Les vendeurs d&eacute;versent du volume, mais un acheteur institutionnel absorbe tout en dessous. Le prix tient. C'est l'un des signaux les plus puissants du footprint — souvent le pr&eacute;lude d'un mouvement haussier explosif.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">La r&egrave;gle d'or du delta</p>
+        <p>Ce n'est pas le delta en lui-m&ecirc;me qui est int&eacute;ressant — c'est la <strong>divergence entre le delta et le mouvement du prix</strong>. Quand delta et prix divergent, quelque chose se passe en coulisses. C'est l&agrave; que se trouvent les meilleures opportunit&eacute;s.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="absorption">L'absorption : d&eacute;fense institutionnelle</h2>
+
+      <p>L'absorption est probablement le concept le plus important du footprint chart. C'est le moment o&ugrave; de gros ordres limites absorbent les ordres agressifs dans la direction oppos&eacute;e.</p>
+
+      <p>Imagine la sc&egrave;ne : le prix arrive sur un support cl&eacute; (disons le VWAP). Les vendeurs agressifs frappent le bid de toutes leurs forces — 500, 800, 1200 contrats de vente. Mais le prix ne baisse pas. Il reste stable, voire remonte l&eacute;g&egrave;rement. Quelqu'un, en dessous, absorbe TOUTE cette pression vendeuse avec des ordres limites acheteurs massifs.</p>
+
+      <p>C'est l'empreinte d'un institutionnel. Un fonds ou un algorithme a d&eacute;cid&eacute; que ce prix est une bonne opportunit&eacute; d'achat, et il est pr&ecirc;t &agrave; absorber des milliers de contrats pour d&eacute;fendre ce niveau.</p>
+
+      <p>Sur le footprint, l'absorption se reconna&icirc;t &agrave; :</p>
+
+      <p><strong>1.</strong> Volume bid &eacute;lev&eacute; (beaucoup de ventes agressives) sur plusieurs niveaux de prix cons&eacute;cutifs.</p>
+
+      <p><strong>2.</strong> Le prix ne baisse pas malgr&eacute; ce volume vendeur.</p>
+
+      <p><strong>3.</strong> Le delta cumul&eacute; est n&eacute;gatif, mais les bougies suivantes sont haussi&egrave;res.</p>
+
+      <p>L'absorption est le signe le plus fiable qu'un gros acteur d&eacute;fend un niveau. Quand tu la rep&egrave;res au contact d'un niveau cl&eacute; (VWAP, POC, support majeur), c'est un signal d'entr&eacute;e de haute qualit&eacute;.</p>
+
+      <!-- ======================== -->
+      <h2 id="imbalances">Les d&eacute;s&eacute;quilibres (imbalances)</h2>
+
+      <p>Un d&eacute;s&eacute;quilibre (imbalance) appara&icirc;t quand, &agrave; un niveau de prix, un c&ocirc;t&eacute; domine massivement l'autre. La plupart des plateformes d&eacute;finissent un imbalance quand le ratio est d'au moins 3:1 — par exemple, 900 contrats ask pour 200 contrats bid (ratio 4,5:1).</p>
+
+      <p>Un imbalance acheteur (ask &gt;&gt; bid) signifie une conviction acheteuse tr&egrave;s forte &agrave; ce niveau. Un imbalance vendeur (bid &gt;&gt; ask) signifie une conviction vendeuse tr&egrave;s forte.</p>
+
+      <p>Les imbalances sont visuellement marqu&eacute;s sur la plupart des plateformes (cellules color&eacute;es). Ils te montrent les niveaux de prix o&ugrave; un camp a clairement domin&eacute; l'autre — ce sont des niveaux de conviction.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Imbalance isol&eacute; vs Stacked</p>
+        <p><strong>Imbalance isol&eacute;</strong> : un seul niveau de prix avec un d&eacute;s&eacute;quilibre. Signal mod&eacute;r&eacute;. <strong>Stacked imbalance</strong> : 3 niveaux de prix cons&eacute;cutifs ou plus avec des imbalances dans la m&ecirc;me direction. Signal tr&egrave;s fort — c'est la marque d'un mouvement institutionnel d&eacute;termin&eacute;.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="stacked-imbalances">Stacked imbalances : le signal ultime</h2>
+
+      <p>Les stacked imbalances (d&eacute;s&eacute;quilibres empil&eacute;s) sont des s&eacute;ries de 3 imbalances ou plus dans la m&ecirc;me direction, sur des niveaux de prix cons&eacute;cutifs. C'est le signal le plus puissant que le footprint puisse te donner.</p>
+
+      <p>Quand tu vois 4-5 niveaux cons&eacute;cutifs avec des imbalances acheteurs (ask dominant massivement le bid), cela signifie qu'un acheteur agressif a litt&eacute;ralement balay&eacute; toute l'offre sur plusieurs niveaux de prix. C'est un mouvement de force institutionnelle.</p>
+
+      <p>Exemple concret : sur le NQ en 1 minute, tu vois un stacked imbalance acheteur de 19 240 &agrave; 19 248 (4 niveaux). Au-dessus de 19 248, il n'y a plus de r&eacute;sistance visible. Le prix acc&eacute;l&egrave;re &agrave; 19 270 en quelques secondes. Le stacked imbalance a signal&eacute; le d&eacute;part du mouvement.</p>
+
+      <p>Comment utiliser les stacked imbalances :</p>
+
+      <p><strong>En tendance</strong> : les stacked imbalances dans le sens de la tendance confirment la force du mouvement. Continue &agrave; tenir ta position.</p>
+
+      <p><strong>Contre la tendance</strong> : des stacked imbalances contre la tendance dominante peuvent signaler un retournement. Attention maximale.</p>
+
+      <p><strong>Comme niveaux de support/r&eacute;sistance</strong> : apr&egrave;s un stacked imbalance, la zone de d&eacute;part du mouvement devient souvent un support (si haussier) ou une r&eacute;sistance (si baissier). Si le prix revient tester cette zone, c'est une opportunit&eacute; d'entr&eacute;e.</p>
+
+      <!-- ======================== -->
+      <h2 id="outils">Outils recommand&eacute;s pour le footprint</h2>
+
+      <p>Le choix de la plateforme est crucial pour le footprint. Toutes les plateformes ne se valent pas.</p>
+
+      <p><strong>Sierra Chart</strong> — Le gold standard. C'est LA plateforme des traders d'order flow professionnels sur les futures. Extr&ecirc;mement rapide, stable, et personnalisable &agrave; l'infini. Le footprint de Sierra Chart est le plus complet du march&eacute;. Inconv&eacute;nient : l'interface est dat&eacute;e et la courbe d'apprentissage est raide. &Agrave; partir de 26$/mois + donn&eacute;es CME.</p>
+
+      <p><strong>ATAS (Advanced Time And Sales)</strong> — Une excellente alternative, plus intuitive que Sierra Chart. Le footprint est bien con&ccedil;u avec des filtres d'imbalances visuels. Tr&egrave;s bon pour les d&eacute;butants en order flow. Essai gratuit de 14 jours, puis environ 70$/mois.</p>
+
+      <p><strong>Bookmap</strong> — Approche diff&eacute;rente : Bookmap visualise le carnet d'ordres en heatmap. Ce n'est pas un footprint au sens classique, mais c'est un outil d'order flow tr&egrave;s visuel et intuitif. Excellent pour voir la liquidit&eacute; en temps r&eacute;el. &Agrave; partir de 39$/mois.</p>
+
+      <p><strong>Quantower</strong> — L'option gratuite. Quantower offre un footprint basique mais fonctionnel, sans frais de plateforme. Tu ne paies que les donn&eacute;es de march&eacute;. C'est un bon point de d&eacute;part pour tester sans investir.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Recommandation pragmatique</p>
+        <p>Commence avec Quantower (gratuit) ou ATAS (essai 14 jours) pour d&eacute;couvrir le footprint sans engagement. Si tu accroches et que tu veux en faire ton outil principal, migre vers Sierra Chart dans les 6 mois. C'est l'investissement le plus rentable pour un trader d'order flow s&eacute;rieux.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="footprint-confirmation">Le footprint comme outil de confirmation</h2>
+
+      <p>C'est le point le plus important de ce guide : le footprint n'est PAS un outil autonome. Il est infiniment plus puissant quand il est utilis&eacute; comme <strong>confirmation</strong> d'un niveau identifi&eacute; par d'autres outils.</p>
+
+      <p>La bonne m&eacute;thodologie :</p>
+
+      <p><strong>1. Identifie le niveau</strong> avec le <a href="/guides/vwap-trading.html">VWAP</a> ou le <a href="/guides/volume-profile-trading.html">Volume Profile</a> (POC, VAH, VAL).</p>
+
+      <p><strong>2. Attends que le prix atteigne ce niveau.</strong></p>
+
+      <p><strong>3. Lis le footprint pour confirmer</strong> : absorption ? Imbalance ? Delta divergent ? Si oui, entre. Si non, attends.</p>
+
+      <p>Le footprint en 1 minute est id&eacute;al pour les entr&eacute;es pr&eacute;cises de type scalping — tu vois l'absorption et les imbalances en quasi-temps r&eacute;el. Le footprint en 5 minutes donne une vision plus large, mieux adapt&eacute;e aux setups de day trading classiques comme le VWAP Reclaim ou les trades depuis le POC.</p>
+
+      <p>Ne tombe pas dans le pi&egrave;ge de trader chaque imbalance ou chaque divergence de delta que tu vois. Le footprint produit des centaines d'informations par session. Sans filtre (VWAP, Volume Profile, niveaux cl&eacute;s), tu vas te noyer. Le footprint r&eacute;pond &agrave; la question "COMMENT le march&eacute; r&eacute;agit &agrave; ce niveau ?". Il ne r&eacute;pond pas &agrave; "QUEL niveau regarder ?".</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le pi&egrave;ge de la suranalyse</p>
+        <p>Le footprint montre TROP d'informations si tu n'as pas de cadre. Avant chaque session, d&eacute;finis 3-5 niveaux cl&eacute;s (VWAP, POC, VA extremes). N'ouvre le footprint que quand le prix approche ces niveaux. Le reste du temps, un graphique classique suffit. Le footprint, c'est le microscope — tu ne le sors que quand tu sais o&ugrave; regarder.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions fr&eacute;quentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Quel logiciel pour le footprint chart ?</strong></summary>
+          <p>Sierra Chart est le gold standard pour les futures (NQ, ES) — rapide, stable, complet. ATAS est plus accessible pour les d&eacute;butants. Bookmap offre une visualisation unique en heatmap. Quantower est gratuit et suffisant pour d&eacute;couvrir. Commence par Quantower ou ATAS, puis migre vers Sierra Chart si tu te sp&eacute;cialises.</p>
+        </details>
+
+        <details>
+          <summary><strong>Le footprint chart est-il pour les d&eacute;butants ?</strong></summary>
+          <p>Non. Le footprint est un outil avanc&eacute; qui n&eacute;cessite de ma&icirc;triser le VWAP et le Volume Profile au pr&eacute;alable. Recommandation : VWAP pendant 1-2 mois, Volume Profile pendant 2-3 mois, puis footprint. Compte 6 mois de pratique minimum avant d'aborder le footprint s&eacute;rieusement.</p>
+        </details>
+
+        <details>
+          <summary><strong>Comment rep&eacute;rer l'absorption sur un footprint ?</strong></summary>
+          <p>L'absorption se reconna&icirc;t quand un volume agressif &eacute;lev&eacute; (ex : beaucoup de market sell) frappe un niveau, mais le prix NE DESCEND PAS. Sur le footprint, tu vois des chiffres &eacute;lev&eacute;s c&ocirc;t&eacute; bid, mais le prix tient ou remonte. Un gros acteur absorbe toute la pression vendeuse avec des ordres limites. C'est un signal tr&egrave;s haussier.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-quun-footprint" class="toc__link">Qu'est-ce qu'un footprint ?</a></li>
+          <li><a href="#delta-par-bougie" class="toc__link">Lire le delta par bougie</a></li>
+          <li><a href="#absorption" class="toc__link">L'absorption</a></li>
+          <li><a href="#imbalances" class="toc__link">Les d&eacute;s&eacute;quilibres</a></li>
+          <li><a href="#stacked-imbalances" class="toc__link">Stacked imbalances</a></li>
+          <li><a href="#outils" class="toc__link">Outils recommand&eacute;s</a></li>
+          <li><a href="#footprint-confirmation" class="toc__link">Footprint comme confirmation</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; &Agrave; retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Le footprint = radiographie de la bougie (bid &times; ask &agrave; chaque prix)</li>
+          <li>L'absorption est le signal le plus puissant (volume agressif + prix qui tient)</li>
+          <li>Les stacked imbalances signalent des mouvements institutionnels</li>
+          <li>Utilise le footprint en CONFIRMATION, jamais seul</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles li&eacute;s</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/order-flow.html">Order Flow : le guide complet</a></li>
+          <li><a href="/guides/vwap-trading.html">Le VWAP en trading</a></li>
+          <li><a href="/guides/volume-profile-trading.html">Le Volume Profile</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/vwap-trading.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le VWAP en Trading</h3>
+        <p class="card-article__excerpt">Le benchmark des institutionnels. Support/r&eacute;sistance dynamique et strat&eacute;gies concr&egrave;tes.</p>
+        <div class="card-article__meta"><span>&#9201; 15 min</span></div>
+      </a>
+      <a href="/guides/tape-reading.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le Tape Reading</h3>
+        <p class="card-article__excerpt">Lis le flux d'ordres en temps r&eacute;el. D&eacute;tecte les gros ordres et l'absorption.</p>
+        <div class="card-article__meta"><span>&#9201; 15 min</span></div>
+      </a>
+      <a href="/guides/volume-profile-trading.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le Volume Profile</h3>
+        <p class="card-article__excerpt">POC, Value Area, HVN, LVN : comprends o&ugrave; les institutionnels ont agi.</p>
+        <div class="card-article__meta"><span>&#9201; 16 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en fran&ccedil;ais. Apprends &agrave; trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">&Agrave; propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Cat&eacute;gories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">D&eacute;buter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">&Eacute;cosyst&egrave;me</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communaut&eacute;, IA &amp; formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits r&eacute;serv&eacute;s</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions l&eacute;gales</a><a href="/politique-confidentialite.html">Confidentialit&eacute;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

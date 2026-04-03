@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Risk Management</title>
+  <!-- Shield with check -->
+  <path d="M24 6L8 14V26C8 34 15 40 24 44C33 40 40 34 40 26V14L24 6Z"/>
+  <polyline points="17 24 22 29 31 19"/>
+</svg>

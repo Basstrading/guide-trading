@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simulateur de Drawdown — Impact des Pertes | Guide Trading</title>
+  <meta name="description" content="Visualise l'impact dévastateur d'une série de pertes sur ton capital de trading. Simulateur gratuit avec graphique interactif.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/outils/simulateur-drawdown.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Simulateur de Drawdown — Impact des Pertes | Guide Trading">
+  <meta property="og:description" content="Visualise l'impact dévastateur d'une série de pertes sur ton capital de trading. Simulateur gratuit avec graphique interactif.">
+  <meta property="og:url" content="https://guide-trading.fr/outils/simulateur-drawdown.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Outils","item":"https://guide-trading.fr/outils/"},{"@type":"ListItem","position":3,"name":"Simulateur de drawdown"}]}
+  </script>
+  <style>
+    input[type="range"]#dd-pertes {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 100%;
+      height: 6px;
+      background: var(--color-border-subtle, #333);
+      border-radius: 3px;
+      outline: none;
+      cursor: pointer;
+    }
+    input[type="range"]#dd-pertes::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-accent-gold, #F59E0B);
+      border: 2px solid var(--color-bg, #0a0a0a);
+      cursor: pointer;
+      transition: transform 0.15s ease;
+    }
+    input[type="range"]#dd-pertes::-webkit-slider-thumb:hover {
+      transform: scale(1.2);
+    }
+    input[type="range"]#dd-pertes::-moz-range-thumb {
+      width: 20px;
+      height: 20px;
+      border-radius: 50%;
+      background: var(--color-accent-gold, #F59E0B);
+      border: 2px solid var(--color-bg, #0a0a0a);
+      cursor: pointer;
+    }
+    .dd-slider-row {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .dd-slider-row input[type="range"] {
+      flex: 1;
+    }
+    .dd-slider-val {
+      font-size: 1.5rem;
+      font-weight: 700;
+      min-width: 2.5ch;
+      text-align: center;
+      color: var(--color-accent-gold, #F59E0B);
+    }
+    #dd-summary {
+      font-size: 1.125rem;
+      font-weight: 600;
+      padding: 1rem;
+      border-radius: 8px;
+      background: var(--color-surface, #141414);
+      margin-top: 1rem;
+      text-align: center;
+    }
+    #dd-chart {
+      display: flex;
+      align-items: flex-end;
+      gap: 3px;
+      height: 200px;
+      padding: 1.5rem 0 1rem;
+      border-bottom: 1px solid var(--color-border-subtle, #333);
+      margin-bottom: 1.5rem;
+    }
+    .dd-asymmetry-table {
+      width: 100%;
+      max-width: 400px;
+    }
+    .dd-asymmetry-table td, .dd-asymmetry-table th {
+      padding: 0.5rem 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link navbar__link--active">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">A propos</a>
+      </div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher"></div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">A propos</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/outils/" class="breadcrumb__link">Outils</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Simulateur de drawdown</span>
+    </nav>
+  </div>
+
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h1>Simulateur de Drawdown</h1>
+          <p class="section-header__subtitle">Visualise l'impact d'une serie de pertes consecutives sur ton capital. Les maths ne mentent pas.</p>
+        </div>
+
+        <div class="card fade-in" style="max-width:720px;margin:0 auto 2rem">
+          <div class="card__body" style="display:flex;flex-direction:column;gap:1.25rem;">
+
+            <div>
+              <label for="dd-capital" style="display:block;margin-bottom:0.4rem;font-weight:600;">Capital initial (&euro;)</label>
+              <input type="number" id="dd-capital" class="input" placeholder="10000" step="500" value="10000" style="width:100%">
+            </div>
+
+            <div>
+              <label for="dd-risque" style="display:block;margin-bottom:0.4rem;font-weight:600;">Risque par trade (%)</label>
+              <input type="number" id="dd-risque" class="input" placeholder="2" step="0.5" min="0.5" max="20" value="2" style="width:100%">
+            </div>
+
+            <div>
+              <label for="dd-pertes" style="display:block;margin-bottom:0.4rem;font-weight:600;">Pertes consecutives : <span id="dd-pertes-val" class="dd-slider-val">5</span></label>
+              <div class="dd-slider-row">
+                <span style="font-size:0.75rem;color:var(--color-text-dim,#888)">1</span>
+                <input type="range" id="dd-pertes" min="1" max="20" value="5">
+                <span style="font-size:0.75rem;color:var(--color-text-dim,#888)">20</span>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+        <!-- Chart -->
+        <div class="card fade-in" style="max-width:720px;margin:0 auto 2rem">
+          <div class="card__body">
+            <h2 style="font-size:1rem;margin-bottom:0.5rem;">Evolution du capital</h2>
+            <div id="dd-chart"></div>
+
+            <!-- Summary -->
+            <div id="dd-summary"></div>
+          </div>
+        </div>
+
+        <!-- Table -->
+        <div class="card fade-in" style="max-width:720px;margin:0 auto 2rem;overflow-x:auto;">
+          <div class="card__body" style="padding:0;">
+            <table style="width:100%">
+              <thead>
+                <tr>
+                  <th>Trade</th>
+                  <th>Capital restant</th>
+                  <th>Perte</th>
+                  <th>Drawdown (%)</th>
+                  <th>Pour revenir (%)</th>
+                </tr>
+              </thead>
+              <tbody id="dd-tbody"></tbody>
+            </table>
+          </div>
+        </div>
+
+        <!-- Warning callout -->
+        <div class="callout callout--warning fade-in" style="max-width:720px;margin:0 auto 3rem">
+          <p><strong>C'est pour ca que les traders pros ne risquent jamais plus de 0.5-1% par trade.</strong> Meme 10 pertes consecutives ne mettent pas leur compte en danger. Avec 1% de risque et 10 pertes d'affilee, tu ne perds que 9.6% de ton capital. Avec 2%, c'est deja 18.3%. Avec 5%, c'est 40%. La difference est colossale.</p>
+        </div>
+
+        <!-- Educational content -->
+        <article class="content fade-in" style="max-width:720px;margin:0 auto;">
+
+          <h2>Le drawdown &mdash; le tueur silencieux du trader</h2>
+
+          <p>Le drawdown est la baisse maximale de ton capital depuis un pic. C'est le chiffre le plus important en trading, et pourtant la plupart des debutants l'ignorent completement. Ils se focalisent sur les gains potentiels, les setups parfaits, les strategies miracles. Mais la realite est brutale : <strong>c'est la gestion des pertes qui determine ta survie en trading</strong>, pas tes gains.</p>
+
+          <p>Quand tu perds de l'argent, il ne suffit pas de regagner le meme montant en pourcentage pour revenir a l'equilibre. C'est la que reside le piege mathematique le plus vicieux du trading.</p>
+
+          <h3>L'asymetrie des pertes</h3>
+
+          <p>Voici un tableau qui devrait etre affiche au-dessus de l'ecran de chaque trader :</p>
+
+          <table class="dd-asymmetry-table" style="margin:1.5rem auto;">
+            <thead>
+              <tr><th>Perte subie</th><th>Gain necessaire pour recuperer</th></tr>
+            </thead>
+            <tbody>
+              <tr><td>-10%</td><td style="color:#10B981">+11.1%</td></tr>
+              <tr><td>-20%</td><td style="color:#F59E0B">+25.0%</td></tr>
+              <tr><td>-30%</td><td style="color:#F59E0B">+42.9%</td></tr>
+              <tr><td>-50%</td><td style="color:#EF4444">+100.0%</td></tr>
+              <tr><td>-70%</td><td style="color:#991B1B">+233.3%</td></tr>
+              <tr><td>-90%</td><td style="color:#991B1B">+900.0%</td></tr>
+            </tbody>
+          </table>
+
+          <p>Tu vois le probleme ? Une perte de 50% demande un gain de 100% juste pour revenir au point de depart. Et une perte de 90% ? Il te faut multiplier ton capital restant par 10. C'est mathematiquement quasi impossible dans des conditions normales de marche. C'est pour ca qu'on dit que <strong>le drawdown est asymetrique</strong> : il est beaucoup plus facile de perdre que de recuperer.</p>
+
+          <h3>Pourquoi les prop firms limitent le drawdown</h3>
+
+          <p>Si tu t'interesses aux <a href="/guides/prop-firms.html">prop firms</a>, tu as surement remarque qu'elles imposent des limites strictes de drawdown. En general :</p>
+
+          <ul>
+            <li><strong>Drawdown journalier maximum :</strong> 4 a 5% du capital initial</li>
+            <li><strong>Drawdown total maximum :</strong> 8 a 12% du capital initial</li>
+          </ul>
+
+          <p>Ce n'est pas un caprice. Les prop firms savent qu'un trader qui depasse ces seuils est statistiquement incapable de recuperer de maniere disciplinee. Au-dela de 10-12% de drawdown, le trader entre dans une spirale psychologique dangereuse : il augmente sa taille de position pour "se refaire", il abandonne son plan de trading, il prend des trades de vengeance. Le resultat est presque toujours le meme : la perte totale du compte.</p>
+
+          <p>Les limites de drawdown ne sont pas la pour te punir. Elles sont la pour te proteger de toi-meme.</p>
+
+          <h3>Comment te proteger du drawdown</h3>
+
+          <p>La bonne nouvelle, c'est que le drawdown se controle. Voici les trois regles fondamentales que tout trader serieux applique :</p>
+
+          <h4>1. Risque par trade : 0.5 a 1% maximum</h4>
+
+          <p>C'est la regle d'or de la <a href="/guides/gestion-du-risque.html">gestion du risque</a>. En ne risquant que 1% de ton capital par trade, meme une serie catastrophique de 10 pertes consecutives ne te coute que 9.6%. Tu restes dans la zone verte. Ton capital est intact, ta psychologie aussi. Tu peux continuer a trader sereinement.</p>
+
+          <h4>2. Perte journaliere maximale : 2-3%</h4>
+
+          <p>Fixe-toi une limite de perte quotidienne. Si tu atteins -2% ou -3% sur la journee, tu eteins ton ecran. Pas de negociation, pas d'exception. Cette regle simple t'empeche d'enchainer les trades perdants sous le coup de l'emotion. Les pires drawdowns arrivent toujours les jours ou le trader refuse de s'arreter.</p>
+
+          <h4>3. La regle des 3 strikes</h4>
+
+          <p>Apres 3 pertes consecutives, fais une pause. Analyse ce qui s'est passe. Est-ce que le marche ne correspond pas a ta strategie ? Est-ce que tu es dans un mauvais etat emotionnel ? 3 pertes d'affilee, c'est un signal. Pas un signal pour doubler la mise, mais un signal pour prendre du recul.</p>
+
+          <p>La <a href="/guides/psychologie-du-trading.html">psychologie du trading</a> joue un role enorme dans la gestion du drawdown. Le drawdown maximal que tu es capable de supporter sans perdre ta discipline est appele ton "seuil de douleur". Connaitre le tien est essentiel. Si tu sais que tu craques psychologiquement apres -15%, alors ta strategie doit etre concue pour ne jamais atteindre ce niveau, meme dans le pire scenario.</p>
+
+          <p>Utilise le simulateur ci-dessus pour tester differents scenarios. Change le risque par trade, augmente le nombre de pertes consecutives, et observe comment ton capital reagit. C'est un exercice simple mais extremement revelateur.</p>
+
+          <div class="callout callout--info" style="margin:2rem 0;">
+            <p><strong>Ecosysteme :</strong> <a href="https://x-trade.ai" target="_blank" rel="noopener">X-Trade.ai</a> monitore ton drawdown en temps reel et coupe automatiquement tes positions avant d'atteindre les limites de ta prop firm. C'est le filet de securite que chaque trader devrait avoir.</p>
+          </div>
+
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en francais.</p></div>
+        <div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">A propos</a></li></ul></div>
+        <div><h4 class="footer__heading">Ecosysteme</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — IA, communaute &amp; formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits reserves</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions legales</a><a href="/politique-confidentialite.html">Confidentialite</a></div></div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var slider = document.getElementById('dd-pertes');
+    var sliderLabel = document.getElementById('dd-pertes-val');
+
+    slider.addEventListener('input', function() {
+      sliderLabel.textContent = this.value;
+      simulate();
+    });
+    document.getElementById('dd-capital').addEventListener('input', simulate);
+    document.getElementById('dd-risque').addEventListener('input', simulate);
+
+    function simulate() {
+      var capital = parseFloat(document.getElementById('dd-capital').value) || 10000;
+      var risque = parseFloat(document.getElementById('dd-risque').value) || 2;
+      var pertes = parseInt(slider.value) || 5;
+
+      if (risque < 0.5) risque = 0.5;
+      if (risque > 20) risque = 20;
+
+      var results = [];
+      var current = capital;
+
+      for (var i = 0; i < pertes; i++) {
+        var perte = current * (risque / 100);
+        current -= perte;
+        var ddPct = ((capital - current) / capital) * 100;
+        var recoveryPct = ((capital / current) - 1) * 100;
+        results.push({
+          trade: i + 1,
+          capital: current,
+          perte: perte,
+          drawdown: ddPct,
+          recovery: recoveryPct
+        });
+      }
+
+      // Render chart
+      var chart = document.getElementById('dd-chart');
+      chart.innerHTML = '';
+      results.forEach(function(r) {
+        var heightPct = (r.capital / capital) * 100;
+        var bar = document.createElement('div');
+        bar.style.flex = '1';
+        bar.style.height = heightPct + '%';
+        bar.style.borderRadius = '4px 4px 0 0';
+        bar.style.minWidth = '20px';
+        bar.style.position = 'relative';
+        bar.style.transition = 'height 0.3s ease';
+
+        // Color based on drawdown
+        if (r.drawdown < 10) bar.style.background = '#10B981';
+        else if (r.drawdown < 20) bar.style.background = '#F59E0B';
+        else if (r.drawdown < 50) bar.style.background = '#EF4444';
+        else bar.style.background = '#991B1B';
+
+        // Label on top
+        var label = document.createElement('span');
+        label.style.cssText = 'position:absolute;top:-20px;left:50%;transform:translateX(-50%);font-size:0.625rem;color:var(--color-text-dim,#888);white-space:nowrap';
+        label.textContent = r.trade;
+        bar.appendChild(label);
+
+        chart.appendChild(bar);
+      });
+
+      // Render table
+      var tbody = document.getElementById('dd-tbody');
+      tbody.innerHTML = '';
+      results.forEach(function(r) {
+        var tr = document.createElement('tr');
+        var ddColor = r.drawdown > 20 ? 'var(--color-danger,#EF4444)' : r.drawdown > 10 ? 'var(--color-accent-gold,#F59E0B)' : 'var(--color-text-muted,#aaa)';
+        tr.innerHTML = '<td>' + r.trade + '</td>'
+          + '<td>' + r.capital.toFixed(0) + ' &euro;</td>'
+          + '<td>-' + r.perte.toFixed(0) + ' &euro;</td>'
+          + '<td style="color:' + ddColor + '">-' + r.drawdown.toFixed(1) + '%</td>'
+          + '<td>+' + r.recovery.toFixed(1) + '%</td>';
+        tbody.appendChild(tr);
+      });
+
+      // Summary
+      var last = results[results.length - 1];
+      var summary = document.getElementById('dd-summary');
+      if (last.drawdown < 10) {
+        summary.textContent = 'G\u00e9rable \u2014 tu peux t\u2019en remettre facilement';
+        summary.style.color = '#10B981';
+      } else if (last.drawdown < 20) {
+        summary.textContent = 'Attention \u2014 il te faut +' + last.recovery.toFixed(0) + '% pour revenir \u00e0 l\u2019\u00e9quilibre';
+        summary.style.color = '#F59E0B';
+      } else if (last.drawdown < 50) {
+        summary.textContent = 'Danger \u2014 il te faut +' + last.recovery.toFixed(0) + '% pour r\u00e9cup\u00e9rer. La montagne est raide.';
+        summary.style.color = '#EF4444';
+      } else {
+        summary.textContent = 'Game over \u2014 avec +' + last.recovery.toFixed(0) + '% n\u00e9cessaires, ton compte est pratiquement irr\u00e9cup\u00e9rable.';
+        summary.style.color = '#991B1B';
+      }
+    }
+
+    simulate(); // initial run
+  });
+  </script>
+</body>
+</html>

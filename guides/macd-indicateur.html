@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le MACD : Guide Complet de l'Indicateur (2026)</title>
+  <meta name="description" content="Maîtrise le MACD en trading : signal line, histogramme, divergences. Comment l'utiliser pour confirmer tes entrées. Guide complet.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/macd-indicateur.html">
+
+  <meta property="og:title" content="Le MACD : Guide Complet de l'Indicateur (2026)">
+  <meta property="og:description" content="Maîtrise le MACD en trading : signal line, histogramme, divergences. Comment l'utiliser pour confirmer tes entrées.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/macd-indicateur.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le MACD : Guide Complet de l'Indicateur (2026)">
+  <meta name="twitter:description" content="Signal line, histogramme, divergences : maîtrise le MACD pour confirmer tes entrées en trading.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le MACD : Guide Complet de l'Indicateur",
+    "description": "Maîtrise le MACD en trading : signal line, histogramme, divergences. Comment l'utiliser pour confirmer tes entrées. Guide complet.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/macd-indicateur.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "MACD Indicateur"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le MACD est-il meilleur que le RSI ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ni l'un ni l'autre n'est 'meilleur'. Le MACD et le RSI mesurent des choses différentes. Le MACD suit la tendance et le momentum via les moyennes mobiles, tandis que le RSI mesure la vitesse des mouvements de prix. Ils sont complémentaires : le RSI identifie les zones de surachat/survente, le MACD confirme la direction du momentum. Les utiliser ensemble est bien plus puissant que de choisir l'un ou l'autre."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels paramètres pour le MACD ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les paramètres par défaut (12, 26, 9) sont les plus utilisés et les plus fiables. Le 12 correspond à l'EMA rapide, le 26 à l'EMA lente, et le 9 à l'EMA de la signal line. Certains traders utilisent (8, 17, 9) pour plus de réactivité en day trading. Ne modifie les paramètres que si tu as une raison claire et que tu as backtesté le changement."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Le MACD fonctionne-t-il en scalping ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le MACD est un indicateur retardé (lagging indicator), ce qui le rend moins adapté au scalping où la rapidité est cruciale. Sur des timeframes très courts (M1, M5), le MACD donne souvent des signaux trop tardifs. Il est plus efficace en day trading (M15, H1) et en swing trading (H4, D1). Pour le scalping, préfère des indicateurs plus réactifs comme le RSI à 7 périodes ou le stochastique."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">MACD Indicateur</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h1 style="font-style: normal;">Le MACD : Guide Complet de l'Indicateur</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 13 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le MACD (Moving Average Convergence Divergence) est l'un des indicateurs techniques les plus utilisés au monde, et pour une bonne raison : il combine suivi de tendance et mesure du momentum en un seul outil. Créé par Gerald Appel dans les années 1970, il reste aujourd'hui incontournable sur les écrans de la plupart des traders professionnels.</p>
+
+      <p>Dans ce guide, on va décortiquer chaque composante du MACD, voir comment lire ses signaux, et surtout comment le combiner avec le <a href="/guides/rsi-indicateur.html">RSI</a> pour obtenir des setups de haute qualité. On parlera aussi de ses limites -- parce qu'aucun indicateur n'est parfait.</p>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-que-le-macd" style="font-style: normal;">Qu'est-ce que le MACD ?</h2>
+
+      <p>Le MACD mesure la différence entre deux moyennes mobiles exponentielles (EMA). Par défaut, c'est l'<strong>EMA 12</strong> moins l'<strong>EMA 26</strong>. Quand l'EMA rapide (12) est au-dessus de l'EMA lente (26), le MACD est positif -- le momentum est haussier. Quand l'EMA rapide est en dessous, le MACD est négatif -- le momentum est baissier.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Les 3 composantes du MACD</p>
+        <p><strong>Ligne MACD</strong> : EMA 12 - EMA 26. C'est la ligne principale. <strong>Signal Line</strong> : EMA 9 de la ligne MACD. C'est la ligne de signal. <strong>Histogramme</strong> : différence entre la ligne MACD et la Signal Line. Il visualise l'écart entre les deux lignes.</p>
+      </div>
+
+      <p>Concrètement, le MACD te dit deux choses : la <strong>direction du momentum</strong> (haussier ou baissier selon que la ligne MACD est au-dessus ou en dessous de zéro) et la <strong>force du momentum</strong> (l'écart entre la ligne MACD et la Signal Line, visualisé par l'histogramme).</p>
+
+      <p>Tu trouveras le MACD sur toutes les plateformes de trading : MetaTrader, TradingView, ProRealTime. Il s'affiche sous le graphique de prix, exactement comme le RSI. La plupart des traders l'affichent en même temps que le RSI pour une lecture complète du momentum.</p>
+
+      <!-- ======================== -->
+      <h2 id="signal-line-croisements" style="font-style: normal;">La Signal Line et les croisements</h2>
+
+      <p>La Signal Line (EMA 9 du MACD) est le composant le plus actionnable du MACD. Les croisements entre la ligne MACD et la Signal Line génèrent des signaux de trading classiques.</p>
+
+      <p><strong>Croisement haussier</strong> : quand la ligne MACD croise la Signal Line vers le haut, c'est un signal d'achat potentiel. Le momentum passe de baissier à haussier. Plus le croisement se produit en dessous de la ligne zéro, plus le signal est intéressant (on revient de loin).</p>
+
+      <p><strong>Croisement baissier</strong> : quand la ligne MACD croise la Signal Line vers le bas, c'est un signal de vente potentiel. Le momentum bascule. Plus le croisement se produit au-dessus de la ligne zéro, plus le signal baissier est significatif.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Les croisements en retard</p>
+        <p>Le problème majeur des croisements MACD : ils arrivent en retard. Le MACD est un indicateur retardé (lagging). Quand le croisement se produit, une bonne partie du mouvement est souvent déjà faite. C'est pourquoi tu ne dois jamais utiliser les croisements MACD seuls comme signal d'entrée -- utilise-les comme confirmation d'un signal déjà identifié par le prix.</p>
+      </div>
+
+      <p>Exemple concret : tu repères un <a href="/guides/chandeliers-japonais.html">marteau</a> sur un support clé sur l'EUR/USD. Tu regardes le MACD : la ligne MACD vient de croiser la Signal Line vers le haut. Le chandelier te donne le signal, le MACD te confirme que le momentum bascule. C'est un setup propre.</p>
+
+      <p>Un autre signal important : le <strong>croisement de la ligne zéro</strong>. Quand la ligne MACD passe au-dessus de zéro, cela signifie que l'EMA 12 passe au-dessus de l'EMA 26 -- c'est un changement de tendance à moyen terme. C'est un signal plus lent mais plus fiable que les croisements Signal Line.</p>
+
+      <!-- ======================== -->
+      <h2 id="histogramme-macd" style="font-style: normal;">L'histogramme MACD : lire le momentum</h2>
+
+      <p>L'histogramme est la différence entre la ligne MACD et la Signal Line, représentée sous forme de barres. C'est la composante la plus sous-estimée du MACD, et pourtant c'est la plus utile pour le timing.</p>
+
+      <p><strong>Histogramme croissant (barres de plus en plus grandes)</strong> : le momentum s'accélère dans la direction actuelle. Si les barres sont positives et grandissent, le momentum haussier se renforce. Ne te mets pas en travers.</p>
+
+      <p><strong>Histogramme décroissant (barres de plus en plus petites)</strong> : le momentum ralentit. C'est un signal précoce de retournement potentiel. Si les barres positives rapetissent, les acheteurs perdent de la vitesse.</p>
+
+      <p><strong>Le changement de signe de l'histogramme</strong> (passage du positif au négatif ou vice versa) correspond exactement au croisement MACD/Signal Line. C'est le même signal, juste visualisé différemment.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Astuce : l'histogramme comme signal précoce</p>
+        <p>Le rétrécissement de l'histogramme précède toujours le croisement des lignes. Si l'histogramme passe de +5, +4, +3, +2, tu sais qu'un croisement baissier arrive. Ça te donne quelques bougies d'avance pour préparer ta sortie ou ton entrée.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="divergences-macd" style="font-style: normal;">Les divergences MACD/prix</h2>
+
+      <p>Comme pour le RSI, les divergences sont les signaux MACD les plus puissants. Le principe est identique : une divergence entre le prix et l'indicateur signale un essoufflement du momentum.</p>
+
+      <p><strong>Divergence haussière</strong> : le prix fait un lower low, le MACD fait un higher low. Le momentum baissier s'essouffle malgré la continuation de la baisse des prix. Signal de retournement haussier potentiel.</p>
+
+      <p><strong>Divergence baissière</strong> : le prix fait un higher high, le MACD fait un lower high. Le momentum haussier faiblit malgré la poursuite de la hausse. Signal de retournement baissier potentiel.</p>
+
+      <p>Les divergences MACD sont souvent plus faciles à repérer que les divergences RSI grâce à l'histogramme. Quand les barres de l'histogramme deviennent progressivement plus petites alors que le prix continue dans sa direction, tu as une divergence visuelle claire.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Divergence classique vs cachée</p>
+        <p><strong>Divergence classique</strong> : signal de retournement. Le prix va contre la tendance actuelle. <strong>Divergence cachée</strong> : signal de continuation. En tendance haussière, le prix fait un higher low mais le MACD fait un lower low -- la tendance va probablement continuer. Les divergences cachées sont moins connues mais très utiles en swing trading.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="combiner-macd-rsi" style="font-style: normal;">Combiner MACD + RSI : le power combo</h2>
+
+      <p>Le MACD et le <a href="/guides/rsi-indicateur.html">RSI</a> sont des indicateurs complémentaires. Le RSI est un oscillateur borné (0-100) qui mesure la vitesse des mouvements. Le MACD est un indicateur de tendance/momentum non borné. Ensemble, ils couvrent deux dimensions différentes du marché.</p>
+
+      <p><strong>Setup achat</strong> : le RSI descend sous 30 (ou vers 40-50 en tendance) ET le MACD montre un croisement haussier ou un rétrécissement de l'histogramme négatif. Tu as un double signal de retournement. Si en plus tu es sur un <a href="/lexique/support.html">support</a> clé, c'est du A+.</p>
+
+      <p><strong>Setup vente</strong> : le RSI monte au-dessus de 70 (ou vers 50-60 en tendance baissière) ET le MACD montre un croisement baissier ou un rétrécissement de l'histogramme positif. Double signal de retournement baissier.</p>
+
+      <p><strong>Signal de confirmation</strong> : si le RSI montre une <a href="/lexique/divergence.html">divergence</a> ET que le MACD montre une divergence dans le même sens, le signal est extrêmement fiable. Double divergence = méga signal. Ça n'arrive pas tous les jours, mais quand ça arrive, prête attention.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">L'erreur à éviter avec le combo MACD + RSI</p>
+        <p>Ne mets pas le MACD et le RSI en même temps puis n'entre que quand les deux donnent un signal simultanément -- tu ne traderas presque jamais. Utilise le RSI pour le timing (surachat/survente) et le MACD pour la direction (momentum). L'un identifie, l'autre confirme.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="limites-macd" style="font-style: normal;">Les limites du MACD</h2>
+
+      <p>Le MACD est un excellent outil, mais il a des faiblesses que tu dois connaître.</p>
+
+      <p><strong>Retard (lag).</strong> C'est le défaut principal. Le MACD est basé sur des moyennes mobiles, qui sont par nature des indicateurs retardés. Le signal arrive après le début du mouvement, jamais avant. En scalping, ce retard peut être fatal.</p>
+
+      <p><strong>Faux signaux en range.</strong> En marché latéral, le MACD oscille autour de zéro et produit de nombreux croisements qui ne mènent nulle part. Si tu trades chaque croisement en range, tu vas accumuler les petites pertes qui mangent ton capital. Le MACD brille en tendance, pas en range.</p>
+
+      <p><strong>Pas de bornes.</strong> Contrairement au RSI qui évolue entre 0 et 100, le MACD n'a pas de limites. Tu ne peux pas dire "le MACD est à un niveau extrême" de manière universelle. Ce qui est "haut" pour un actif peut être "normal" pour un autre.</p>
+
+      <p><strong>Un seul timeframe ne suffit pas.</strong> Un croisement haussier en M15 ne signifie rien si le MACD journalier est en chute libre. Vérifie toujours le MACD sur le timeframe supérieur pour éviter de trader contre la tendance de fond.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Ne jamais oublier</p>
+        <p>Le MACD est un outil de confirmation, pas un outil de décision. Il confirme ce que le prix te montre déjà. Si tu bases toute ta stratégie sur les croisements MACD sans regarder le prix, les niveaux clés et le contexte de marché, tu perdras de l'argent. Le prix est roi -- les indicateurs sont ses conseillers.</p>
+      </div>
+
+      <p>Pour aller plus loin, consulte notre guide pilier sur l'<a href="/guides/analyse-technique.html">analyse technique</a>, ainsi que la <a href="/lexique/macd.html">définition du MACD</a> dans le lexique. Et si tu veux combiner le MACD avec d'autres outils de volatilité, lis notre guide sur les <a href="/guides/bandes-bollinger.html">Bandes de Bollinger</a>.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Le MACD est-il meilleur que le RSI ?</strong></summary>
+          <p>Ni l'un ni l'autre n'est "meilleur". Le MACD suit la tendance et le momentum via les moyennes mobiles, le RSI mesure la vitesse des mouvements. Ils sont complémentaires. Le RSI identifie les zones extrêmes, le MACD confirme la direction. Les utiliser ensemble est bien plus puissant que d'en choisir un seul.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quels paramètres pour le MACD ?</strong></summary>
+          <p>Les paramètres par défaut (12, 26, 9) sont les plus utilisés et les plus fiables. Certains day traders utilisent (8, 17, 9) pour plus de réactivité. Ne modifie les paramètres que si tu as une raison claire et que tu as backtesté le changement sur suffisamment de données.</p>
+        </details>
+
+        <details>
+          <summary><strong>Le MACD fonctionne-t-il en scalping ?</strong></summary>
+          <p>Le MACD est un indicateur retardé, ce qui le rend moins adapté au scalping sur M1-M5. Les signaux arrivent souvent trop tard. Il est plus efficace en day trading (M15-H1) et swing trading (H4-D1). Pour le scalping, combine-le avec des indicateurs plus rapides comme le RSI 7 ou le stochastique.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-que-le-macd" class="toc__link">Qu'est-ce que le MACD ?</a></li>
+          <li><a href="#signal-line-croisements" class="toc__link">Signal Line et croisements</a></li>
+          <li><a href="#histogramme-macd" class="toc__link">L'histogramme MACD</a></li>
+          <li><a href="#divergences-macd" class="toc__link">Les divergences MACD</a></li>
+          <li><a href="#combiner-macd-rsi" class="toc__link">MACD + RSI : le power combo</a></li>
+          <li><a href="#limites-macd" class="toc__link">Les limites du MACD</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>MACD = EMA 12 - EMA 26, Signal = EMA 9 du MACD</li>
+          <li>Les croisements sont des signaux de confirmation, pas de décision</li>
+          <li>L'histogramme donne des signaux précoces de retournement</li>
+          <li>MACD + RSI = combo puissant pour le timing</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/analyse-technique.html">Analyse technique : le guide complet</a></li>
+          <li><a href="/guides/rsi-indicateur.html">Le RSI : guide complet</a></li>
+          <li><a href="/guides/bandes-bollinger.html">Les Bandes de Bollinger</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/analyse-technique.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Analyse technique : le guide complet</h3>
+        <p class="card-article__excerpt">Chandeliers, indicateurs, figures chartistes : tout pour lire les graphiques comme un pro.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+      <a href="/guides/rsi-indicateur.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Le RSI : guide complet</h3>
+        <p class="card-article__excerpt">Surachat, survente, divergences : maîtrise l'indicateur RSI de A à Z.</p>
+        <div class="card-article__meta"><span>&#9201; 14 min</span></div>
+      </a>
+      <a href="/guides/bandes-bollinger.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title" style="font-style: normal;">Les Bandes de Bollinger</h3>
+        <p class="card-article__excerpt">Squeeze, breakout, retour à la moyenne : les stratégies Bollinger qui marchent.</p>
+        <div class="card-article__meta"><span>&#9201; 13 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

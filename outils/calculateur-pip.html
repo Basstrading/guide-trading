@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur de Pips — Valeur d'un Pip | Guide Trading</title>
+  <meta name="description" content="Calcule la valeur d'un pip en fonction de ta paire de devises et de ta taille de position. Outil gratuit pour les traders Forex.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/outils/calculateur-pip.html">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Calculateur de Pips — Valeur d'un Pip | Guide Trading">
+  <meta property="og:description" content="Calcule la valeur d'un pip en fonction de ta paire de devises et de ta taille de position. Outil gratuit pour les traders Forex.">
+  <meta property="og:url" content="https://guide-trading.fr/outils/calculateur-pip.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Outils","item":"https://guide-trading.fr/outils/"},{"@type":"ListItem","position":3,"name":"Calculateur de pips"}]}
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link navbar__link--active">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">A propos</a>
+      </div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher"></div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">A propos</a>
+    </div>
+  </nav>
+  <div class="container"><nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/outils/" class="breadcrumb__link">Outils</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Calculateur de pips</span></nav></div>
+  <main>
+    <section class="section">
+      <div class="container">
+        <div class="section-header fade-in">
+          <h1>Calculateur de Pips</h1>
+          <p class="section-header__subtitle">Calcule instantanement la valeur d'un pip selon ta paire de devises, ta taille de lot et la devise de ton compte.</p>
+        </div>
+
+        <div class="tool-form fade-in">
+          <div class="tool-form__group">
+            <label class="tool-form__label" for="pip-paire">Paire de devises</label>
+            <select id="pip-paire" class="tool-form__select tool-input">
+              <option value="EUR/USD">EUR/USD</option>
+              <option value="GBP/USD">GBP/USD</option>
+              <option value="USD/JPY">USD/JPY</option>
+              <option value="USD/CHF">USD/CHF</option>
+              <option value="AUD/USD">AUD/USD</option>
+              <option value="NZD/USD">NZD/USD</option>
+              <option value="EUR/GBP">EUR/GBP</option>
+              <option value="EUR/JPY">EUR/JPY</option>
+              <option value="GBP/JPY">GBP/JPY</option>
+            </select>
+          </div>
+
+          <div class="tool-form__group">
+            <label class="tool-form__label" for="pip-lot">Taille du lot</label>
+            <select id="pip-lot" class="tool-form__select tool-input">
+              <option value="100000">Standard (100 000)</option>
+              <option value="10000">Mini (10 000)</option>
+              <option value="1000">Micro (1 000)</option>
+            </select>
+          </div>
+
+          <div class="tool-form__group">
+            <label class="tool-form__label" for="pip-devise">Devise du compte</label>
+            <select id="pip-devise" class="tool-form__select tool-input">
+              <option value="EUR">EUR</option>
+              <option value="USD">USD</option>
+              <option value="GBP">GBP</option>
+            </select>
+          </div>
+
+          <div class="tool-result">
+            <div class="tool-result__label">Valeur d'1 pip</div>
+            <div class="tool-result__value"><span id="pip-result">—</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <article class="prose fade-in">
+          <h2>Comprendre la valeur d'un pip en Forex</h2>
+
+          <p>Si tu debutes en trading Forex, tu as probablement deja croise le terme <strong>pip</strong>. C'est l'une des notions les plus fondamentales du marche des changes, et pourtant, beaucoup de traders ne comprennent pas vraiment comment sa valeur est calculee. Ce calculateur te permet d'obtenir instantanement la valeur monetaire d'un pip, mais voyons ensemble ce qui se cache derriere ce chiffre.</p>
+
+          <h3>Qu'est-ce qu'un pip ?</h3>
+
+          <p>Un <strong>pip</strong> (Percentage In Point) represente la plus petite variation de prix standardisee sur une paire de devises. Pour la grande majorite des paires, un pip correspond a un mouvement de <strong>0,0001</strong> (la quatrieme decimale). Par exemple, si l'EUR/USD passe de 1,0850 a 1,0851, il a progresse d'un pip.</p>
+
+          <p>Il existe une exception notable : les paires cotees en <strong>yen japonais (JPY)</strong>. Pour celles-ci, un pip correspond a un mouvement de <strong>0,01</strong> (la deuxieme decimale). Si l'USD/JPY passe de 155,50 a 155,51, c'est un mouvement d'un pip. Cette difference s'explique simplement par le fait que le yen a une valeur unitaire beaucoup plus faible que l'euro ou le dollar.</p>
+
+          <h3>Et la pipette alors ?</h3>
+
+          <p>Avec les plateformes modernes, tu verras souvent un <strong>cinquieme chiffre apres la virgule</strong> (ou un troisieme pour les paires JPY). Ce cinquieme chiffre est appele une <strong>pipette</strong>, soit un dixieme de pip. Par exemple, si l'EUR/USD affiche 1,08505, le dernier "5" est une pipette. La pipette permet une cotation plus precise, mais pour tes calculs de risque et de gain, tu te baseras generalement sur le pip entier. Pour approfondir cette notion, consulte notre <a href="/lexique/pip.html">definition complete du pip</a> dans le lexique.</p>
+
+          <h3>Pourquoi la valeur d'un pip change selon la paire ?</h3>
+
+          <p>C'est un point crucial a comprendre : <strong>la valeur d'un pip depend de la devise de cotation</strong> (la seconde devise de la paire). Quand tu trades l'EUR/USD, la devise de cotation est le dollar americain. La valeur brute d'un pip sur un lot standard est alors de 10 USD. Mais si tu trades l'EUR/GBP, la devise de cotation est la livre sterling, et un pip vaut 10 GBP sur un lot standard.</p>
+
+          <p>Ensuite, si la devise de ton compte n'est pas la meme que la devise de cotation, il faut effectuer une <strong>conversion supplementaire</strong>. C'est exactement ce que fait notre calculateur : il prend en compte la paire, la taille du lot et la devise de ton compte pour te donner un resultat directement exploitable.</p>
+
+          <h3>L'impact de la taille du lot</h3>
+
+          <p>La taille de ta position influence directement la valeur monetaire de chaque pip. Voici les trois tailles de <a href="/lexique/lot.html">lots</a> standard :</p>
+
+          <ul>
+            <li><strong>Lot standard (100 000 unites)</strong> : sur EUR/USD avec un compte en USD, un pip vaut environ 10 $. C'est la taille utilisee par les traders experimentes disposant d'un capital consequent.</li>
+            <li><strong>Mini lot (10 000 unites)</strong> : un pip vaut environ 1 $. C'est un bon compromis pour les traders intermediaires qui veulent une exposition moderee.</li>
+            <li><strong>Micro lot (1 000 unites)</strong> : un pip vaut environ 0,10 $. C'est la taille ideale pour les debutants, car elle permet de trader en reel avec un risque minimal.</li>
+          </ul>
+
+          <h3>Exemples concrets</h3>
+
+          <p>Prenons quelques scenarios pour illustrer le fonctionnement :</p>
+
+          <p><strong>Exemple 1 :</strong> tu trades l'EUR/USD avec un lot standard et un compte en EUR. La valeur brute d'un pip est de 10 USD (0,0001 x 100 000). Pour convertir en euros, on divise par le taux EUR/USD (~1,0850), ce qui donne environ <strong>9,22 EUR</strong> par pip.</p>
+
+          <p><strong>Exemple 2 :</strong> tu trades l'USD/JPY avec un mini lot et un compte en USD. La valeur brute d'un pip est de 100 JPY (0,01 x 10 000). Pour convertir en dollars, on divise par le taux USD/JPY (~155,50), ce qui donne environ <strong>0,64 USD</strong> par pip.</p>
+
+          <p><strong>Exemple 3 :</strong> tu trades le GBP/JPY avec un micro lot et un compte en GBP. La valeur brute d'un pip est de 10 JPY (0,01 x 1 000). On convertit d'abord en USD (10 / 155,50 = ~0,064 USD), puis en GBP (0,064 / 1,2650 = ~0,051 GBP), soit environ <strong>0,05 GBP</strong> par pip.</p>
+
+          <h3>Pourquoi calculer la valeur d'un pip est essentiel ?</h3>
+
+          <p>Connaitre la valeur d'un pip est indispensable pour <strong>gerer ton risque correctement</strong>. Quand tu places un stop loss a 20 pips de ton prix d'entree, tu dois savoir combien ces 20 pips representent en valeur monetaire pour determiner si le risque est acceptable par rapport a ton capital. C'est la base de tout <a href="/guides/debuter-en-trading.html">plan de trading serieux</a>.</p>
+
+          <p>En combinant la valeur du pip avec la distance de ton stop loss et la taille de ta position, tu peux calculer ton risque exact en euros, dollars ou livres. C'est cette approche methodique qui differencie un trader discipliné d'un joueur de casino.</p>
+        </article>
+      </div>
+    </section>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en francais.</p></div>
+        <div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">A propos</a></li></ul></div>
+        <div><h4 class="footer__heading">Ecosysteme</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — IA, communaute & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits reserves</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions legales</a><a href="/politique-confidentialite.html">Confidentialite</a></div></div>
+    </div>
+  </footer>
+  <script defer src="../js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var rates = {
+      'EURUSD': 1.0850, 'GBPUSD': 1.2650, 'USDJPY': 155.50,
+      'USDCHF': 0.8850, 'AUDUSD': 0.6550, 'NZDUSD': 0.5950,
+      'EURGBP': 0.8580, 'EURJPY': 168.70, 'GBPJPY': 196.70
+    };
+    var conversionToEUR = { 'USD': 1/1.0850, 'EUR': 1, 'GBP': 1/0.8580 };
+    var conversionToUSD = { 'USD': 1, 'EUR': 1.0850, 'GBP': 1.2650 };
+    var conversionToGBP = { 'USD': 1/1.2650, 'EUR': 0.8580, 'GBP': 1 };
+
+    ['pip-paire','pip-lot','pip-devise'].forEach(function(id) {
+      document.getElementById(id).addEventListener('change', calcPip);
+    });
+
+    function calcPip() {
+      var paire = document.getElementById('pip-paire').value;
+      var lotSize = parseInt(document.getElementById('pip-lot').value);
+      var devise = document.getElementById('pip-devise').value;
+      var key = paire.replace('/','');
+
+      var quoteCurrency = paire.split('/')[1];
+      var pipValue;
+
+      if (quoteCurrency === 'JPY') {
+        pipValue = lotSize * 0.01;
+      } else {
+        pipValue = lotSize * 0.0001;
+      }
+
+      var pipInAccount;
+      if (quoteCurrency === devise) {
+        pipInAccount = pipValue;
+      } else if (quoteCurrency === 'USD') {
+        if (devise === 'EUR') pipInAccount = pipValue * conversionToEUR['USD'];
+        else if (devise === 'GBP') pipInAccount = pipValue * conversionToGBP['USD'];
+        else pipInAccount = pipValue;
+      } else if (quoteCurrency === 'JPY') {
+        var jpyToUsd = 1 / rates['USDJPY'];
+        var pipInUsd = pipValue * jpyToUsd;
+        if (devise === 'USD') pipInAccount = pipInUsd;
+        else if (devise === 'EUR') pipInAccount = pipInUsd * conversionToEUR['USD'];
+        else pipInAccount = pipInUsd * conversionToGBP['USD'];
+      } else if (quoteCurrency === 'CHF') {
+        var chfToUsd = 1 / rates['USDCHF'];
+        var pipInUsd2 = pipValue * chfToUsd;
+        if (devise === 'USD') pipInAccount = pipInUsd2;
+        else if (devise === 'EUR') pipInAccount = pipInUsd2 * conversionToEUR['USD'];
+        else pipInAccount = pipInUsd2 * conversionToGBP['USD'];
+      } else if (quoteCurrency === 'GBP') {
+        var gbpToUsd = rates['GBPUSD'];
+        var pipInUsd3 = pipValue * gbpToUsd;
+        if (devise === 'USD') pipInAccount = pipInUsd3;
+        else if (devise === 'EUR') pipInAccount = pipInUsd3 * conversionToEUR['USD'];
+        else pipInAccount = pipValue;
+      } else {
+        pipInAccount = pipValue;
+      }
+
+      var symbol = devise === 'EUR' ? '\u20AC' : devise === 'GBP' ? '\u00A3' : '$';
+      document.getElementById('pip-result').textContent = pipInAccount.toFixed(2) + ' ' + symbol;
+    }
+
+    calcPip();
+  });
+  </script>
+</body>
+</html>

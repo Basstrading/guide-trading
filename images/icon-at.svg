@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Analyse Technique</title>
+  <!-- Candlestick -->
+  <line x1="14" y1="10" x2="14" y2="38"/>
+  <rect x="10" y="16" width="8" height="12" rx="1" fill="#3B82F6" stroke="#3B82F6"/>
+  <line x1="26" y1="8" x2="26" y2="40"/>
+  <rect x="22" y="12" width="8" height="16" rx="1" fill="none"/>
+  <line x1="38" y1="12" x2="38" y2="36"/>
+  <rect x="34" y="18" width="8" height="10" rx="1" fill="#3B82F6" stroke="#3B82F6"/>
+</svg>

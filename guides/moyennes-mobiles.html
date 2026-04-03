@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Moyennes Mobiles en Trading : SMA, EMA, Stratégies (2026)</title>
+  <meta name="description" content="SMA, EMA, croisements, Golden Cross, Death Cross. Tout comprendre sur les moyennes mobiles et comment les utiliser en trading.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/moyennes-mobiles.html">
+
+  <meta property="og:title" content="Les Moyennes Mobiles en Trading : SMA, EMA, Stratégies (2026)">
+  <meta property="og:description" content="SMA, EMA, croisements, Golden Cross, Death Cross. Tout comprendre sur les moyennes mobiles et comment les utiliser en trading.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/moyennes-mobiles.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Les Moyennes Mobiles en Trading : SMA, EMA, Stratégies (2026)">
+  <meta name="twitter:description" content="SMA, EMA, croisements, Golden Cross, Death Cross. Tout comprendre sur les moyennes mobiles.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Les Moyennes Mobiles en Trading : SMA, EMA, Stratégies",
+    "description": "SMA, EMA, croisements, Golden Cross, Death Cross. Tout comprendre sur les moyennes mobiles et comment les utiliser en trading.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/moyennes-mobiles.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Moyennes Mobiles"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "SMA ou EMA : laquelle choisir ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cela dépend de ton style de trading. La SMA est plus stable et filtre mieux le bruit — elle convient au swing trading et à l'analyse de fond. L'EMA réagit plus vite aux mouvements récents — elle est préférable pour le day trading et le scalping où tu as besoin de signaux rapides. En pratique, beaucoup de traders utilisent les deux : une EMA courte pour les entrées et une SMA longue (200) pour la tendance de fond."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelles périodes de moyennes mobiles utiliser ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Les trois périodes les plus utilisées sont la 20 (court terme, idéale pour le day trading), la 50 (moyen terme, très suivie par les swing traders) et la 200 (long terme, LA référence des institutionnels). Sur les futures comme le NQ ou l'ES, la moyenne mobile 200 périodes en daily est surveillée par tous les gros acteurs — quand le prix la touche, une réaction est quasi garantie."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Les moyennes mobiles marchent-elles en range ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, c'est leur principale faiblesse. En range (marché sans tendance), les moyennes mobiles génèrent énormément de faux signaux. Le prix croise la MA dans un sens puis dans l'autre en permanence, ce qui produit des whipsaws coûteux. Dans un marché latéral, mieux vaut utiliser des oscillateurs comme le RSI ou les bandes de Bollinger. Réserve les stratégies de moyennes mobiles aux marchés en tendance."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">A&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">A propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Moyennes Mobiles</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h1>Les Moyennes Mobiles en Trading : SMA, EMA, Strategies</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 15 min de lecture</span>
+          <span>&#x1F4C5; Mis a jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Les moyennes mobiles sont probablement l'indicateur le plus utilise en trading. Que tu sois debutant ou trader confirme, tu les as forcément croisees sur un graphique. Mais sais-tu vraiment comment les exploiter ? Pas juste les afficher — les <strong>utiliser</strong> pour prendre des decisions concretes.</p>
+
+      <p>Dans ce guide, on va tout decortiquer : la difference entre SMA et EMA, les periodes cles a connaitre, comment utiliser les moyennes mobiles comme support et resistance, les croisements celebres (Golden Cross, Death Cross), et surtout les limites que trop de traders ignorent.</p>
+
+      <!-- ======================== -->
+      <h2 id="sma-vs-ema">SMA vs EMA : comprendre la difference</h2>
+
+      <p>Il existe deux grandes familles de moyennes mobiles. Chacune a ses avantages et ses cas d'usage.</p>
+
+      <h3 id="sma">La SMA (Simple Moving Average)</h3>
+
+      <p>La <a href="/lexique/moyenne-mobile.html">SMA</a> est la moyenne arithmetique classique. Tu prends les X derniers prix de cloture, tu les additionnes, tu divises par X. C'est aussi simple que ca.</p>
+
+      <p>Exemple concret : une SMA 20 sur le graphique daily du NQ prend les 20 derniers prix de cloture, les additionne et divise par 20. Chaque jour, la valeur la plus ancienne sort du calcul et la nouvelle entre. La courbe se deplace — d'ou le nom "mobile".</p>
+
+      <p>L'avantage de la SMA : elle est <strong>stable</strong>. Elle ne reagit pas excessivement aux mouvements brusques. C'est son point fort et sa faiblesse : elle filtre le bruit, mais elle est lente a reagir aux changements de tendance.</p>
+
+      <h3 id="ema">L'EMA (Exponential Moving Average)</h3>
+
+      <p>L'EMA applique une ponderation exponentielle aux prix les plus recents. Concretement, les dernieres bougies comptent davantage dans le calcul que les anciennes. Le resultat : l'EMA colle plus pres du prix actuel et reagit plus vite aux mouvements recents.</p>
+
+      <p>Sur un graphique, la difference est visible a l'oeil nu. Quand le prix fait un mouvement brusque, l'EMA se decale rapidement alors que la SMA reste plus plate. Pour le day trading sur le NQ par exemple, l'EMA 9 ou l'EMA 21 sont des references que tu verras sur pratiquement toutes les configurations de traders professionnels.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">SMA vs EMA en resume</p>
+        <p><strong>SMA</strong> : moyenne simple, poids egal a chaque bougie. Stable, lisse, lente. Ideale pour identifier la tendance de fond. <strong>EMA</strong> : moyenne exponentielle, poids superieur aux bougies recentes. Reactive, rapide, plus de bruit. Ideale pour les entrees en day trading et scalping.</p>
+      </div>
+
+      <p>En pratique, la plupart des traders serieux utilisent les deux. L'EMA courte pour la reactivite, la SMA longue pour le contexte. Tu n'as pas a choisir un camp — tu dois comprendre quand utiliser chacune.</p>
+
+      <!-- ======================== -->
+      <h2 id="periodes-cles">Les periodes cles des moyennes mobiles</h2>
+
+      <p>Toutes les periodes ne se valent pas. Certaines sont surveillees par des millions de traders et d'algorithmes dans le monde entier, ce qui leur donne un poids reel sur le marche.</p>
+
+      <p><strong>La MA 20 (court terme)</strong> — C'est la moyenne mobile du day trader. Sur un graphique en 5 minutes ou 15 minutes, la MA 20 capture le rythme de la session. En daily, elle represente environ un mois de trading. Quand le prix reste au-dessus de la MA 20, le momentum court terme est haussier. Quand il passe en dessous, ca se degrade.</p>
+
+      <p><strong>La MA 50 (moyen terme)</strong> — La favorite des swing traders. En daily, elle represente environ 2,5 mois de trading. C'est souvent le premier niveau que les traders institutionnels regardent quand ils evaluent la sante d'une tendance. Un prix au-dessus de la MA 50 daily est generalement considere comme "en tendance haussiere".</p>
+
+      <p><strong>La MA 200 (long terme)</strong> — C'est LA reference. La MA 200 daily est surveillee par absolument tout le monde : hedge funds, banques, algorithmes, traders retail. Quand le S&P 500 ou le Nasdaq passe sous sa MA 200 daily, les medias financiers en parlent. C'est un evenement.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">La regle des institutionnels</p>
+        <p>La MA 200 en daily est le thermometre de la tendance de fond. Au-dessus = marche haussier. En dessous = marche baissier. C'est une simplification, mais c'est exactement comme ca que les gros fonds gerent leur exposition. Si tu ne retiens qu'une seule moyenne mobile, retiens la 200.</p>
+      </div>
+
+      <p>D'autres periodes meritent mention : la 9 et la 21 sont populaires chez les scalpers (basees sur les nombres de Fibonacci), la 100 est un niveau intermediaire souvent regarde sur les indices. Mais si tu debutes, concentre-toi sur le trio 20/50/200 — c'est tout ce dont tu as besoin.</p>
+
+      <!-- ======================== -->
+      <h2 id="support-resistance">Les moyennes mobiles comme support et resistance dynamique</h2>
+
+      <p>Contrairement aux supports et resistances horizontaux (lignes fixes sur le graphique), les moyennes mobiles bougent avec le prix. On les appelle donc des <strong>supports et resistances dynamiques</strong>.</p>
+
+      <p>Le principe est simple : dans une tendance haussiere, le prix a tendance a rebondir sur ses moyennes mobiles. C'est comme un trampoline. Le prix monte, s'eloigne de la MA, puis revient la tester — et repart a la hausse. Ce phenomène se repete tant que la tendance est intacte.</p>
+
+      <p>Exemple reel : prends le graphique daily du NQ (Nasdaq 100 futures) sur n'importe quelle tendance haussiere soutenue. Tu verras le prix rebondir methodiquement sur l'EMA 21. Quand il casse l'EMA 21, il rebondit sur la SMA 50. Quand il casse la 50, il teste la 200. C'est comme une cascade de niveaux de defense.</p>
+
+      <p>En tendance baissiere, c'est l'inverse : les MAs deviennent des resistances. Le prix tente de remonter, touche la MA, et se fait rejeter vers le bas. Tu as deja vu ca des dizaines de fois sans peut-etre le realiser.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Attention au biais de confirmation</p>
+        <p>Les MAs ne fonctionnent comme support/resistance que dans un marche en tendance. En range, le prix traverse les MAs sans aucun respect — et tu te retrouves avec des faux signaux en cascade. Avant de trader un rebond sur MA, confirme d'abord que tu es bien dans une tendance etablie.</p>
+      </div>
+
+      <p>Comment trader concretement un rebond sur MA ? Attends que le prix touche la MA, puis cherche une confirmation : une bougie de rejet (marteau, engulfing), un volume croissant, ou un signal d'<a href="/guides/analyse-technique.html">analyse technique</a> complementaire. Ne trade jamais le simple contact avec la MA — c'est une zone d'interet, pas un signal automatique.</p>
+
+      <!-- ======================== -->
+      <h2 id="croisements">Croisements : Golden Cross et Death Cross</h2>
+
+      <p>Les croisements de moyennes mobiles font partie des signaux les plus mediatises en trading. Ils sont simples a comprendre, ce qui explique leur popularite — mais ils ont des limites qu'il faut connaitre.</p>
+
+      <p><strong>Le Golden Cross</strong> : la MA 50 croise au-dessus de la MA 200. C'est un signal haussier majeur. Quand ca arrive sur le S&P 500 ou le Nasdaq en daily, les medias financiers s'enflamment. L'idee : la tendance court/moyen terme (50) depasse la tendance long terme (200), ce qui indique un changement de momentum en faveur des acheteurs.</p>
+
+      <p><strong>Le Death Cross</strong> : l'inverse. La MA 50 croise en dessous de la MA 200. Signal baissier. Quand le Death Cross s'est forme sur le S&P 500 en mars 2020 (debut Covid), la panique etait a son maximum. Historiquement, les Death Cross sur les grands indices precedent souvent des periodes de faiblesse prolongee.</p>
+
+      <p>Mais attention : ces signaux ont un <strong>retard considerable</strong>. Le Golden Cross se forme souvent quand une bonne partie du mouvement haussier est deja derriere nous. Le Death Cross apparait parfois quand le gros de la baisse est deja fait. C'est la nature meme des moyennes mobiles : elles sont des indicateurs retardes.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Utilise les croisements comme confirmation, pas comme signal d'entree</p>
+        <p>Le Golden Cross et le Death Cross sont utiles pour confirmer un changement de tendance de fond — pas pour timer une entree precise. Si tu attends le Golden Cross pour acheter, tu rates souvent 15-20% du mouvement. Utilise-les comme filtre directionnel : si Golden Cross est actif, cherche des longs. Si Death Cross, cherche des shorts.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="strategie-2-ma">Strategie de croisement de 2 moyennes mobiles</h2>
+
+      <p>La strategie de croisement de deux MAs est l'une des plus anciennes et des plus enseignees en trading. Elle est simple : tu combines une MA rapide (courte periode) et une MA lente (longue periode).</p>
+
+      <p><strong>Signal d'achat</strong> : la MA rapide croise au-dessus de la MA lente. <strong>Signal de vente</strong> : la MA rapide croise en dessous de la MA lente. C'est tout.</p>
+
+      <p>Les combinaisons populaires :</p>
+
+      <p><strong>EMA 9 / EMA 21</strong> — Pour le scalping et le day trading. Signaux frequents, beaucoup de bruit, mais reaction rapide aux changements de momentum. Sur un graphique 5 minutes du NQ, cette combinaison donne des entrees precises quand le marche est en tendance intraday.</p>
+
+      <p><strong>EMA 20 / SMA 50</strong> — Pour le day trading et le swing court terme. Moins de signaux, plus de fiabilite. C'est un bon compromis entre reactivite et filtrage du bruit.</p>
+
+      <p><strong>SMA 50 / SMA 200</strong> — Pour le swing trading et l'investissement. C'est le duo Golden Cross / Death Cross. Signaux rares mais significatifs.</p>
+
+      <p>Exemple concret : sur le graphique 15 minutes de l'ES (S&P 500 futures), tu affiches l'EMA 9 et l'EMA 21. En debut de session, le prix demarre au-dessus des deux MAs. L'EMA 9 croise sous l'EMA 21 a 10h30 — signal short. Tu entres avec un stop loss au-dessus du dernier swing high. Le prix continue de baisser pendant 2 heures. A 12h45, l'EMA 9 recroise au-dessus — tu sors.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Regle d'or des croisements</p>
+        <p>Un croisement de MAs n'est fiable que dans un marche en tendance. En range, les MAs se croisent en permanence (whipsaw) et tu accumules les pertes. Avant de trader un croisement, verifie que le marche presente une direction claire — avec l'ADX par exemple (ADX &gt; 25 = tendance confirmee).</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="limites">Limites des moyennes mobiles</h2>
+
+      <p>Les moyennes mobiles ne sont pas magiques. Loin de la. Si elles l'etaient, tout le monde serait riche. Voici leurs faiblesses principales que tu dois absolument connaitre.</p>
+
+      <p><strong>1. Le retard (lag)</strong> — C'est le defaut structurel des MAs. Elles sont calculees sur des donnees passees, donc elles reagissent toujours APRES le mouvement. Plus la periode est longue, plus le retard est important. Une MA 200 ne te dira jamais qu'un retournement est en cours — elle te le confirmera quand il sera deja bien avance.</p>
+
+      <p><strong>2. Les faux signaux en range</strong> — On l'a repete plusieurs fois dans ce guide, et ce n'est pas pour rien. En range, les MAs sont inutilisables. Le prix oscille autour de la MA, la croise dans un sens puis dans l'autre, genere des signaux d'achat et de vente contradictoires. Resultat : tu te fais decouper en petits morceaux.</p>
+
+      <p><strong>3. L'auto-realisation partielle</strong> — Les MAs "fonctionnent" en partie parce que tout le monde les regarde. La MA 200 du S&P 500 est un support parce que des millions de traders placent leurs ordres dessus. Si demain plus personne ne la regardait, elle perdrait sa pertinence. C'est un outil de consensus, pas une loi physique.</p>
+
+      <p><strong>4. L'optimisation excessive</strong> — Beaucoup de traders passent des heures a backtester des combinaisons de periodes : "Et si j'utilisais la 17 au lieu de la 20 ? Et la 53 au lieu de la 50 ?" C'est du curve fitting. Les periodes standard (20, 50, 200) fonctionnent parce qu'elles sont utilisees par tout le monde. Inventer des periodes exotiques n'apporte aucun avantage.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Les MAs ne doivent jamais etre ton seul outil</p>
+        <p>Utilise les moyennes mobiles comme un <strong>filtre directionnel</strong>, pas comme un systeme de trading complet. Combine-les avec d'autres outils : <a href="/guides/macd-indicateur.html">MACD</a>, volume, price action, niveaux cles. Un signal de MA confirme par le volume et la price action est 10 fois plus fiable qu'un signal de MA seul.</p>
+      </div>
+
+      <p>Malgre leurs limites, les moyennes mobiles restent un outil fondamental. Elles ne te disent pas OU entrer avec precision, mais elles te disent DANS QUELLE DIRECTION chercher. Et ca, c'est deja enorme. Un trader qui trade toujours dans le sens de la MA 200 a un avantage statistique reel sur celui qui s'y oppose systematiquement.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions frequentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>SMA ou EMA : laquelle choisir ?</strong></summary>
+          <p>Cela depend de ton style. La SMA est plus stable et filtre mieux le bruit — elle convient au swing trading et a l'analyse de fond. L'EMA reagit plus vite aux mouvements recents — elle est preferable pour le day trading et le scalping. En pratique, utilise les deux : une EMA courte pour les entrees et une SMA longue (200) pour la tendance de fond.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quelles periodes de moyennes mobiles utiliser ?</strong></summary>
+          <p>Les trois periodes incontournables sont la 20 (court terme, day trading), la 50 (moyen terme, swing trading) et la 200 (long terme, reference institutionnelle). Sur les futures comme le NQ ou l'ES, la MA 200 daily est surveillee par tous les gros acteurs. Si tu debutes, concentre-toi sur ce trio.</p>
+        </details>
+
+        <details>
+          <summary><strong>Les moyennes mobiles marchent-elles en range ?</strong></summary>
+          <p>Non, c'est leur principale faiblesse. En range, les MAs generent enormement de faux signaux — le prix croise la MA dans un sens puis dans l'autre en permanence (whipsaw). Dans un marche lateral, utilise plutot des oscillateurs (RSI, bandes de Bollinger). Reserve les strategies de MAs aux marches en tendance.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#sma-vs-ema" class="toc__link">SMA vs EMA</a></li>
+          <li><a href="#periodes-cles" class="toc__link">Les periodes cles</a></li>
+          <li><a href="#support-resistance" class="toc__link">Support/resistance dynamique</a></li>
+          <li><a href="#croisements" class="toc__link">Golden Cross &amp; Death Cross</a></li>
+          <li><a href="#strategie-2-ma" class="toc__link">Strategie 2 MAs</a></li>
+          <li><a href="#limites" class="toc__link">Limites</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; A retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>L'EMA est plus reactive, la SMA plus stable — utilise les deux</li>
+          <li>La MA 200 daily est LA reference des institutionnels</li>
+          <li>Les MAs ne fonctionnent qu'en tendance — jamais en range</li>
+          <li>Utilise les croisements comme filtre, pas comme signal unique</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles lies</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/analyse-technique.html">Analyse technique : le guide complet</a></li>
+          <li><a href="/guides/macd-indicateur.html">Le MACD : guide complet</a></li>
+          <li><a href="/lexique/moyenne-mobile.html">Lexique : Moyenne mobile</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/analyse-technique.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title">Analyse technique : le guide complet</h3>
+        <p class="card-article__excerpt">Chandeliers, indicateurs, figures chartistes : tout pour lire les graphiques comme un pro.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+      <a href="/guides/macd-indicateur.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title">Le MACD : guide complet de l'indicateur</h3>
+        <p class="card-article__excerpt">Histogramme, ligne de signal, divergences : maitriser le MACD de A a Z.</p>
+        <div class="card-article__meta"><span>&#9201; 12 min</span></div>
+      </a>
+      <a href="/guides/gestion-du-risque.html" class="card card-article fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h3 class="card-article__title">La gestion du risque</h3>
+        <p class="card-article__excerpt">Le facteur n1 qui separe les traders gagnants des perdants.</p>
+        <div class="card-article__meta"><span>&#9201; 10 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en francais. Apprends a trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">A propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Categories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Debuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Ecosysteme</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communaute, IA &amp; formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits reserves</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions legales</a><a href="/politique-confidentialite.html">Confidentialite</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

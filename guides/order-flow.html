@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Order Flow : Comprendre les Flux d'Ordres en Trading (2026)</title>
+  <meta name="description" content="Maîtrise l'order flow : carnet d'ordres, volume profile, footprint, CVD, tape reading, VWAP. Le guide complet pour lire le marché comme un pro.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/order-flow.html">
+
+  <meta property="og:title" content="Order Flow : Comprendre les Flux d'Ordres en Trading (2026)">
+  <meta property="og:description" content="Maîtrise l'order flow : carnet d'ordres, volume profile, footprint, CVD, tape reading, VWAP. Le guide complet pour lire le marché comme un pro.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/order-flow.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Order Flow : Comprendre les Flux d'Ordres en Trading (2026)">
+  <meta name="twitter:description" content="Maîtrise l'order flow : carnet d'ordres, volume profile, footprint, CVD, tape reading, VWAP.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Order Flow : Comprendre les Flux d'Ordres en Trading",
+    "description": "Maîtrise l'order flow : carnet d'ordres, volume profile, footprint, CVD, tape reading, VWAP. Le guide complet pour lire le marché comme un pro.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/order-flow.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "Order Flow"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "L'order flow est-il réservé aux professionnels ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Non, mais il demande plus d'apprentissage que l'analyse technique classique. Commence par le VWAP et le Volume Profile — ces deux outils sont accessibles à toute personne motivée. Le DOM et le footprint viendront ensuite, avec la pratique. L'important est de progresser étape par étape plutôt que de vouloir tout maîtriser d'un coup."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quels outils utiliser pour l'order flow ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Sierra Chart est la référence pour les futures (NQ, ES) — puissant mais courbe d'apprentissage raide. ATAS est un bon choix pour les débutants avec une interface plus intuitive. Bookmap offre une visualisation heatmap du DOM très parlante. Quantower propose une option gratuite correcte pour débuter. Tu auras aussi besoin d'un data feed professionnel : CQG ou Rithmic sont les standards."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "L'order flow fonctionne-t-il sur le Forex ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Partiellement seulement. Le Forex est un marché OTC (de gré à gré), ce qui signifie que les données de volume sont fragmentées entre différents fournisseurs de liquidité. Tu ne vois qu'une fraction du volume réel. L'order flow fonctionne le mieux sur les marchés centralisés : les futures (NQ, ES, CL), et certaines plateformes crypto qui publient leurs données de carnet d'ordres."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quelle est la différence entre order flow et analyse technique ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "L'analyse technique lit le passé : elle utilise des indicateurs retardés (moyennes mobiles, RSI, MACD) et des patterns graphiques formés par l'historique des prix. L'order flow lit le présent : il montre qui achète et qui vend en ce moment, avec quelle agressivité, et à quel prix. L'AT te dit ce qui s'est passé, l'order flow te dit ce qui se passe. Les deux se complètent : l'AT donne le contexte, l'order flow donne le timing."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">À propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">Order Flow</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h1>Order Flow : Comprendre les Flux d'Ordres en Trading</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 25 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">L'analyse technique te montre ce qui s'est passé. L'order flow te montre ce qui se passe <strong>maintenant</strong>. C'est la différence entre regarder un match en replay et être dans les tribunes en direct. Si tu trades des futures — NQ, ES, CL — sans regarder l'order flow, tu trades avec un bandeau sur les yeux pendant que les institutionnels voient tout.</p>
+
+      <p>Ce guide va te donner les clés pour lire le marché comme un professionnel : le carnet d'ordres, le volume profile, le footprint, le CVD, le tape reading et le VWAP. Pas de théorie creuse. Chaque concept est accompagné de son application concrète, parce que l'order flow ne sert à rien si tu ne sais pas l'utiliser pour prendre des décisions.</p>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-que-lorder-flow">Qu'est-ce que l'order flow ?</h2>
+
+      <p>L'order flow, c'est la radiographie du marché. Au lieu de regarder un graphique en chandeliers qui te résume l'action du prix en open/high/low/close, tu regardes <strong>chaque transaction</strong>, <strong>chaque ordre</strong>, <strong>chaque interaction entre acheteurs et vendeurs</strong>. Tu vois QUI achète, QUI vend, avec quelle taille, et à quel prix exact.</p>
+
+      <p>Pourquoi c'est important ? Parce que le prix ne bouge pas tout seul. Le prix bouge parce que quelqu'un a passé un ordre agressif — un market order — qui a consommé la liquidité de l'autre côté. Quand tu comprends ce mécanisme, tu arrêtes de deviner et tu commences à <strong>lire</strong> le marché.</p>
+
+      <p>Les traders institutionnels utilisent l'order flow pour une raison simple : quand tu gères des positions de plusieurs millions de dollars, tu as besoin de savoir si tes ordres sont absorbés, si quelqu'un trade contre toi, s'il y a une participation réelle derrière un mouvement de prix ou si c'est du bruit. Un hedge fund ne se fie pas au RSI pour entrer sur le NQ — il regarde le DOM, le delta, et le footprint.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Order Flow — Définition</p>
+        <p>L'<strong>order flow</strong> (flux d'ordres) désigne l'ensemble des données relatives aux ordres passés sur un marché : ordres limites en attente dans le carnet d'ordres, ordres au marché exécutés, volume échangé à chaque prix, et le delta (différence entre achats et ventes agressifs). C'est l'étude de la mécanique réelle de formation des prix — l'offre et la demande en temps réel.</p>
+      </div>
+
+      <p>La différence fondamentale avec l'analyse technique classique est une question de temporalité. L'AT utilise des indicateurs <strong>retardés</strong> — une moyenne mobile, un RSI, un MACD — qui sont tous calculés sur des données passées. Ce sont des résumés statistiques de ce qui s'est déjà produit. L'order flow, lui, te montre le flux en temps réel. Tu vois les ordres arriver, tu vois l'agressivité des acheteurs et des vendeurs, tu vois les institutionnels placer et retirer leurs ordres. C'est la différence entre un indicateur de température qui te dit qu'il faisait chaud hier, et un thermomètre qui te donne la température maintenant.</p>
+
+      <p>Cela ne veut pas dire que l'AT est inutile — au contraire. L'AT te donne le <strong>contexte</strong> (tendance, niveaux clés, structure), et l'order flow te donne le <strong>timing</strong> et la <strong>confirmation</strong>. Les meilleurs traders utilisent les deux ensemble.</p>
+
+      <!-- ======================== -->
+      <h2 id="carnet-ordres-dom">Le carnet d'ordres (DOM — Depth of Market)</h2>
+
+      <p>Le <a href="/lexique/dom.html">DOM</a> (Depth of Market), c'est la fenêtre qui te montre tous les ordres limites en attente à chaque niveau de prix. C'est le champ de bataille en direct : d'un côté les acheteurs qui placent leurs bids (ordres d'achat), de l'autre les vendeurs qui placent leurs asks (ordres de vente), et au centre l'échelle de prix qui défile.</p>
+
+      <p>Concrètement, sur un DOM de NQ futures, tu vois quelque chose comme :</p>
+
+      <p><strong>Bids (gauche)</strong> : 150 contrats à 18450, 300 contrats à 18449, 85 contrats à 18448...<br>
+      <strong>Asks (droite)</strong> : 120 contrats à 18451, 450 contrats à 18452, 200 contrats à 18453...</p>
+
+      <p>Ce que tu cherches, c'est le <strong>déséquilibre</strong>. Si tu vois 450 contrats empilés à 18452 (ask) et seulement 85 contrats face à eux côté bid, il y a un mur de vente significatif. Mais attention — le DOM est dynamique. Ces ordres peuvent être retirés en une milliseconde.</p>
+
+      <h3>Les concepts clés du DOM</h3>
+
+      <p><strong>Absorption.</strong> C'est quand un gros ordre limite "absorbe" les ordres agressifs qui arrivent contre lui. Imagine 500 contrats en bid à 18450. Des vendeurs agressifs envoient des market sells, 50, 100, 80 contrats — et le prix ne baisse pas. Ce bid à 500 absorbe tout. C'est un signal de soutien institutionnel : quelqu'un avec du capital sérieux défend ce niveau. C'est un signal d'achat potentiel — mais uniquement en combinaison avec d'autres confirmations.</p>
+
+      <p><strong>Stacking (empilement).</strong> Quand tu vois plusieurs niveaux consécutifs avec des tailles anormalement élevées — 300 à 18450, 280 à 18449, 350 à 18448 — c'est du stacking. C'est un mur de liquidité qui agit comme un support ou une résistance. Les institutionnels empilent des ordres limites pour créer une zone de défense. Plus le stacking est épais, plus le niveau est significatif.</p>
+
+      <p><strong>Pulling (retrait d'ordres).</strong> C'est le piège classique. Un gros bid de 500 contrats apparaît à 18450 — tu te dis "support solide". Puis, une seconde avant que le prix arrive à ce niveau, les 500 contrats disparaissent. C'était un leurre. Le pulling est utilisé pour donner une fausse impression de support ou de résistance, et piéger les traders qui se fient uniquement au DOM statique.</p>
+
+      <p><strong>Iceberg orders.</strong> Un iceberg, c'est un ordre institutionnel massif — disons 2 000 contrats — mais seule une fraction est visible dans le DOM (par exemple 50 contrats). Chaque fois que les 50 sont exécutés, 50 de plus apparaissent automatiquement. Comment les repérer ? Tu vois des exécutions répétées au même prix exact, sur le Time & Sales, alors que la taille visible dans le DOM reste constante. C'est un signal fort : un institutionnel accumule ou distribue discrètement à ce prix.</p>
+
+      <p><strong>Spoofing.</strong> Le spoofing est une pratique illégale (mais toujours présente) où un participant place des ordres massifs qu'il n'a pas l'intention d'exécuter, dans le seul but de manipuler la perception du marché. Un trader place 1 000 contrats en bid, les autres voient "gros support", achètent — et le spoofer retire ses 1 000 contrats et vend. Le spoofing est difficile à distinguer du pulling légitime en temps réel, c'est pourquoi tu ne dois jamais baser une décision sur le DOM seul.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le DOM en pratique</p>
+        <p>Le DOM ne te dit pas CE QUI VA SE PASSER — il te dit CE QUI SE PASSE MAINTENANT. C'est un outil de confirmation, pas de prédiction. Utilise-le pour valider une thèse que tu as déjà construite avec d'autres outils (volume profile, CVD, contexte technique). Ne prends jamais un trade uniquement parce que tu vois un gros bid ou un gros ask.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="volume-profile">Le Volume Profile</h2>
+
+      <p>Le <a href="/lexique/volume-profile.html">Volume Profile</a> est probablement l'outil d'order flow le plus accessible et le plus puissant pour les débutants. Au lieu de montrer le volume par barre de temps (comme un histogramme classique sous ton graphique), il montre le volume échangé <strong>à chaque niveau de prix</strong> sur une période donnée — sous forme d'histogramme horizontal.</p>
+
+      <p>Résultat : tu vois immédiatement où le marché a passé le plus de temps et échangé le plus de volume. Et ça, c'est de l'information institutionnelle brute.</p>
+
+      <h3>Les niveaux clés du Volume Profile</h3>
+
+      <p><strong>Le POC (Point of Control)</strong> — c'est le prix avec le plus gros volume échangé sur la période analysée. C'est le prix d'équilibre, le "prix juste" selon le consensus du marché. Le <a href="/lexique/poc.html">POC</a> agit comme un aimant : quand le prix s'éloigne du POC, il a tendance à y revenir. Les institutionnels utilisent le POC comme référence pour évaluer si un actif est "cher" ou "pas cher" par rapport au consensus.</p>
+
+      <p><strong>La Value Area (VA)</strong> — c'est la zone qui contient 70% du volume total échangé sur la période. Elle est délimitée par le <a href="/lexique/value-area.html">VAH</a> (Value Area High) en haut et le VAL (Value Area Low) en bas. Quand le prix est à l'intérieur de la Value Area, il est dans la zone d'acceptation — le marché considère ces prix comme "normaux". Quand il sort de la Value Area, il entre en territoire d'exploration — et les probabilités de retour vers la VA augmentent.</p>
+
+      <h3>Noeud de haut volume vs noeud de bas volume</h3>
+
+      <p><strong>Les HVN (High Volume Nodes)</strong> sont des niveaux de prix où beaucoup de volume a été échangé. Ce sont des zones d'équilibre — le marché a "accepté" ces prix. Le prix a tendance à ralentir, consolider et osciller autour des HVN. Ce sont des zones de support/résistance naturelles.</p>
+
+      <p><strong>Les LVN (Low Volume Nodes)</strong> sont des niveaux où très peu de volume a été échangé. Ce sont des zones de rejet — le marché a traversé ces prix rapidement parce que ni les acheteurs ni les vendeurs ne voulaient y rester. Quand le prix revient sur un LVN, il a tendance à le traverser vite à nouveau. Les LVN sont des accélérateurs de mouvement.</p>
+
+      <h3>Session Profile vs Composite Profile</h3>
+
+      <p>Le <strong>Session Profile</strong> te montre le volume profile d'une seule session de trading (une journée). C'est utile pour le day trading — tu vois le POC du jour, la Value Area du jour, et tu peux identifier les zones de bataille intraday.</p>
+
+      <p>Le <strong>Composite Profile</strong> agrège le volume de plusieurs sessions (une semaine, un mois, un trimestre). Il te donne une vision macro des niveaux institutionnels majeurs. Un POC composite de 30 jours est un niveau de référence beaucoup plus puissant qu'un POC de session — il représente le prix d'équilibre sur un mois entier de trading.</p>
+
+      <p>En pratique, utilise le composite pour identifier les niveaux macro, et le session profile pour le timing intraday. Quand un POC de session se superpose à un HVN composite, tu as un niveau de support/résistance extrêmement significatif.</p>
+
+      <!-- ======================== -->
+      <h2 id="auction-market-theory">L'Auction Market Theory (AMT)</h2>
+
+      <p>L'Auction Market Theory est le cadre théorique qui donne du sens à tout ce que tu observes en order flow. Sans l'AMT, tu regardes des données brutes sans contexte. Avec l'AMT, chaque donnée a une signification.</p>
+
+      <p>Le principe fondamental : le marché est une <strong>enchère permanente</strong> entre acheteurs et vendeurs. Son seul objectif est de trouver le prix d'équilibre — le prix où le maximum de transactions peut se produire, où l'offre rencontre la demande.</p>
+
+      <p>Comment fonctionne cette enchère ? Le prix <strong>sonde</strong> vers le haut jusqu'à ce que les acheteurs se tarissent. Plus personne ne veut acheter à ce prix ? Le prix a trouvé sa limite haute. Il redescend alors, sondant vers le bas, jusqu'à ce que les vendeurs se tarissent. Plus personne ne veut vendre à ce prix ? Limite basse trouvée. Le prix oscille entre ces deux extrêmes, créant une zone d'équilibre.</p>
+
+      <h3>Balance et Imbalance</h3>
+
+      <p><strong>Les zones de balance</strong> sont des périodes où le marché a trouvé un équilibre. Le prix range dans une zone relativement étroite, le volume est élevé (beaucoup de transactions se produisent), et le Volume Profile montre un profil en forme de cloche — beaucoup de volume au centre, moins aux extrêmes. C'est la zone de confort du marché.</p>
+
+      <p><strong>Les zones d'imbalance</strong> sont des périodes de déséquilibre. Un côté (acheteurs ou vendeurs) domine massivement l'autre. Le prix bouge rapidement dans une direction avec peu de résistance. Le Volume Profile montre des LVN — le marché traverse ces prix sans s'arrêter.</p>
+
+      <p>La clé de l'AMT : <strong>le prix se déplace DE balance EN balance, EN TRAVERSANT des zones d'imbalance</strong>. C'est le rythme naturel du marché. Une zone de balance se forme, de l'information nouvelle arrive (news, données économiques, flux institutionnel), le marché sort de la balance, traverse une zone d'imbalance, et forme une nouvelle zone de balance plus haut ou plus bas.</p>
+
+      <p>Concrètement, quand tu trades : si le prix est dans une zone de balance, tu cherches des trades de retour à la moyenne (fading les extrêmes). Si le prix sort de la balance avec conviction (fort volume, delta directionnel), tu cherches des trades dans le sens de la sortie, en ciblant la prochaine zone de balance.</p>
+
+      <p>L'AMT te donne le "pourquoi" derrière chaque mouvement. Ce n'est pas un indicateur, c'est une grille de lecture. Et c'est la grille de lecture des institutionnels.</p>
+
+      <!-- ======================== -->
+      <h2 id="footprint-chart">Le Footprint Chart</h2>
+
+      <p>Le <a href="/lexique/footprint.html">footprint chart</a> est la loupe de l'order flow. Là où un chandelier classique te donne 4 informations (OHLC), le footprint te montre le volume des <strong>bids</strong> et des <strong>asks</strong> exécutés à <strong>chaque niveau de prix</strong>, à l'intérieur de <strong>chaque chandelier</strong>. C'est le niveau de détail maximum.</p>
+
+      <p>Concrètement, chaque cellule du footprint affiche deux nombres : le volume exécuté au bid (ordres vendus au marché) et le volume exécuté à l'ask (ordres achetés au marché). Par exemple, à 18450 sur NQ, tu pourrais voir <strong>120 x 340</strong> — 120 contrats vendus au bid et 340 contrats achetés à l'ask. Le delta à ce prix est +220 (340 - 120) : les acheteurs agressifs dominent largement à ce niveau.</p>
+
+      <h3>Le delta par chandelier</h3>
+
+      <p>Le delta total d'un chandelier, c'est la somme de tous les deltas à chaque prix : (total achats agressifs) - (total ventes agressives). Un delta positif (vert) signifie que les acheteurs ont dominé dans ce chandelier. Un delta négatif (rouge) signifie que les vendeurs ont dominé. Le delta te donne la direction de l'agressivité — QUI pousse le prix.</p>
+
+      <h3>Les imbalances</h3>
+
+      <p>Une imbalance se produit quand un côté est massivement supérieur à l'autre à un prix donné. Typiquement, un ratio de 3:1 ou plus est considéré comme une imbalance significative. Si tu vois <strong>40 x 400</strong> à un prix (ratio 10:1 en faveur des acheteurs), c'est une imbalance claire — les acheteurs écrasent les vendeurs à ce niveau.</p>
+
+      <p><strong>Les stacked imbalances</strong> (imbalances empilées) sont le signal le plus puissant du footprint. Quand tu vois 3, 4, 5 niveaux de prix consécutifs avec des imbalances dans la même direction, c'est une tendance agressive. Les institutionnels achètent (ou vendent) de manière systématique à chaque tick. C'est un train en marche — tu ne te mets pas devant, tu montes dedans.</p>
+
+      <h3>Le POC du footprint</h3>
+
+      <p>Chaque chandelier footprint a son propre POC — le prix avec le plus grand volume échangé dans ce chandelier. Un chandelier haussier dont le POC est dans le tiers supérieur montre que l'essentiel de l'activité s'est concentré dans la partie haute — les acheteurs ont maintenu la pression jusqu'au bout. Un chandelier haussier dont le POC est dans le tiers inférieur montre que le volume s'est concentré en bas — le mouvement haussier a manqué de participation dans sa partie haute. Signal de faiblesse.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Footprint : patience obligatoire</p>
+        <p>Le footprint est l'outil le plus puissant pour confirmer un trade — mais il nécessite 3-6 mois de pratique avant de devenir naturel. Patience. Commence par regarder le footprint en 5 minutes pour comprendre les dynamiques, puis descends en 1 minute pour les entrées précises. Ne trade pas le footprint avant de l'avoir observé pendant au moins 100 heures.</p>
+      </div>
+
+      <p>En pratique, utilise le footprint en <strong>1 minute</strong> pour des entrées chirurgicales et en <strong>5 minutes</strong> pour comprendre la direction dominante. Le footprint 5 minutes te donne le contexte, le footprint 1 minute te donne le timing.</p>
+
+      <!-- ======================== -->
+      <h2 id="cvd">Le CVD (Cumulative Volume Delta)</h2>
+
+      <p>Le <a href="/lexique/cvd.html">CVD</a> (Cumulative Volume Delta) est la somme cumulée du delta au fil du temps. Rappel : le delta = achats agressifs (market buys) - ventes agressives (market sells). Le CVD trace cette somme sur un graphique, comme une ligne qui monte quand les acheteurs agressifs dominent et descend quand les vendeurs agressifs dominent.</p>
+
+      <p>En soi, la direction du CVD te dit qui est le plus agressif en ce moment. Mais le vrai pouvoir du CVD, c'est quand il <strong>diverge</strong> du prix.</p>
+
+      <h3>La divergence CVD — le signal principal</h3>
+
+      <p>C'est le signal le plus fiable de l'order flow trading. Point.</p>
+
+      <p><strong>Divergence baissière</strong> : le prix fait de nouveaux plus hauts, mais le CVD fait des plus hauts <strong>décroissants</strong>. Concrètement, le prix monte à 18500, puis 18520, puis 18535 — mais le CVD au moment de ces sommets est à +1200, +900, +650. Les acheteurs agressifs sont de moins en moins présents à chaque nouveau sommet. Le mouvement haussier perd son carburant. C'est un signal de retournement baissier potentiel — les acheteurs s'épuisent, et quand ils arrêtent, les vendeurs prennent le relais.</p>
+
+      <p><strong>Divergence haussière</strong> : le prix fait de nouveaux plus bas, mais le CVD fait des plus bas <strong>croissants</strong>. Le prix descend à 18400, 18380, 18365 — mais le CVD passe de -800 à -500 à -300. Les vendeurs agressifs perdent de l'intensité à chaque nouveau creux. Le momentum vendeur s'essouffle. Signal de retournement haussier potentiel.</p>
+
+      <p>Pourquoi c'est si puissant ? Parce que la divergence CVD te montre une déconnexion entre le prix (ce que tout le monde voit) et la participation réelle (ce que seuls les traders order flow voient). Le prix peut continuer à monter par inertie, par stops qui sautent, par des ordres limites qui se déclenchent — mais si les acheteurs agressifs ne sont plus là pour pousser, le mouvement est condamné.</p>
+
+      <p>La divergence CVD est mon signal d'entrée principal. Quand je la vois sur le NQ, combinée à un niveau de volume profile significatif, je sais que j'ai un edge statistique. C'est le genre de setup qui te donne confiance pour appuyer sur le bouton.</p>
+
+      <h3>CVD et confirmation</h3>
+
+      <p>Le CVD fonctionne aussi en mode confirmation (sans divergence). Si le prix monte et le CVD monte aussi de manière proportionnelle, le mouvement est sain — il y a une participation réelle des acheteurs agressifs. C'est un feu vert pour rester dans un trade directionnel ou pour prendre un breakout. Si le prix monte mais le CVD est plat, le mouvement est suspect — il manque d'agression.</p>
+
+      <!-- ======================== -->
+      <h2 id="tape-reading">Le Tape Reading</h2>
+
+      <p>Le tape reading, c'est la lecture du flux brut des transactions en temps réel — le Time & Sales (T&S). Chaque ligne du T&S te montre une transaction : prix, taille, et si elle a été exécutée au bid ou à l'ask. C'est le flux d'ordres dans sa forme la plus pure, non filtrée, non agrégée.</p>
+
+      <p>Le tape reading est la compétence la plus avancée de l'order flow, et aussi la plus ancienne — les traders de la Bourse de Chicago lisaient le tape (la bande de cotation) bien avant l'invention des ordinateurs. Aujourd'hui, le principe est le même, mais la vitesse est incomparablement plus grande.</p>
+
+      <h3>Ce que tu cherches sur le tape</h3>
+
+      <p><strong>Les size prints (gros ordres).</strong> Sur le NQ, un ordre de 50+ contrats au marché est notable. Un ordre de 100+ est significatif. Un ordre de 200+ est institutionnel. Quand tu vois un print de 150 contrats à l'ask pendant un pullback dans une tendance haussière, un institutionnel vient d'acheter massivement dans la faiblesse. C'est un signal de conviction acheteuse — ils ne se contentent pas d'ordres limites discrets, ils frappent au marché.</p>
+
+      <p><strong>La vitesse du tape.</strong> Un tape rapide (les lignes défilent à toute vitesse) signifie une participation élevée — le marché est actif, les mouvements sont plus susceptibles d'être suivis. Un tape lent signifie un faible intérêt — les mouvements de prix sont moins fiables, plus susceptibles de reverser. Ne prends pas de breakout sur un tape lent.</p>
+
+      <p><strong>Les cluster prints.</strong> Tu vois des exécutions répétées au même prix exact, en séquence rapide : 50 à 18452, 50 à 18452, 50 à 18452, 50 à 18452. C'est un iceberg order qui se fait remplir. Quelqu'un a placé un ordre massif (probablement 200-500+ contrats) caché derrière des tranches de 50. Tu vois les 50, mais pas le total. C'est de l'activité institutionnelle pure — et le prix exact de ces cluster prints devient un niveau de référence.</p>
+
+      <p><strong>Les sweeps.</strong> Un sweep, c'est quand un gros ordre au marché consomme plusieurs niveaux de prix d'un coup — il "nettoie" le carnet. Sur le tape, tu vois des exécutions en cascade : 30 à 18452, 45 à 18453, 60 à 18454, 80 à 18455 — tout en quelques millisecondes. C'est un signal d'urgence : quelqu'un veut être exécuté MAINTENANT, quel que soit le prix. Les sweeps marquent souvent le début d'un mouvement impulsif.</p>
+
+      <p>Le tape reading prend des années à maîtriser. Tu ne le liras pas comme un pro après avoir lu cet article. Mais commence à observer le Time & Sales sur tes sessions de trading — même passivement, ton cerveau commencera à reconnaître des patterns. C'est un processus de reconnaissance de patterns qui s'affine avec l'expérience.</p>
+
+      <!-- ======================== -->
+      <h2 id="vwap">Le VWAP (Volume Weighted Average Price)</h2>
+
+      <p>Le <a href="/lexique/vwap.html">VWAP</a> (Volume Weighted Average Price) est la moyenne des prix pondérée par le volume sur une session. C'est le prix moyen auquel le marché a réellement échangé — et c'est <strong>le</strong> benchmark des institutionnels.</p>
+
+      <p>Pourquoi les institutionnels l'utilisent ? Parce que quand un fonds doit acheter 10 000 contrats de NQ, sa performance est mesurée par rapport au VWAP. S'il a acheté en moyenne en dessous du VWAP, il a fait un bon travail d'exécution. Au-dessus, il a surpayé. C'est le standard de l'industrie — et ça signifie que des milliards de dollars de flux institutionnel gravitent autour de ce niveau chaque jour.</p>
+
+      <h3>Le VWAP comme support/résistance dynamique</h3>
+
+      <p>Le prix au-dessus du VWAP = contexte haussier. Les acheteurs qui ont accumulé dans la session sont en profit, ils n'ont pas de raison de vendre. Les vendeurs qui ont shorté sont en perte, ils pourraient être forcés de couvrir (ce qui pousse le prix encore plus haut).</p>
+
+      <p>Le prix en dessous du VWAP = contexte baissier. Exactement l'inverse. Les acheteurs de la session sont sous l'eau, la pression vendeuse domine.</p>
+
+      <p>Mais le VWAP n'est pas juste un indicateur de direction — c'est un niveau d'action.</p>
+
+      <h3>Stratégies VWAP concrètes</h3>
+
+      <p><strong>Le VWAP Reclaim (reprise).</strong> Le prix passe sous le VWAP, consolide un moment, puis le reprend par le haut avec un delta positif fort. C'est un signal d'achat. Le scénario : les vendeurs ont poussé le prix sous le VWAP, mais les acheteurs ont absorbé la vente et reprennent le contrôle. La confirmation : le delta est clairement positif au moment de la reprise (pas un drift passif), et le footprint montre des imbalances acheteuses. Le stop : juste sous le low du mouvement qui a cassé le VWAP.</p>
+
+      <p><strong>Le VWAP Rejection (rejet).</strong> Le prix essaie de reprendre le VWAP par en dessous, touche le VWAP ou le traverse à peine, mais échoue. Le delta est faible ou négatif au moment du test. C'est un signal de vente. Les acheteurs n'ont pas la force de reprendre le niveau — les vendeurs restent en contrôle. Le stop : juste au-dessus du VWAP.</p>
+
+      <p><strong>Le VWAP Magnet Fade.</strong> Quand le prix s'éloigne de plus de 1% du VWAP (sur les futures majeurs), il a tendance à y revenir. C'est l'effet "aimant". Les institutionnels qui ont raté le mouvement vont acheter/vendre vers le VWAP pour obtenir un bon prix d'exécution, ce qui crée une force de rappel naturelle. Concrètement : si le NQ trade à 1.5% au-dessus du VWAP en début d'après-midi, cherche des signaux de faiblesse (delta divergence, tape qui ralentit) pour fade le mouvement avec un target de retour vers le VWAP.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le VWAP : ton outil n°1</p>
+        <p>Le VWAP est LE niveau que les institutionnels surveillent. Si tu ne retiens qu'un seul outil de cet article, c'est celui-ci. Il te donne instantanément le biais directionnel de la session (prix au-dessus = bullish, en dessous = bearish), un niveau d'action concret (trades de reprise/rejet), et un effet de gravité mesurable (magnet fade). Aucun autre indicateur ne combine autant d'utilité dans un seul niveau.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="checklist-entree">Le Checklist d'Entrée : la Règle des 2/3</h2>
+
+      <p>Maintenant que tu connais les outils, voici comment les combiner pour prendre des décisions. Cette section est la plus importante de l'article — c'est ici que l'order flow passe de la théorie à l'edge réel.</p>
+
+      <p>Avant CHAQUE entrée en position, tu dois vérifier 3 critères :</p>
+
+      <p><strong>1. Le delta confirme.</strong> Le CVD va dans le sens de ton trade. Si tu veux acheter, le delta doit être positif ou montrer une divergence haussière. Si tu veux vendre, le delta doit être négatif ou montrer une divergence baissière. Un achat avec un delta négatif et en chute libre, c'est attraper un couteau en vol.</p>
+
+      <p><strong>2. Le DOM montre de l'absorption ou du stacking.</strong> Tu vois des ordres limites significatifs qui défendent ton niveau d'entrée (absorption), ou un empilement d'ordres dans la direction de ton trade (stacking). C'est la preuve que des participants avec du capital soutiennent ton scénario.</p>
+
+      <p><strong>3. Le footprint montre des imbalances.</strong> À l'intérieur des chandeliers proches de ton entrée, tu vois des imbalances dans la direction de ton trade. Idéalement, des stacked imbalances qui confirment une pression directionnelle agressive.</p>
+
+      <p><strong>La règle :</strong></p>
+
+      <p><strong>2 critères sur 3 confirmés</strong> = trade normal, taille de position standard.<br>
+      <strong>1 critère sur 3 confirmé</strong> = réduis ta taille de 50%, ou skip le trade.<br>
+      <strong>0 critère confirmé</strong> = ne prends PAS le trade. Peu importe ce que te dit ton "feeling".</p>
+
+      <p>Cette règle m'a sauvé des centaines de trades perdants. La discipline de checker ces 3 points avant d'appuyer sur le bouton élimine 80% des entrées impulsives. C'est fastidieux au début, ça devient automatique après quelques semaines.</p>
+
+      <h3>Les pièges classiques</h3>
+
+      <p><strong>Le Stop Hunt.</strong> Le prix spike au-delà d'un niveau clé — un high de session, un support évident — déclenchant tous les stops placés au-dessus/en dessous. Comment l'identifier avec l'order flow ? Le spike se fait avec un <strong>delta contraire</strong> à la direction du mouvement. Exemple : le prix spike à la hausse au-dessus du high de la session, mais le delta montre de la vente agressive INTO le spike. Les stops des vendeurs sautent (achats forcés qui poussent le prix up), mais les vrais acheteurs agressifs ne sont pas là. Retournement immédiat. C'est un setup de short classique.</p>
+
+      <p><strong>Le Fake Breakout.</strong> Le prix casse un niveau de résistance, mais avec un volume faible et un delta mou. Le DOM est thin (peu de liquidité) — le prix a traversé facilement, non pas parce que les acheteurs étaient forts, mais parce qu'il n'y avait personne en face. Aucune participation. Le prix revient dans le range en quelques minutes. Le vrai breakout montre l'inverse : volume élevé, delta fort, stacked imbalances dans le sens de la cassure, DOM qui se reconstruit rapidement dans la direction du breakout.</p>
+
+      <!-- ======================== -->
+      <h2 id="commencer-order-flow">Par où commencer avec l'order flow ?</h2>
+
+      <h3>Les outils recommandés</h3>
+
+      <p><strong>Sierra Chart</strong> — la référence pour les futures. C'est la plateforme utilisée par la majorité des traders order flow professionnels sur NQ et ES. Extrêmement puissante, personnalisable à l'infini, mais la courbe d'apprentissage est raide. Interface datée, configuration technique — il faut investir du temps pour la maîtriser. C'est un investissement qui vaut chaque heure.</p>
+
+      <p><strong>ATAS (Advanced Time and Sales)</strong> — un excellent choix pour les débutants en order flow. Interface plus moderne que Sierra, footprint et volume profile intégrés, configuration plus intuitive. Le meilleur compromis puissance/accessibilité.</p>
+
+      <p><strong>Bookmap</strong> — la meilleure visualisation du DOM sous forme de heatmap. Tu vois littéralement la liquidité en couleur sur ton graphique — les zones chaudes (beaucoup d'ordres) et froides (peu d'ordres) en temps réel. Idéal pour comprendre visuellement la mécanique du carnet d'ordres.</p>
+
+      <p><strong>Quantower</strong> — l'option gratuite (version de base). Moins puissant que les trois précédents, mais suffisant pour débuter et découvrir les concepts sans investir. Quand tu es prêt à passer au niveau supérieur, migre vers Sierra ou ATAS.</p>
+
+      <p>Tu auras aussi besoin d'un <strong>data feed professionnel</strong> : CQG ou Rithmic. Ces flux de données sont le carburant de tes outils — sans un data feed de qualité, tes données d'order flow sont inexactes ou en retard, ce qui rend l'analyse inutile.</p>
+
+      <h3>Le parcours d'apprentissage recommandé</h3>
+
+      <p><strong>Mois 1 — VWAP uniquement.</strong> Ajoute le VWAP à ton graphique. Chaque session, note la position du prix par rapport au VWAP. Identifie les reclaims, les rejections, les fades. Ne trade que des setups VWAP. L'objectif : comprendre comment le prix interagit avec ce niveau et développer un biais directionnel basé sur le VWAP.</p>
+
+      <p><strong>Mois 2-3 — Ajoute le Volume Profile.</strong> Identifie les POC, les VAH/VAL, les HVN et LVN. Combine-les avec le VWAP. Un rejet du VWAP qui se produit exactement sur un LVN du composite profile ? C'est un setup haute probabilité. L'objectif : cartographier les niveaux de prix significatifs en utilisant le volume, pas les lignes horizontales arbitraires.</p>
+
+      <p><strong>Mois 3-5 — Ajoute le Footprint et le CVD.</strong> Commence à lire le delta, les imbalances, les divergences CVD. C'est ici que les choses deviennent sérieuses — et que ton edge commence à se construire. L'objectif : confirmer ou infirmer tes thèses de trading avec des données d'order flow concrètes.</p>
+
+      <p><strong>Mois 6+ — Ajoute le DOM et le Tape Reading.</strong> Le DOM et le tape sont des skills qui ne s'apprennent pas dans un article — ils se développent par l'observation quotidienne. Ajoute le DOM ladder à côté de ton graphique et observe. L'objectif : affiner tes entrées et identifier l'activité institutionnelle en temps réel.</p>
+
+      <p>Pour aller plus loin, <a href="https://hubtrading.fr" target="_blank" rel="noopener">HubTrading propose des modules de formation gratuits</a> dédiés à l'order flow — du carnet d'ordres au footprint, avec des exercices pratiques et une IA qui t'accompagne.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Marché centralisé obligatoire</p>
+        <p>L'order flow ne fonctionne correctement que sur les marchés centralisés (futures). Sur le Forex spot, les données de volume sont fragmentées entre les différents fournisseurs de liquidité et tu ne vois qu'une fraction du volume réel. Commence par le NQ ou l'ES — ce sont les futures les plus liquides, avec les données d'order flow les plus propres et les plus fiables.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>L'order flow est-il réservé aux professionnels ?</strong></summary>
+          <p>Non, mais il demande plus d'apprentissage que l'analyse technique classique. Commence par le VWAP et le Volume Profile — ces deux outils sont accessibles à toute personne motivée. Le DOM et le footprint viendront ensuite, avec la pratique. L'important est de progresser étape par étape plutôt que de vouloir tout maîtriser d'un coup. Avec 1-2 heures d'étude quotidienne, tu peux devenir compétent en 6 mois.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quels outils utiliser pour l'order flow ?</strong></summary>
+          <p>Sierra Chart est la référence pour les futures (NQ, ES) — puissant mais courbe d'apprentissage raide. ATAS est un bon choix pour les débutants avec une interface plus intuitive. Bookmap offre une visualisation heatmap du DOM très parlante. Quantower propose une option gratuite correcte pour débuter. Tu auras aussi besoin d'un data feed professionnel : CQG ou Rithmic sont les standards de l'industrie.</p>
+        </details>
+
+        <details>
+          <summary><strong>L'order flow fonctionne-t-il sur le Forex ?</strong></summary>
+          <p>Partiellement seulement. Le Forex est un marché OTC (de gré à gré), ce qui signifie que les données de volume sont fragmentées entre différents fournisseurs de liquidité. Tu ne vois qu'une fraction du volume réel. L'order flow fonctionne le mieux sur les marchés centralisés : les futures (NQ, ES, CL), et certaines plateformes crypto (Binance, Bybit) qui publient leurs données de carnet d'ordres.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quelle est la différence entre order flow et analyse technique ?</strong></summary>
+          <p>L'analyse technique lit le passé : elle utilise des indicateurs retardés (moyennes mobiles, RSI, MACD) et des patterns graphiques formés par l'historique des prix. L'order flow lit le présent : il montre qui achète et qui vend en ce moment, avec quelle agressivité, et à quel prix. L'AT te dit ce qui s'est passé, l'order flow te dit ce qui se passe. Les deux se complètent parfaitement : l'AT te donne le contexte et les niveaux, l'order flow te donne le timing et la confirmation.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-que-lorder-flow" class="toc__link">Qu'est-ce que l'order flow ?</a></li>
+          <li><a href="#carnet-ordres-dom" class="toc__link">Le carnet d'ordres (DOM)</a></li>
+          <li><a href="#volume-profile" class="toc__link">Le Volume Profile</a></li>
+          <li><a href="#auction-market-theory" class="toc__link">Auction Market Theory</a></li>
+          <li><a href="#footprint-chart" class="toc__link">Le Footprint Chart</a></li>
+          <li><a href="#cvd" class="toc__link">Le CVD</a></li>
+          <li><a href="#tape-reading" class="toc__link">Le Tape Reading</a></li>
+          <li><a href="#vwap" class="toc__link">Le VWAP</a></li>
+          <li><a href="#checklist-entree" class="toc__link">Checklist d'entrée (2/3)</a></li>
+          <li><a href="#commencer-order-flow" class="toc__link">Par où commencer ?</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>L'order flow lit le présent, l'AT lit le passé — utilise les deux</li>
+          <li>La divergence CVD est le signal d'entrée principal</li>
+          <li>Règle des 2/3 : delta + DOM + footprint — 2 confirmations minimum</li>
+          <li>Le VWAP est le benchmark institutionnel — ton niveau n°1</li>
+          <li>Commence par le VWAP, puis Volume Profile, puis Footprint, puis DOM</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/analyse-technique.html">Analyse technique : le guide complet</a></li>
+          <li><a href="/guides/price-action.html">Le Price Action</a></li>
+          <li><a href="/guides/gestion-du-risque.html">La gestion du risque</a></li>
+          <li><a href="/guides/volume-profile.html">Le Volume Profile en détail</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/analyse-technique.html" class="card card-article fade-in">
+        <span class="tag tag-at">Analyse Technique</span>
+        <h3 class="card-article__title">Analyse technique : le guide complet</h3>
+        <p class="card-article__excerpt">Chandeliers, indicateurs, figures chartistes : tout pour lire les graphiques comme un pro.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+      <a href="/guides/price-action.html" class="card card-article fade-in">
+        <span class="tag tag-at">Price Action</span>
+        <h3 class="card-article__title">Le Price Action</h3>
+        <p class="card-article__excerpt">Trader avec le prix nu : structure de marché, supply/demand, et lecture des chandeliers.</p>
+        <div class="card-article__meta"><span>&#9201; 18 min</span></div>
+      </a>
+      <a href="/guides/gestion-du-risque.html" class="card card-article fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h3 class="card-article__title">La gestion du risque</h3>
+        <p class="card-article__excerpt">Le facteur n°1 qui sépare les traders gagnants des perdants.</p>
+        <div class="card-article__meta"><span>&#9201; 10 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">À propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Catégories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Écosystème</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

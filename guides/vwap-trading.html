@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le VWAP en Trading : Guide Complet (2026)</title>
+  <meta name="description" content="Le VWAP est LE benchmark des institutionnels. Apprends à l'utiliser comme support/résistance dynamique. Stratégies et setups concrets.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/vwap-trading.html">
+
+  <meta property="og:title" content="Le VWAP en Trading : Guide Complet (2026)">
+  <meta property="og:description" content="Le VWAP est LE benchmark des institutionnels. Apprends à l'utiliser comme support/résistance dynamique.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/vwap-trading.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le VWAP en Trading : Guide Complet (2026)">
+  <meta name="twitter:description" content="Le VWAP : le benchmark des institutionnels. Stratégies et setups concrets.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Le VWAP en Trading : Guide Complet",
+    "description": "Le VWAP est LE benchmark des institutionnels. Apprends à l'utiliser comme support/résistance dynamique. Stratégies et setups concrets.",
+    "author": {"@type": "Organization", "name": "Guide Trading", "url": "https://guide-trading.fr"},
+    "publisher": {"@type": "Organization", "name": "Guide Trading"},
+    "datePublished": "2026-04-03",
+    "dateModified": "2026-04-03",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://guide-trading.fr/guides/vwap-trading.html"}
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {"@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://guide-trading.fr/"},
+      {"@type": "ListItem", "position": 2, "name": "Guides", "item": "https://guide-trading.fr/guides/"},
+      {"@type": "ListItem", "position": 3, "name": "VWAP Trading"}
+    ]
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Le VWAP marche-t-il sur le Forex ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le VWAP sur le Forex spot est peu fiable car le Forex est un marché décentralisé (OTC). Il n'existe pas de volume centralisé — chaque broker affiche son propre volume, qui ne représente qu'une infime fraction du marché réel. Pour un VWAP fiable, trade les futures : le 6E (EUR/USD futures), le 6B (GBP/USD futures) ou le 6J (USD/JPY futures) sur le CME ont un volume centralisé et transparent."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Quand le VWAP se réinitialise-t-il ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le VWAP standard se réinitialise chaque jour à l'ouverture de la session. Sur les futures du CME, c'est généralement à 18h00 EST (minuit heure de Paris). Cela signifie que le VWAP de la veille n'existe plus — chaque journée repart de zéro. C'est pour cela que le VWAP est un outil intraday par nature. Il existe des VWAP hebdomadaires et mensuels (anchored VWAP) qui ne se réinitialisent pas quotidiennement, mais le VWAP standard est toujours daily."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Peut-on utiliser le VWAP seul pour trader ?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Le VWAP seul te donne un biais directionnel solide (au-dessus = bullish, en dessous = bearish) et des niveaux de référence. Mais pour des entrées précises, tu as besoin de confirmation. Le delta (via le footprint chart), le Volume Profile et la price action sont les meilleurs compléments. Le VWAP te dit OÙ regarder, les autres outils te disent QUAND agir."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil">
+        <span class="navbar__logo-mark" aria-hidden="true">GT</span>
+        <span class="navbar__logo-text">Guide <span>Trading</span></span>
+      </a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">&Agrave;&nbsp;propos</a>
+      </div>
+      <div class="navbar__search">
+        <span class="navbar__search-icon" aria-hidden="true">&#128269;</span>
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site">
+      </div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a>
+      <a href="/lexique/" class="navbar__link">Lexique</a>
+      <a href="/outils/" class="navbar__link">Outils</a>
+      <a href="/a-propos.html" class="navbar__link">&Agrave; propos</a>
+      <div class="navbar__mobile-search">
+        <input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher">
+      </div>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <a href="/guides/" class="breadcrumb__link">Guides</a>
+      <span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span>
+      <span class="breadcrumb__current">VWAP Trading</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h1>Le VWAP en Trading : Guide Complet</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 15 min de lecture</span>
+          <span>&#x1F4C5; Mis &agrave; jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Si tu ne devais retenir qu'un seul outil d'order flow, ce serait le <a href="/lexique/vwap.html">VWAP</a>. Le Volume Weighted Average Price est le benchmark universel des institutionnels — c'est le prix moyen pond&eacute;r&eacute; par le volume, et c'est la r&eacute;f&eacute;rence &agrave; laquelle les gros fonds mesurent la qualit&eacute; de leurs ex&eacute;cutions.</p>
+
+      <p>Dans ce guide, tu vas comprendre ce qu'est le VWAP, pourquoi les institutionnels l'utilisent obsessivement, comment l'exploiter comme support/r&eacute;sistance dynamique, et surtout deux strat&eacute;gies concr&egrave;tes que tu pourras appliquer d&egrave;s demain : le VWAP Reclaim et le VWAP Rejection.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">L'outil n&deg;1 de l'order flow</p>
+        <p>Si tu ne connais qu'un seul outil d'order flow, c'est le VWAP. Les gros fonds mesurent la qualit&eacute; de leurs ex&eacute;cutions par rapport au VWAP — c'est leur benchmark quotidien. Quand un g&eacute;rant de fonds ach&egrave;te en dessous du VWAP, c'est une "bonne ex&eacute;cution". Au-dessus, c'est une mauvaise. Tout part de l&agrave;.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-que-le-vwap">Qu'est-ce que le VWAP ?</h2>
+
+      <p>Le VWAP (Volume Weighted Average Price) est le prix moyen pond&eacute;r&eacute; par le volume sur une p&eacute;riode donn&eacute;e. Sa formule est simple :</p>
+
+      <p><strong>VWAP = Somme cumul&eacute;e (Prix &times; Volume) / Somme cumul&eacute;e (Volume)</strong></p>
+
+      <p>&Agrave; chaque transaction, le prix est multipli&eacute; par le volume &eacute;chang&eacute;. On cumule ce produit depuis le d&eacute;but de la session, puis on divise par le volume total cumul&eacute;. Le r&eacute;sultat est une ligne sur ton graphique qui repr&eacute;sente le "vrai prix moyen" de la journ&eacute;e, pond&eacute;r&eacute; par l'activit&eacute; r&eacute;elle.</p>
+
+      <p>Contrairement &agrave; une moyenne mobile classique qui donne le m&ecirc;me poids &agrave; chaque bougie, le VWAP donne plus de poids aux niveaux de prix o&ugrave; le volume a &eacute;t&eacute; le plus important. Si 80% du volume de la journ&eacute;e s'est &eacute;chang&eacute; entre 18 400 et 18 500 sur le NQ, le VWAP sera ancr&eacute; dans cette zone — peu importe que le prix ait bri&egrave;vement touch&eacute; 18 600.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">VWAP en une phrase</p>
+        <p>Le VWAP est le prix moyen auquel un contrat a &eacute;t&eacute; &eacute;chang&eacute; sur la journ&eacute;e, pond&eacute;r&eacute; par le volume. C'est le "fair price" — le prix que le march&eacute; consid&egrave;re comme juste &agrave; un instant donn&eacute;.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="pourquoi-institutionnels">Pourquoi les institutionnels utilisent le VWAP</h2>
+
+      <p>Quand un fonds d'investissement veut acheter 10 000 contrats NQ, il ne peut pas tout acheter d'un coup — il ferait exploser le prix. Il &eacute;tale ses achats sur la journ&eacute;e. Et &agrave; la fin de la journ&eacute;e, son benchmark de performance, c'est le VWAP.</p>
+
+      <p>Si le fonds a achet&eacute; ses 10 000 contrats &agrave; un prix moyen inf&eacute;rieur au VWAP, le trader institutionnel a fait un "bon travail". Si le prix moyen est au-dessus du VWAP, il a sous-perform&eacute;. C'est aussi simple que &ccedil;a.</p>
+
+      <p>Ce m&eacute;canisme a des cons&eacute;quences directes sur le comportement du march&eacute;. Quand le prix est en dessous du VWAP, les institutionnels sont incit&eacute;s &agrave; acheter (ils obtiennent un prix "en dessous de la moyenne"). Quand le prix est au-dessus, ils sont incit&eacute;s &agrave; vendre ou &agrave; attendre. Cette dynamique cr&eacute;e une gravit&eacute; naturelle autour du VWAP.</p>
+
+      <p>C'est pour cette raison que le VWAP est l'une des lignes les plus respect&eacute;es sur un graphique intraday. Ce n'est pas un indicateur technique abstrait — c'est un niveau autour duquel des milliards de dollars d'ordres s'ex&eacute;cutent chaque jour.</p>
+
+      <!-- ======================== -->
+      <h2 id="support-resistance-dynamique">Le VWAP comme support/r&eacute;sistance dynamique</h2>
+
+      <p>La r&egrave;gle de base est d'une simplicit&eacute; d&eacute;sarmante :</p>
+
+      <p><strong>Prix au-dessus du VWAP = biais haussier.</strong> Les acheteurs contr&ocirc;lent. Cherche des longs.</p>
+
+      <p><strong>Prix en dessous du VWAP = biais baissier.</strong> Les vendeurs contr&ocirc;lent. Cherche des shorts.</p>
+
+      <p>C'est basique, mais c'est redoutablement efficace. Sur le NQ, si le prix est au-dessus du VWAP depuis l'ouverture de la session r&eacute;guli&egrave;re (9h30 EST), les probabilit&eacute;s favorisent la continuation haussi&egrave;re. Tenter des shorts contre le VWAP dans ce contexte, c'est nager &agrave; contre-courant.</p>
+
+      <p>Le VWAP agit comme un support dynamique en tendance haussi&egrave;re : le prix s'&eacute;loigne vers le haut, revient tester le VWAP, rebondit, et repart. Tant que ce pattern se r&eacute;p&egrave;te, la tendance est intacte. Quand le prix casse le VWAP et cl&ocirc;ture en dessous, le biais change.</p>
+
+      <p>En tendance baissi&egrave;re, c'est l'inverse. Le VWAP devient un plafond que le prix tente de percer mais dont il se fait rejeter &agrave; chaque tentative.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le VWAP se reset chaque jour</p>
+        <p>Le VWAP se r&eacute;initialise chaque jour &agrave; l'ouverture de la session. Il n'est fiable que sur les march&eacute;s centralis&eacute;s (futures). Sur le Forex spot, les donn&eacute;es de volume sont fragment&eacute;es entre les diff&eacute;rents fournisseurs de liquidit&eacute;, ce qui rend le VWAP peu fiable. Pour le Forex, utilise plut&ocirc;t les futures correspondants (6E, 6B, etc.).</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="vwap-reclaim">Strat&eacute;gie VWAP Reclaim</h2>
+
+      <p>Le VWAP Reclaim est l'un des setups les plus puissants en intraday. C'est essentiellement le concept de "Setup 2" utilis&eacute; par les traders institutionnels.</p>
+
+      <p><strong>Le sc&eacute;nario</strong> : le prix &eacute;volue en dessous du VWAP (biais baissier). Puis, une impulsion ach&egrave;te pousse le prix au-dessus du VWAP. Le prix recule, reteste le VWAP par le dessus (pullback), et tient. Le VWAP passe de r&eacute;sistance &agrave; support. C'est le Reclaim.</p>
+
+      <p><strong>Les conditions d'entr&eacute;e</strong> :</p>
+
+      <p>1. Le prix &eacute;tait en dessous du VWAP depuis un certain temps (30 min minimum).</p>
+
+      <p>2. Une impulsion haussi&egrave;re franche (pas un drift lent) pousse le prix au-dessus du VWAP.</p>
+
+      <p>3. Le prix revient tester le VWAP par le dessus et ne le casse pas — il tient comme support.</p>
+
+      <p>4. <strong>Confirmation delta</strong> : sur le <a href="/guides/footprint-chart.html">footprint chart</a>, le delta est positif au moment du test du VWAP. Les acheteurs agressifs d&eacute;fendent le niveau.</p>
+
+      <p>5. Entr&eacute;e long sur la confirmation, stop loss sous le VWAP (5-10 ticks), target au dernier swing high ou &agrave; la bande VWAP +1 &eacute;cart-type.</p>
+
+      <p>Exemple concret : sur le NQ en 5 minutes, le prix est sous le VWAP (19 200) depuis l'ouverture. &Agrave; 11h00, une vague d'achats pousse le prix &agrave; 19 230. Le prix revient &agrave; 19 202 (juste au-dessus du VWAP), le footprint montre un delta fortement positif avec absorption. Tu entres long &agrave; 19 205, stop &agrave; 19 190, target &agrave; 19 260. Ratio risk/reward de 1:3,5.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le timing du Reclaim</p>
+        <p>Les meilleurs VWAP Reclaims surviennent pendant les heures de fort volume : l'ouverture US (9h30-10h30 EST) et la derni&egrave;re heure (15h00-16h00 EST). &Eacute;vite les reclaims en milieu de journ&eacute;e (12h00-14h00 EST) — le volume est trop faible pour confirmer le mouvement.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="vwap-rejection">Strat&eacute;gie VWAP Rejection</h2>
+
+      <p>Le VWAP Rejection est le miroir du Reclaim. Au lieu d'un changement de biais, c'est une confirmation de la tendance en cours.</p>
+
+      <p><strong>Le sc&eacute;nario</strong> : le prix est en dessous du VWAP (biais baissier). Il tente de remonter vers le VWAP, le touche ou s'en approche — mais se fait rejeter. Le VWAP agit comme r&eacute;sistance. Le biais baissier est confirm&eacute;.</p>
+
+      <p><strong>Les conditions d'entr&eacute;e</strong> :</p>
+
+      <p>1. Le prix est en tendance sous le VWAP depuis au moins 30 minutes.</p>
+
+      <p>2. Un rallye correctionnel am&egrave;ne le prix au contact du VWAP.</p>
+
+      <p>3. Le prix montre des signes de rejet : m&egrave;che haute, bougie de rejet, engulfing baissier.</p>
+
+      <p>4. <strong>Confirmation delta</strong> : delta n&eacute;gatif au contact du VWAP. Les vendeurs reprennent le contr&ocirc;le.</p>
+
+      <p>5. Entr&eacute;e short sur la confirmation, stop loss au-dessus du VWAP + m&egrave;che de rejet, target au dernier bas ou au VAL du <a href="/guides/volume-profile-trading.html">Volume Profile</a>.</p>
+
+      <p>Ce setup est particuli&egrave;rement fiable dans les journ&eacute;es de tendance forte. Quand le march&eacute; ouvre gap down et tente de remonter au VWAP sans y arriver, c'est un signe de faiblesse extr&ecirc;me. Les vendeurs contr&ocirc;lent totalement.</p>
+
+      <!-- ======================== -->
+      <h2 id="vwap-delta">VWAP + Delta : la combinaison gagnante</h2>
+
+      <p>Le VWAP te dit O&Ugrave; regarder. Le delta te dit QUI gagne la bataille &agrave; ce niveau.</p>
+
+      <p>Le delta, c'est la diff&eacute;rence entre le volume achet&eacute; de mani&egrave;re agressive (market buy orders frappant l'ask) et le volume vendu de mani&egrave;re agressive (market sell orders frappant le bid). Un delta positif = plus d'acheteurs agressifs. Un delta n&eacute;gatif = plus de vendeurs agressifs.</p>
+
+      <p>Quand le prix touche le VWAP et que le delta est fortement positif (sur le footprint 1 minute), les acheteurs d&eacute;fendent activement ce niveau. C'est une confirmation puissante pour un long. Quand le delta est n&eacute;gatif au contact du VWAP, les vendeurs rejettent le niveau — confirmation pour un short.</p>
+
+      <p>Sans le delta, tu trades "aveugl&eacute;ment" sur le simple contact avec le VWAP. Avec le delta, tu vois en temps r&eacute;el qui domine. C'est la diff&eacute;rence entre deviner et savoir.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Delta positif vs n&eacute;gatif</p>
+        <p><strong>Delta positif</strong> : plus d'ordres market buy que market sell &agrave; ce niveau de prix. Les acheteurs sont agressifs. <strong>Delta n&eacute;gatif</strong> : plus d'ordres market sell. Les vendeurs dominent. Au contact du VWAP, le signe du delta te donne le verdict : rebond ou rejet.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="bandes-vwap">Les bandes VWAP (&eacute;cart-type)</h2>
+
+      <p>Les bandes VWAP fonctionnent comme les bandes de Bollinger, mais pond&eacute;r&eacute;es par le volume. Elles ajoutent des niveaux d'&eacute;cart-type (standard deviation) au-dessus et en dessous du VWAP.</p>
+
+      <p><strong>Bande +1 / -1 &eacute;cart-type</strong> : contient environ 68% de l'activit&eacute;. C'est la "zone normale". Le prix oscille naturellement entre ces bandes en journ&eacute;e de range.</p>
+
+      <p><strong>Bande +2 / -2 &eacute;cart-type</strong> : contient environ 95% de l'activit&eacute;. Quand le prix touche la bande +2 ou -2, il est statistiquement "trop loin" du VWAP. C'est une zone d'extension extr&ecirc;me.</p>
+
+      <p>En pratique, les bandes VWAP servent de targets. Si tu entres long sur un VWAP Reclaim, ta target naturelle est la bande +1. Si le momentum est fort, vise la bande +2. &Agrave; l'inverse, quand le prix touche la bande +2 ou -2, c'est souvent un signal de mean reversion — le prix a tendance &agrave; revenir vers le VWAP.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Ne trade pas les bandes en journ&eacute;e de tendance</p>
+        <p>En journ&eacute;e de forte tendance, le prix peut rester coll&eacute; &agrave; la bande +2 pendant des heures. Fader (trader contre) un prix &agrave; la bande +2 dans une tendance forte est suicidaire. Les bandes sont des outils de mean reversion — elles ne fonctionnent que dans un march&eacute; qui oscille autour du VWAP.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="faq">Questions fr&eacute;quentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Le VWAP marche-t-il sur le Forex ?</strong></summary>
+          <p>Le VWAP sur le Forex spot est peu fiable car c'est un march&eacute; d&eacute;centralis&eacute; (OTC). Il n'y a pas de volume centralis&eacute;. Pour un VWAP fiable, trade les futures correspondants : 6E (EUR/USD), 6B (GBP/USD), 6J (USD/JPY) sur le CME, o&ugrave; le volume est centralis&eacute; et transparent.</p>
+        </details>
+
+        <details>
+          <summary><strong>Quand le VWAP se r&eacute;initialise-t-il ?</strong></summary>
+          <p>Le VWAP standard se r&eacute;initialise chaque jour &agrave; l'ouverture de la session (18h00 EST sur les futures CME, soit minuit heure de Paris). Chaque journ&eacute;e repart de z&eacute;ro. Il existe des VWAP ancr&eacute;s (anchored VWAP) hebdomadaires ou mensuels, mais le VWAP standard est toujours un outil intraday.</p>
+        </details>
+
+        <details>
+          <summary><strong>Peut-on utiliser le VWAP seul pour trader ?</strong></summary>
+          <p>Le VWAP seul te donne un biais directionnel solide et des niveaux de r&eacute;f&eacute;rence. Mais pour des entr&eacute;es pr&eacute;cises, tu as besoin de confirmation : le delta (footprint), le Volume Profile et la price action. Le VWAP te dit O&Ugrave; regarder, les autres outils te disent QUAND agir.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-que-le-vwap" class="toc__link">Qu'est-ce que le VWAP ?</a></li>
+          <li><a href="#pourquoi-institutionnels" class="toc__link">Pourquoi les institutionnels l'utilisent</a></li>
+          <li><a href="#support-resistance-dynamique" class="toc__link">Support/r&eacute;sistance dynamique</a></li>
+          <li><a href="#vwap-reclaim" class="toc__link">Strat&eacute;gie VWAP Reclaim</a></li>
+          <li><a href="#vwap-rejection" class="toc__link">Strat&eacute;gie VWAP Rejection</a></li>
+          <li><a href="#vwap-delta" class="toc__link">VWAP + Delta</a></li>
+          <li><a href="#bandes-vwap" class="toc__link">Les bandes VWAP</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem">&#x1F3AF; &Agrave; retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Le VWAP est le benchmark des institutionnels — pas un indicateur banal</li>
+          <li>Au-dessus du VWAP = biais haussier, en dessous = biais baissier</li>
+          <li>Le VWAP Reclaim (+ delta positif) est un setup long puissant</li>
+          <li>Le VWAP ne fonctionne que sur les march&eacute;s centralis&eacute;s (futures)</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem">Articles li&eacute;s</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/order-flow.html">Order Flow : le guide complet</a></li>
+          <li><a href="/guides/volume-profile-trading.html">Le Volume Profile</a></li>
+          <li><a href="/guides/footprint-chart.html">Le Footprint Chart</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/volume-profile-trading.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le Volume Profile</h3>
+        <p class="card-article__excerpt">POC, Value Area, HVN, LVN : comprends o&ugrave; les institutionnels ont agi.</p>
+        <div class="card-article__meta"><span>&#9201; 16 min</span></div>
+      </a>
+      <a href="/guides/footprint-chart.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Le Footprint Chart</h3>
+        <p class="card-article__excerpt">L'outil le plus puissant de l'order flow. Lis le delta, l'absorption et les d&eacute;s&eacute;quilibres.</p>
+        <div class="card-article__meta"><span>&#9201; 16 min</span></div>
+      </a>
+      <a href="/guides/order-flow.html" class="card card-article fade-in">
+        <span class="tag tag-orderflow">Order Flow</span>
+        <h3 class="card-article__title">Order Flow : le guide complet</h3>
+        <p class="card-article__excerpt">Comprends le flux d'ordres pour trader comme les institutionnels.</p>
+        <div class="card-article__meta"><span>&#9201; 20 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div>
+          <a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+          <p class="footer__brand-desc">Le guide trading 100% gratuit en fran&ccedil;ais. Apprends &agrave; trader intelligemment.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Navigation</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/" class="footer__link">Guides</a></li>
+            <li><a href="/lexique/" class="footer__link">Lexique</a></li>
+            <li><a href="/outils/" class="footer__link">Outils</a></li>
+            <li><a href="/a-propos.html" class="footer__link">&Agrave; propos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">Cat&eacute;gories</h4>
+          <ul class="footer__links">
+            <li><a href="/guides/debuter-en-trading.html" class="footer__link">D&eacute;buter en trading</a></li>
+            <li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li>
+            <li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li>
+            <li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="footer__heading">&Eacute;cosyst&egrave;me</h4>
+          <ul class="footer__links">
+            <li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communaut&eacute;, IA &amp; formations</a></li>
+            <li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li>
+            <li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copy">&copy; 2026 Guide Trading — Tous droits r&eacute;serv&eacute;s</p>
+        <div class="footer__legal"><a href="/mentions-legales.html">Mentions l&eacute;gales</a><a href="/politique-confidentialite.html">Confidentialit&eacute;</a></div>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

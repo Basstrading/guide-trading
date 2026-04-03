@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calculateur de Taille de Position — Outil Gratuit | Guide Trading</title>
+  <meta name="description" content="Calcule ta taille de position en fonction de ton capital, ton risque et la distance de ton stop loss. Outil gratuit, sans inscription, calcul instantané.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/outils/calculateur-taille-position.html">
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="Calculateur de Taille de Position — Outil Gratuit | Guide Trading">
+  <meta property="og:description" content="Calcule ta taille de position en fonction de ton capital, ton risque et la distance de ton stop loss. Outil gratuit, sans inscription.">
+  <meta property="og:url" content="https://guide-trading.fr/outils/calculateur-taille-position.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="../css/style.css">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Outils","item":"https://guide-trading.fr/outils/"},{"@type":"ListItem","position":3,"name":"Taille de position"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Calculateur de Taille de Position","description":"Calcule ta taille de position en fonction de ton capital, ton risque et la distance de ton stop loss.","author":{"@type":"Organization","name":"Guide Trading"},"publisher":{"@type":"Organization","name":"Guide Trading"},"mainEntityOfPage":{"@type":"WebPage","@id":"https://guide-trading.fr/outils/calculateur-taille-position.html"}}
+  </script>
+</head>
+<body>
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link navbar__link--active">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À propos</a>
+      </div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher"></div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a>
+    </div>
+  </nav>
+  <div class="container"><nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/outils/" class="breadcrumb__link">Outils</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Calculateur de taille de position</span></nav></div>
+  <main>
+    <article>
+      <section class="section">
+        <div class="container">
+          <div class="section-header fade-in">
+            <h1>Calculateur de Taille de Position</h1>
+            <p class="section-header__subtitle">Calcule en un instant le nombre de lots que tu peux trader en fonction de ton capital, ton pourcentage de risque et la distance de ton stop loss. Gratuit, sans inscription.</p>
+          </div>
+
+          <div class="tool-form fade-in">
+            <div class="tool-form__group">
+              <label for="capital" class="tool-form__label">Capital du compte (&euro;)</label>
+              <input type="number" class="tool-form__input tool-input" id="capital" placeholder="10000" step="100">
+            </div>
+            <div class="tool-form__group">
+              <label for="risque" class="tool-form__label">Risque par trade (%)</label>
+              <input type="number" class="tool-form__input tool-input" id="risque" placeholder="1" step="0.1" min="0.1" max="100">
+            </div>
+            <div class="tool-form__group">
+              <label for="entree" class="tool-form__label">Prix d'entr&eacute;e</label>
+              <input type="number" class="tool-form__input tool-input" id="entree" placeholder="1.1050" step="0.0001">
+            </div>
+            <div class="tool-form__group">
+              <label for="stoploss" class="tool-form__label">Prix du stop loss</label>
+              <input type="number" class="tool-form__input tool-input" id="stoploss" placeholder="1.1000" step="0.0001">
+            </div>
+
+            <div class="tool-results">
+              <div class="tool-result">
+                <span class="tool-result__value" id="res-montant">—</span>
+                <span class="tool-result__label">Montant risqu&eacute;</span>
+              </div>
+              <div class="tool-result">
+                <span class="tool-result__value" id="res-distance">—</span>
+                <span class="tool-result__label">Distance au stop (pips)</span>
+              </div>
+              <div class="tool-result tool-result--primary">
+                <span class="tool-result__value" id="res-taille">—</span>
+                <span class="tool-result__label">Taille de position (lots)</span>
+              </div>
+            </div>
+
+            <div id="verdict" class="tool-verdict"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container container--narrow">
+          <div class="article-content">
+            <h2>Comment calculer sa taille de position</h2>
+
+            <p>Le calcul de la taille de position est la base absolue de toute gestion de risque en trading. Sans ce calcul, tu trades a l'aveugle. Voici la formule centrale :</p>
+
+            <p><strong>Taille de position = (Capital &times; % Risque) / (Distance au stop &times; Valeur du pip)</strong></p>
+
+            <p>D&eacute;composons cette formule &eacute;tape par &eacute;tape :</p>
+
+            <p><strong>Etape 1 : D&eacute;termine ton montant risqu&eacute;.</strong> Si tu as un capital de 10 000 &euro; et que tu d&eacute;cides de risquer 1 % par trade, ton montant risqu&eacute; est de 100 &euro;. Ce sont les 100 &euro; que tu acceptes de perdre si le march&eacute; va contre toi.</p>
+
+            <p><strong>Etape 2 : Mesure la distance au stop loss en pips.</strong> Tu veux acheter EUR/USD &agrave; 1.1050 et tu places ton stop loss &agrave; 1.1030. La diff&eacute;rence est de 0.0020, soit 20 pips. Cette distance d&eacute;pend de ton analyse technique, pas de ton envie de gagner vite.</p>
+
+            <p><strong>Etape 3 : Calcule la taille.</strong> Pour un lot standard sur le forex, un pip vaut environ 10 &dollar; (soit environ 10 &euro;). Donc : 100 &euro; / (20 pips &times; 10 &euro;) = 0.50 lots. Tu peux donc ouvrir une position de 0.50 lots en respectant ton risque de 1 %.</p>
+
+            <p>Voici un point capital que beaucoup de d&eacute;butants ne comprennent pas : <strong>un stop loss de 10 pips et un stop loss de 50 pips ne donnent jamais la m&ecirc;me taille de position</strong>. Avec un stop &agrave; 10 pips et 100 &euro; de risque, tu peux prendre 1 lot. Avec un stop &agrave; 50 pips et le m&ecirc;me risque, tu ne peux prendre que 0.20 lots. Le montant risqu&eacute; reste identique (100 &euro;), mais le nombre de lots change du tout au tout.</p>
+
+            <h3>L'erreur la plus courante</h3>
+
+            <p>L'erreur classique est de toujours utiliser la m&ecirc;me taille de lot, quel que soit le trade. Un trader qui prend syst&eacute;matiquement 0.5 lots ne g&egrave;re pas son risque : il accepte un risque variable selon la distance de son stop. Sur un trade avec un stop serr&eacute; de 10 pips, il risque 50 &euro;. Sur un trade avec un stop large de 80 pips, il risque 400 &euro; — soit 8 fois plus. C'est exactement comme rouler sans ceinture : &ccedil;a passe jusqu'au jour o&ugrave; &ccedil;a ne passe plus.</p>
+
+            <p>Le bon r&eacute;flexe, c'est d'adapter la taille de ta position &agrave; chaque trade en fonction de la distance de ton stop loss. C'est la seule mani&egrave;re de garder un risque constant d'un trade &agrave; l'autre.</p>
+
+            <div class="tip-box">
+              <p>Le calcul de taille de position est la PREMIERE chose &agrave; faire avant d'entrer un trade. Pas apr&egrave;s.</p>
+            </div>
+
+            <h2>Pourquoi ne jamais risquer plus de 1-2 %</h2>
+
+            <p>La r&egrave;gle du 1-2 % n'est pas une convention arbitraire. C'est une protection math&eacute;matique contre les s&eacute;ries de pertes cons&eacute;cutives, qui arrivent in&eacute;vitablement &agrave; tout trader, m&ecirc;me les meilleurs.</p>
+
+            <p>Prenons un exemple concret. Avec un risque de 2 % par trade, apr&egrave;s 10 pertes cons&eacute;cutives, tu as perdu environ 18 % de ton capital. C'est douloureux mais r&eacute;cup&eacute;rable. Avec un risque de 5 % par trade, 10 pertes cons&eacute;cutives te co&ucirc;tent pr&egrave;s de 40 % de ton capital. Pour revenir &agrave; l'&eacute;quilibre, il te faudra alors un gain de 67 %. Avec un risque de 10 %, ces m&ecirc;mes 10 pertes anantissent 65 % de ton compte, et tu auras besoin de pr&egrave;s de 186 % de gain pour t'en remettre — quasiment impossible.</p>
+
+            <p>La math&eacute;matique est sans piti&eacute; : plus le drawdown est profond, plus il est difficile d'en sortir. Un drawdown de 50 % n&eacute;cessite un gain de 100 % pour revenir &agrave; z&eacute;ro. C'est pourquoi les traders professionnels et les prop firms imposent des limites de risque strictes, g&eacute;n&eacute;ralement entre 0.5 % et 2 % par position.</p>
+
+            <p>Pour visualiser l'impact d'une s&eacute;rie de pertes sur ton capital, utilise notre <a href="/outils/simulateur-drawdown.html">simulateur de drawdown</a>. Tu comprendras imm&eacute;diatement pourquoi les petits pourcentages font toute la diff&eacute;rence.</p>
+
+            <p>Pour aller plus loin sur la gestion du risque en trading, consulte notre <a href="/guides/gestion-du-risque.html">guide complet sur la gestion du risque</a>. Tu y trouveras des strat&eacute;gies concr&egrave;tes pour prot&eacute;ger ton capital &agrave; long terme.</p>
+
+            <div class="tip-box">
+              <p><a href="https://x-trade.ai" target="_blank" rel="noopener">X-Trade.ai</a> fait ce calcul automatiquement et ajuste ta taille en temps r&eacute;el selon les r&egrave;gles de ta prop firm.</p>
+            </div>
+
+            <h3>Termes &agrave; conna&icirc;tre</h3>
+            <ul>
+              <li><a href="/lexique/stop-loss.html">Stop loss</a> — le niveau de prix auquel tu coupes ta perte.</li>
+              <li><a href="/lexique/pip.html">Pip</a> — la plus petite unit&eacute; de variation de prix sur le forex.</li>
+              <li><a href="/lexique/lot.html">Lot</a> — l'unit&eacute; de mesure de la taille d'une position.</li>
+            </ul>
+          </div>
+        </div>
+      </section>
+    </article>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en français.</p></div>
+        <div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">À propos</a></li></ul></div>
+        <div><h4 class="footer__heading">Écosystème</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — IA, communauté & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div>
+    </div>
+  </footer>
+  <script defer src="../js/main.js"></script>
+  <script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var inputs = document.querySelectorAll('.tool-input');
+    inputs.forEach(function(input) {
+      input.addEventListener('input', calculate);
+    });
+
+    function calculate() {
+      var capital = parseFloat(document.getElementById('capital').value);
+      var risquePct = parseFloat(document.getElementById('risque').value);
+      var entree = parseFloat(document.getElementById('entree').value);
+      var stoploss = parseFloat(document.getElementById('stoploss').value);
+
+      if (!capital || !risquePct || !entree || !stoploss || entree === stoploss) return;
+
+      var distanceStop = Math.abs(entree - stoploss);
+      var montantRisque = capital * (risquePct / 100);
+      var taillePosition = montantRisque / (distanceStop * 100000); // For forex standard lots
+      var distancePips = distanceStop * 10000;
+
+      document.getElementById('res-montant').textContent = montantRisque.toFixed(2) + ' \u20AC';
+      document.getElementById('res-distance').textContent = distancePips.toFixed(1) + ' pips';
+      document.getElementById('res-taille').textContent = taillePosition.toFixed(2) + ' lots';
+
+      // Color coding
+      var resultContainer = document.getElementById('res-taille').closest('.tool-result');
+      var verdict = document.getElementById('verdict');
+      resultContainer.classList.remove('result-good', 'result-warning', 'result-danger');
+
+      if (risquePct <= 1) {
+        resultContainer.classList.add('result-good');
+        verdict.textContent = 'Risque conservateur \u2014 bonne gestion';
+        verdict.style.color = 'var(--color-secondary)';
+      } else if (risquePct <= 2) {
+        resultContainer.classList.add('result-warning');
+        verdict.textContent = 'Risque mod\u00E9r\u00E9 \u2014 acceptable';
+        verdict.style.color = 'var(--color-accent-gold)';
+      } else {
+        resultContainer.classList.add('result-danger');
+        verdict.textContent = 'Risque \u00E9lev\u00E9 \u2014 r\u00E9duis ta taille';
+        verdict.style.color = 'var(--color-danger)';
+      }
+    }
+  });
+  </script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <title>Psychologie</title>
+  <!-- Brain outline -->
+  <path d="M24 40V34"/>
+  <path d="M16 34C12 34 8 30 8 24C8 20 10 17 13 15.5C12.5 14 12.5 12 14 10C15.5 8 18 7 20 7.5C21.5 5.5 23 5 24 5C25 5 26.5 5.5 28 7.5C30 7 32.5 8 34 10C35.5 12 35.5 14 35 15.5C38 17 40 20 40 24C40 30 36 34 32 34"/>
+  <path d="M24 18V28"/>
+  <path d="M20 22L24 18L28 22"/>
+</svg>
