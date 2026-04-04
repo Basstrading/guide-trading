@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Types d'Ordres en Trading : Guide Complet (2026)</title>
+  <meta name="description" content="Tous les types d'ordres en trading expliqués : ordre au marché, limite, stop loss, stop limite, take profit, trailing stop, OCO. Exemples concrets et cas d'usage.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/types-ordres.html">
+  <meta property="og:title" content="Les Types d'Ordres en Trading : Guide Complet (2026)">
+  <meta property="og:description" content="Tous les types d'ordres expliqués simplement : marché, limite, stop, trailing stop, OCO.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/types-ordres.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Les Types d'Ordres en Trading : Guide Complet","description":"Tous les types d'ordres en trading expliqués simplement avec des exemples concrets.","author":{"@type":"Organization","name":"Guide Trading","url":"https://guide-trading.fr"},"publisher":{"@type":"Organization","name":"Guide Trading"},"datePublished":"2026-04-04","dateModified":"2026-04-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://guide-trading.fr/guides/types-ordres.html"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://guide-trading.fr/guides/"},{"@type":"ListItem","position":3,"name":"Types d'Ordres"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Quelle est la différence entre un ordre au marché et un ordre limite ?","acceptedAnswer":{"@type":"Answer","text":"Un ordre au marché s'exécute immédiatement au meilleur prix disponible — tu es sûr d'être exécuté mais pas du prix exact. Un ordre limite s'exécute uniquement au prix que tu as défini (ou mieux) — tu contrôles le prix mais tu n'es pas sûr d'être exécuté. En règle générale, utilise le marché quand tu dois entrer/sortir MAINTENANT, et le limite quand tu peux attendre un meilleur prix."}},
+    {"@type":"Question","name":"C'est quoi le slippage ?","acceptedAnswer":{"@type":"Answer","text":"Le slippage est la différence entre le prix attendu et le prix réel d'exécution d'un ordre. Il se produit surtout avec les ordres au marché en période de forte volatilité ou de faible liquidité. Exemple : tu passes un ordre d'achat au marché à 1.0850, mais tu es exécuté à 1.0853 — c'est 3 pips de slippage. Le slippage peut être positif (meilleur prix) ou négatif (pire prix)."}},
+    {"@type":"Question","name":"Faut-il toujours utiliser un stop loss ?","acceptedAnswer":{"@type":"Answer","text":"Oui, sans exception. Le stop loss est un ordre qui ferme automatiquement ta position à un niveau de perte prédéfini. Trader sans stop loss, c'est prendre un risque illimité pour un gain limité — c'est mathématiquement absurde. Place toujours un stop loss RÉEL (un ordre sur ta plateforme), jamais un stop loss 'mental'."}}
+  ]}
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav"><a href="/guides/" class="navbar__link navbar__link--active">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a></div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site"></div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel"><a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a></div>
+  </nav>
+
+  <div class="container"><nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/guides/" class="breadcrumb__link">Guides</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Types d'Ordres</span></nav></div>
+
+  <div class="article-layout container">
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-debutant">Débutant</span>
+        <h1 style="font-style: normal;">Les Types d'Ordres en Trading : Guide Complet</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 12 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Un ordre est l'instruction que tu donnes à ton broker pour acheter ou vendre un actif. Mais il existe des dizaines de types d'ordres — et ne pas les maîtriser, c'est comme conduire une voiture sans connaître le frein. Ce guide t'explique chaque type d'ordre, quand l'utiliser, et les pièges à éviter.</p>
+
+      <!-- ======================== -->
+      <h2 id="ordre-marche" style="font-style: normal;">L'ordre au marché (Market Order)</h2>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Définition</p>
+        <p>Un ordre au marché s'exécute <strong>immédiatement</strong> au meilleur prix disponible. Tu cliques "Acheter" et tu es en position dans la seconde. C'est l'ordre le plus rapide mais aussi le moins précis — tu ne contrôles pas le prix exact d'exécution.</p>
+      </div>
+
+      <p><strong>Quand l'utiliser :</strong> quand tu dois être en position MAINTENANT. Cassure de niveau en cours, signal urgent, sortie d'urgence d'un trade perdant. L'exécution est garantie (si le marché est liquide), mais le prix peut varier légèrement.</p>
+
+      <p><strong>Exemple :</strong> l'EUR/USD est à 1.0850/1.0852 (bid/ask). Tu passes un ordre d'achat au marché. Tu es exécuté à 1.0852 (le ask). En marché calme, c'est précis. En période de news, tu pourrais être exécuté à 1.0855 ou 1.0860 — c'est le <strong>slippage</strong>.</p>
+
+      <p><strong>Coût :</strong> tu paies le <a href="/lexique/spread.html">spread</a> complet. Si le spread est de 1.5 pip, tu commences ton trade avec -1.5 pip.</p>
+
+      <!-- ======================== -->
+      <h2 id="ordre-limite" style="font-style: normal;">L'ordre limite (Limit Order)</h2>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Définition</p>
+        <p>Un ordre limite s'exécute uniquement au prix que tu as défini <strong>ou à un prix meilleur</strong>. Un buy limit s'exécute au prix spécifié ou en dessous. Un sell limit s'exécute au prix spécifié ou au-dessus. Si le prix n'atteint jamais ton niveau, l'ordre n'est pas exécuté.</p>
+      </div>
+
+      <p><strong>Quand l'utiliser :</strong> quand tu veux entrer à un meilleur prix que le prix actuel. Tu identifies un niveau de support à 1.0800 et tu places un buy limit à 1.0805. Si le prix descend jusque-là, tu es exécuté. S'il ne descend pas, tu restes en dehors — et c'est très bien comme ça.</p>
+
+      <p><strong>Exemple :</strong> le NQ est à 18 500. Tu vois un support à 18 420 et tu veux acheter sur ce pullback. Tu places un buy limit à 18 425. Si le NQ descend à 18 425, tu es rempli automatiquement. Tu as obtenu un meilleur prix d'entrée que si tu avais acheté à 18 500.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Market vs Limit : la règle simple</p>
+        <p>Utilise un <strong>ordre au marché</strong> quand la vitesse d'exécution est plus importante que le prix exact (cassure en cours, sortie urgente). Utilise un <strong>ordre limite</strong> quand le prix d'entrée est plus important que la vitesse (pullback anticipé, niveau clé identifié). Les traders professionnels utilisent beaucoup plus de limites que de marchés — ça améliore le prix moyen d'entrée.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="stop-loss" style="font-style: normal;">Le Stop Loss</h2>
+
+      <p>Le <a href="/lexique/stop-loss.html">stop loss</a> est un ordre qui ferme automatiquement ta position quand le prix atteint un niveau de perte prédéfini. C'est ton filet de sécurité — il protège ton capital quand le marché va contre toi.</p>
+
+      <p><strong>Comment ça marche :</strong> tu achètes l'EUR/USD à 1.0850 et tu places ton stop loss à 1.0820. Si le prix descend à 1.0820, ta position est fermée automatiquement. Ta perte maximale est de 30 pips — connue à l'avance.</p>
+
+      <p>Techniquement, un stop loss est un "stop order" — un ordre dormant qui se transforme en ordre au marché quand le prix atteint ton niveau. C'est pour ça qu'en cas de forte volatilité, tu peux subir du slippage sur ton SL (exécuté à un prix pire que ton niveau). Sur les marchés liquides (EUR/USD, ES, NQ), le slippage est généralement minime.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Toujours un SL réel, jamais un SL mental</p>
+        <p>Un stop loss "mental" (tu décides de sortir à un niveau mais tu ne places pas l'ordre) ne marche pas. Quand le prix touche ton niveau, l'émotion prend le dessus et tu ne coupes pas. Place TOUJOURS un ordre réel sur ta plateforme. C'est la règle n°1. Consulte notre <a href="/guides/stop-loss-guide.html">guide complet sur le stop loss</a> pour approfondir.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="take-profit" style="font-style: normal;">Le Take Profit</h2>
+
+      <p>Le <a href="/lexique/take-profit.html">take profit</a> (TP) est l'inverse du stop loss : c'est un ordre qui ferme automatiquement ta position quand le prix atteint un niveau de profit prédéfini.</p>
+
+      <p><strong>Exemple :</strong> tu achètes l'EUR/USD à 1.0850, SL à 1.0820 (risque : 30 pips), TP à 1.0910 (gain : 60 pips). Ton <a href="/lexique/risk-reward.html">risk/reward</a> est de 1:2 — tu risques 30 pour potentiellement gagner 60. Si le prix monte à 1.0910, ta position est fermée automatiquement avec +60 pips.</p>
+
+      <p>Le TP est techniquement un ordre limite (il s'exécute au prix spécifié ou mieux). Pas de slippage sur un TP — c'est un avantage par rapport au SL.</p>
+
+      <p><strong>Débat : avec ou sans take profit ?</strong> Certains traders préfèrent ne pas mettre de TP et utiliser un trailing stop pour "laisser courir les gains". D'autres préfèrent un TP fixe pour sécuriser le profit. Il n'y a pas de bonne réponse universelle — ça dépend de ta stratégie et du contexte de marché.</p>
+
+      <!-- ======================== -->
+      <h2 id="stop-limite" style="font-style: normal;">L'ordre Stop Limite (Stop Limit)</h2>
+
+      <p>Le stop limite est un hybride. C'est un ordre dormant qui, une fois déclenché, se transforme en <strong>ordre limite</strong> (pas en ordre au marché comme un stop classique).</p>
+
+      <p><strong>Comment ça marche :</strong> tu définis deux prix — un prix de déclenchement (stop) et un prix d'exécution (limite). Quand le prix atteint le stop, l'ordre limite est activé.</p>
+
+      <p><strong>Exemple :</strong> le NQ est à 18 400. Tu veux acheter sur la cassure de 18 500 mais tu ne veux pas payer plus de 18 510. Tu places un buy stop limit : stop à 18 500, limite à 18 510. Quand le NQ touche 18 500, un ordre d'achat limite à 18 510 est activé. Si le prix dépasse 18 510 trop vite (gap, spike), tu n'es pas rempli.</p>
+
+      <p><strong>Avantage :</strong> tu contrôles le prix maximum d'exécution. <strong>Inconvénient :</strong> en cas de mouvement rapide, tu peux ne pas être rempli du tout. C'est un risque à accepter.</p>
+
+      <!-- ======================== -->
+      <h2 id="trailing-stop" style="font-style: normal;">Le Trailing Stop (Stop Suiveur)</h2>
+
+      <p>Le <a href="/lexique/trailing-stop.html">trailing stop</a> est un stop loss dynamique qui suit le prix quand celui-ci évolue en ta faveur, mais qui ne recule jamais.</p>
+
+      <p><strong>Exemple :</strong> tu achètes à 1.0850 avec un trailing stop de 20 pips. Le SL initial est à 1.0830. Le prix monte à 1.0870 → ton SL monte à 1.0850 (break-even). Le prix monte à 1.0900 → ton SL monte à 1.0880. Le prix retrace à 1.0880 → tu es sorti avec +30 pips de profit.</p>
+
+      <p>Le trailing stop est excellent pour capturer les grands mouvements en tendance. Mais il est terrible en marché choppy — les petites fluctuations te font sortir prématurément. Utilise-le sur des timeframes H1+ en tendance confirmée.</p>
+
+      <!-- ======================== -->
+      <h2 id="ordres-avances" style="font-style: normal;">Les ordres avancés : OCO, Bracket, Iceberg</h2>
+
+      <p><strong>OCO (One Cancels Other) :</strong> deux ordres liés — quand l'un est exécuté, l'autre est automatiquement annulé. Exemple : tu places un buy limit à 1.0800 ET un sell limit à 1.0900 en OCO. Si le buy à 1.0800 est touché, le sell à 1.0900 est annulé (et inversement). Utile en range pour attraper le premier mouvement significatif.</p>
+
+      <p><strong>Bracket Order :</strong> un ordre d'entrée + un SL + un TP regroupés en un seul "paquet". Quand l'entrée est exécutée, le SL et le TP sont automatiquement activés. Si le SL est touché, le TP est annulé, et vice versa. C'est la façon la plus propre de passer un trade complet en une action.</p>
+
+      <p><strong>Iceberg Order :</strong> un gros ordre découpé en petites tranches qui s'exécutent progressivement. Utilisé par les institutionnels pour ne pas montrer la taille réelle de leur position sur le <a href="/lexique/dom.html">carnet d'ordres</a>. Si tu vois un niveau de prix qui absorbe beaucoup de volume sans que le prix bouge, il y a probablement un iceberg. En tant que trader particulier, tu ne les utilises pas — mais tu dois savoir les détecter.</p>
+
+      <!-- ======================== -->
+      <h2 id="slippage" style="font-style: normal;">Le slippage : ce que personne ne t'explique</h2>
+
+      <p>Le slippage est la différence entre le prix auquel tu voulais être exécuté et le prix réel d'exécution. Il affecte principalement les ordres au marché et les stop loss.</p>
+
+      <p><strong>Pourquoi ça arrive :</strong> entre le moment où tu cliques et le moment où ton ordre atteint le serveur du broker/exchange, le prix peut bouger. En période de faible liquidité (hors-heures, jours fériés) ou de forte volatilité (NFP, CPI, flash crash), le slippage peut être significatif.</p>
+
+      <p><strong>Slippage positif :</strong> ton ordre est exécuté à un MEILLEUR prix. Ça arrive, mais c'est rare sur les ordres au marché. Plus courant sur les ordres limites (tu es rempli à un meilleur prix que ton limite).</p>
+
+      <p><strong>Comment minimiser le slippage :</strong></p>
+      <ul>
+        <li>Trade pendant les heures de haute liquidité (sessions de Londres et New York)</li>
+        <li>Évite de trader pendant les annonces économiques majeures</li>
+        <li>Utilise des ordres limites plutôt que des ordres au marché quand possible</li>
+        <li>Choisis un broker avec une bonne exécution (ECN/STP, pas de dealing desk)</li>
+        <li>Trade des instruments liquides (EUR/USD, ES, NQ, BTC)</li>
+      </ul>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Le slippage sur le stop loss</p>
+        <p>Le slippage sur les SL est le plus douloureux. Si ton SL est à -30 pips mais que tu es exécuté à -35 pips, ta perte est 17% plus grande que prévu. Sur les marchés liquides, le slippage moyen sur un SL est de 0.1-0.5 pip. Sur les annonces majeures ou les gaps, ça peut être 5-20 pips. Intègre toujours une petite marge de slippage dans ton calcul de risque.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Ordre au marché ou ordre limite ?</strong></summary>
+          <p>Ordre au marché quand la vitesse prime (cassure, sortie urgente). Ordre limite quand le prix d'entrée prime (pullback, niveau clé). Les pros utilisent majoritairement des ordres limites pour améliorer leur prix moyen d'entrée.</p>
+        </details>
+        <details>
+          <summary><strong>C'est quoi le slippage ?</strong></summary>
+          <p>La différence entre le prix souhaité et le prix d'exécution réel. Principalement sur les ordres au marché et les stop loss, en période de volatilité ou de faible liquidité. Minimise-le en tradant aux heures liquides et en utilisant des ordres limites.</p>
+        </details>
+        <details>
+          <summary><strong>Faut-il toujours utiliser un stop loss ?</strong></summary>
+          <p>Oui, toujours. Un ordre SL réel sur ta plateforme, jamais un "stop mental". C'est la règle n°1 de la gestion du risque. Sans stop loss, un seul trade peut détruire ton compte.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#ordre-marche" class="toc__link">Ordre au marché</a></li>
+          <li><a href="#ordre-limite" class="toc__link">Ordre limite</a></li>
+          <li><a href="#stop-loss" class="toc__link">Stop loss</a></li>
+          <li><a href="#take-profit" class="toc__link">Take profit</a></li>
+          <li><a href="#stop-limite" class="toc__link">Stop limite</a></li>
+          <li><a href="#trailing-stop" class="toc__link">Trailing stop</a></li>
+          <li><a href="#ordres-avances" class="toc__link">Ordres avancés</a></li>
+          <li><a href="#slippage" class="toc__link">Le slippage</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Marché = vitesse, Limite = précision du prix</li>
+          <li>Toujours un SL réel, jamais mental</li>
+          <li>Le slippage est normal — intègre-le dans ton calcul</li>
+          <li>Le bracket order est la façon la plus propre de trader</li>
+          <li>Évite les ordres au marché pendant les news majeures</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/debuter-en-trading.html">Débuter en trading</a></li>
+          <li><a href="/guides/stop-loss-guide.html">Le stop loss : guide complet</a></li>
+          <li><a href="/guides/gestion-du-risque.html">Gestion du risque</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in"><h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2></div>
+    <div class="grid-3">
+      <a href="/guides/debuter-en-trading.html" class="card card-article fade-in"><span class="tag tag-debutant">Débutant</span><h3 class="card-article__title" style="font-style: normal;">Débuter en Trading : Le Guide Complet</h3><p class="card-article__excerpt">Les bases du trading expliquées simplement.</p><div class="card-article__meta"><span>&#9201; 18 min</span></div></a>
+      <a href="/guides/marches-financiers.html" class="card card-article fade-in"><span class="tag tag-debutant">Débutant</span><h3 class="card-article__title" style="font-style: normal;">Les Différents Marchés Financiers</h3><p class="card-article__excerpt">Forex, actions, futures, crypto — quel marché choisir ?</p><div class="card-article__meta"><span>&#9201; 14 min</span></div></a>
+      <a href="/guides/stop-loss-guide.html" class="card card-article fade-in"><span class="tag tag-risk">Risk Management</span><h3 class="card-article__title" style="font-style: normal;">Le Stop Loss : Guide Complet</h3><p class="card-article__excerpt">Types, placement et stratégies pour protéger ton capital.</p><div class="card-article__meta"><span>&#9201; 14 min</span></div></a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p></div><div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">À propos</a></li></ul></div><div><h4 class="footer__heading">Catégories</h4><ul class="footer__links"><li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li><li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li><li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li><li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li></ul></div><div><h4 class="footer__heading">Écosystème</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li></ul></div></div><div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div></div></footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

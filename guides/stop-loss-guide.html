@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Le Stop Loss : Guide Complet pour Protéger ton Capital (2026)</title>
+  <meta name="description" content="Apprends à placer ton stop loss correctement : types de SL, méthodes de placement (ATR, structure, volatilité), erreurs courantes et stratégies avancées.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/stop-loss-guide.html">
+  <meta property="og:title" content="Le Stop Loss : Guide Complet pour Protéger ton Capital (2026)">
+  <meta property="og:description" content="Apprends à placer ton stop loss correctement : types, méthodes de placement, erreurs courantes et stratégies avancées.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/stop-loss-guide.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Le Stop Loss : Guide Complet pour Protéger ton Capital (2026)">
+  <meta name="twitter:description" content="Types de stop loss, méthodes de placement, erreurs courantes et stratégies avancées pour protéger ton capital.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Le Stop Loss : Guide Complet pour Protéger ton Capital","description":"Apprends à placer ton stop loss correctement : types de SL, méthodes de placement, erreurs courantes et stratégies avancées.","author":{"@type":"Organization","name":"Guide Trading","url":"https://guide-trading.fr"},"publisher":{"@type":"Organization","name":"Guide Trading"},"datePublished":"2026-04-04","dateModified":"2026-04-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://guide-trading.fr/guides/stop-loss-guide.html"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://guide-trading.fr/guides/"},{"@type":"ListItem","position":3,"name":"Stop Loss Guide"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"Où placer son stop loss ?","acceptedAnswer":{"@type":"Answer","text":"Le stop loss doit être placé à un niveau où ton scénario de trade est invalidé. En pratique, place-le sous le dernier creux (achat) ou au-dessus du dernier sommet (vente), avec une marge de quelques pips/ticks pour éviter le bruit. Les méthodes ATR et structure de marché sont les plus fiables pour un placement précis."}},
+    {"@type":"Question","name":"Faut-il toujours utiliser un stop loss ?","acceptedAnswer":{"@type":"Answer","text":"Oui, sans exception. Même les traders institutionnels utilisent des stop loss. Trader sans SL, c'est conduire sans ceinture : ça peut marcher 100 fois, mais la 101e fois peut être fatale. En prop firm, l'absence de SL est la première cause d'échec aux challenges."}},
+    {"@type":"Question","name":"Stop loss fixe ou trailing stop ?","acceptedAnswer":{"@type":"Answer","text":"Ça dépend de ta stratégie. Le SL fixe est plus simple et fonctionne bien pour les trades avec un objectif clair. Le trailing stop est idéal pour capturer les mouvements prolongés en tendance. Commence avec un SL fixe et n'utilise le trailing que quand tu maîtrises parfaitement ta stratégie de base."}}
+  ]}
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link navbar__link--active">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a>
+      </div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site"></div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a>
+    </div>
+  </nav>
+
+  <div class="container">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane">
+      <a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/guides/" class="breadcrumb__link">Guides</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Stop Loss Guide</span>
+    </nav>
+  </div>
+
+  <div class="article-layout container">
+
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h1 style="font-style: normal;">Le Stop Loss : Guide Complet pour Protéger ton Capital</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 14 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le stop loss est la ligne de défense la plus importante de ton capital. Sans lui, un seul trade peut effacer des semaines de gains. Et pourtant, c'est l'un des outils les moins bien compris et les plus mal utilisés par les traders. Ce guide va te montrer comment le placer intelligemment, pas juste "quelque part sous ton entrée".</p>
+
+      <p>On va couvrir tous les types de stop loss, les méthodes de placement professionnelles, les erreurs qui coûtent des milliers d'euros, et les stratégies avancées pour optimiser ta protection. Que tu trades le <a href="/lexique/forex.html">forex</a>, les <a href="/lexique/futures.html">futures</a> ou la crypto, ce guide s'applique à toi.</p>
+
+      <!-- ======================== -->
+      <h2 id="quest-ce-quun-stop-loss" style="font-style: normal;">Qu'est-ce qu'un stop loss ?</h2>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Définition</p>
+        <p>Un stop loss (SL) est un ordre automatique qui ferme ta position lorsque le prix atteint un niveau prédéfini. Son rôle : limiter ta perte maximale sur un trade. C'est ton filet de sécurité — il s'exécute même si tu n'es pas devant ton écran.</p>
+      </div>
+
+      <p>Concrètement, si tu achètes l'EUR/USD à 1.0850 et que tu places ton stop loss à 1.0820, ta position sera automatiquement fermée si le prix descend à 1.0820. Ta perte maximale est de 30 <a href="/lexique/pip.html">pips</a> — connue à l'avance, maîtrisée, acceptée.</p>
+
+      <p>Le stop loss n'est pas un aveu de faiblesse. C'est un outil de gestion du risque que <strong>tous les professionnels utilisent sans exception</strong>. Les hedge funds, les prop traders, les market makers — tout le monde a des limites de perte. Si Goldman Sachs utilise des stop loss, tu devrais en faire autant.</p>
+
+      <p>Le SL est intimement lié à ta <a href="/guides/gestion-du-risque.html">gestion du risque</a> globale. Il détermine ta perte par trade, qui elle-même détermine ta <a href="/outils/calculateur-taille-position.html">taille de position</a>. Sans SL défini, tu ne peux pas calculer ton risque. Et sans risque calculé, tu joues au casino.</p>
+
+      <!-- ======================== -->
+      <h2 id="types-stop-loss" style="font-style: normal;">Les différents types de stop loss</h2>
+
+      <p>Tous les stop loss ne se valent pas. Chaque type a ses avantages, ses limites, et ses cas d'usage optimaux.</p>
+
+      <p><strong>Stop loss fixe (classique)</strong> : tu définis un prix précis et l'ordre reste là jusqu'à exécution ou annulation. C'est le plus simple et le plus utilisé. Exemple : achat à 1.0850, SL à 1.0820. Point. Le SL ne bouge pas, quoi qu'il arrive.</p>
+
+      <p><strong>Trailing stop (stop suiveur)</strong> : le SL suit le prix quand celui-ci évolue en ta faveur, mais ne recule jamais. Si tu places un trailing stop de 20 pips et que le prix monte de 50 pips, ton SL sera 30 pips au-dessus de ton entrée — tu as verrouillé 30 pips de profit. Si le prix retrace de 20 pips, tu es sorti avec +30.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Quand utiliser le trailing stop</p>
+        <p>Le trailing stop est idéal en tendance forte quand tu veux laisser courir tes gains sans fixer de take profit. Mais il est terrible en range ou en marché choppy — tu te feras sortir par le bruit. Utilise-le sur des timeframes H1+ et en tendance confirmée uniquement.</p>
+      </div>
+
+      <p><strong>Stop loss basé sur le temps (time stop)</strong> : tu fermes ta position si elle n'a pas atteint ton objectif après un certain temps. Exemple : si le trade n'est pas en profit après 2 heures, tu sors. Peu utilisé seul, mais excellent comme complément. Un trade qui stagne consomme du capital mental et de la marge.</p>
+
+      <p><strong>Stop loss mental</strong> : tu ne places pas d'ordre réel, mais tu as un niveau en tête auquel tu fermeras manuellement. <strong>C'est le pire type de SL.</strong> En théorie ça marche. En pratique, quand le prix touche ton niveau, tu te dis "ça va revenir" et tu ne coupes pas. Résultat : ta perte de 30 pips devient 100, puis 200. Ne fais jamais ça.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le stop loss mental est un piège</p>
+        <p>95% des traders qui utilisent un stop loss mental finissent par ne pas le respecter. L'émotion prend le dessus au moment critique. Place TOUJOURS un ordre réel sur ta plateforme. C'est non négociable. Les prop firms l'exigent d'ailleurs — sans SL réel, tu risques de péter ta limite de <a href="/lexique/drawdown.html">drawdown</a> en un trade.</p>
+      </div>
+
+      <p><strong>Break-even stop</strong> : une fois que le trade est suffisamment en profit, tu déplaces ton SL au niveau d'entrée (break-even). Tu élimines le risque sans fermer le trade. Attention : ne déplace pas ton SL à BE trop tôt, sinon tu te feras sortir par le bruit normal du marché avant que le mouvement ne se développe.</p>
+
+      <!-- ======================== -->
+      <h2 id="methodes-placement" style="font-style: normal;">Méthodes de placement du stop loss</h2>
+
+      <p>Un stop loss bien placé doit répondre à une seule question : <strong>"À quel niveau mon scénario de trade est-il invalidé ?"</strong> Si tu ne peux pas répondre à cette question, tu ne devrais pas prendre le trade.</p>
+
+      <p><strong>Méthode 1 : Placement par structure de marché.</strong> C'est la méthode la plus utilisée par les traders professionnels. En achat, place ton SL sous le dernier creux significatif (swing low). En vente, au-dessus du dernier sommet (swing high). Logique : si le prix casse ce niveau, la structure haussière/baissière est brisée et ton scénario est invalidé.</p>
+
+      <p>Exemple concret : tu achètes le NQ (Nasdaq futures) à 18 500 après un rebond sur un support. Le dernier swing low est à 18 420. Tu places ton SL à 18 410 (10 points sous le creux pour laisser une marge). Si le prix casse 18 420, la structure haussière est brisée — ton scénario n'est plus valide.</p>
+
+      <p><strong>Méthode 2 : Placement par ATR (Average True Range).</strong> L'ATR mesure la volatilité moyenne du marché. Un SL basé sur l'ATR s'adapte automatiquement aux conditions de marché. Règle classique : SL = 1.5x à 2x l'ATR de la période.</p>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Comment utiliser l'ATR pour ton stop loss</p>
+        <p>Si l'ATR 14 en H1 de l'EUR/USD est de 15 pips, un SL de 1.5x ATR = 22-23 pips. En période de forte volatilité (news, ouverture de session), l'ATR monte et ton SL s'élargit automatiquement. En marché calme, l'ATR baisse et ton SL se resserre. C'est de l'adaptation dynamique.</p>
+      </div>
+
+      <p><strong>Méthode 3 : Placement par pourcentage.</strong> Tu définis un pourcentage maximal de perte par trade (typiquement 1-2% du capital). Ensuite, tu calcules la distance du SL qui correspond à ce pourcentage. Cette méthode est simple mais a un défaut : elle ne tient pas compte de la structure du marché. Ton SL peut se retrouver au milieu de nulle part.</p>
+
+      <p><strong>Méthode 4 : Placement par zone de liquidité.</strong> Les institutionnels savent où se trouvent les clusters de stop loss (sous les creux évidents, sous les chiffres ronds). Place ton SL légèrement au-delà de ces zones pour éviter le stop hunting. Au lieu de mettre ton SL exactement à 1.0800 (chiffre rond), mets-le à 1.0785 — sous le niveau où les algorithmes vont chercher la liquidité.</p>
+
+      <p><strong>La meilleure approche : combiner structure + ATR.</strong> Identifie le niveau structurel logique, puis vérifie qu'il est à au moins 1x ATR de ton entrée. Si le niveau structurel est trop proche (moins de 0.5x ATR), tu risques de te faire sortir par le bruit. S'il est trop loin (plus de 3x ATR), ton <a href="/lexique/risk-reward.html">risk/reward</a> sera probablement mauvais.</p>
+
+      <!-- ======================== -->
+      <h2 id="stop-hunting" style="font-style: normal;">Le stop hunting : mythe ou réalité ?</h2>
+
+      <p>Tu as sûrement vu le prix toucher ton SL au pip près avant de repartir dans la bonne direction. Frustrant ? Oui. De la manipulation ? Pas toujours — mais parfois, oui.</p>
+
+      <p>Le <strong>stop hunting</strong> est bien réel sur les marchés. Les gros acteurs (market makers, algorithmes HFT, institutionnels) savent où se trouvent les clusters de stop loss. Pourquoi ? Parce que les stop loss sont des ordres en attente, et les niveaux où ils s'accumulent sont prévisibles : sous les creux évidents, au-dessus des sommets, sous les chiffres ronds.</p>
+
+      <p>Quand un gros acteur pousse le prix pour déclencher ces stops, il obtient de la liquidité. Tes stop loss d'achat qui se déclenchent deviennent des ordres de vente — exactement ce dont un acheteur institutionnel a besoin pour remplir sa position.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Comment éviter le stop hunting</p>
+        <p>1) Ne place jamais ton SL exactement sur un niveau évident (creux/sommet exact, chiffre rond). Ajoute 5-15 pips/ticks de marge. 2) Évite les SL trop serrés en période de haute volatilité. 3) Utilise des timeframes supérieurs pour identifier les vrais niveaux structurels — les niveaux D1 et H4 sont plus fiables que M5. 4) Accepte que certains stop hunting sont inévitables — c'est le coût du business.</p>
+      </div>
+
+      <p>Attention : ne tombe pas dans la paranoïa. La majorité du temps, ton SL est touché parce que ton analyse était fausse, pas parce que "le marché te vise personnellement". Le marché ne sait pas que tu existes. Prends tes responsabilités avant de blâmer les market makers.</p>
+
+      <!-- ======================== -->
+      <h2 id="erreurs-courantes" style="font-style: normal;">Les erreurs fatales avec le stop loss</h2>
+
+      <p><strong>Erreur 1 : Déplacer son SL pour "donner de l'air" au trade.</strong> Tu as un SL à -30 pips. Le prix s'approche. Tu paniques et tu déplaces ton SL à -50 pips. Puis à -80. Puis tu n'as plus de SL du tout. C'est la pente glissante. La règle est simple : <strong>ne déplace JAMAIS ton SL dans le sens de la perte</strong>. Tu peux le rapprocher de ton entrée (réduire le risque), mais jamais l'éloigner.</p>
+
+      <p><strong>Erreur 2 : Stop loss trop serré.</strong> Tu veux risquer le moins possible, alors tu places un SL à 5 pips sur l'EUR/USD. Résultat : tu te fais sortir par le bruit normal du marché 80% du temps. Un SL trop serré, c'est comme conduire avec le frein à main : tu t'arrêtes avant même d'avoir avancé. Ton SL doit respecter la volatilité du marché.</p>
+
+      <p><strong>Erreur 3 : Stop loss trop large.</strong> L'inverse : ton SL est à 200 pips "pour être sûr". Oui, tu ne seras pas sorti par le bruit. Mais si le trade perd, tu perds 200 pips. Avec un <a href="/lexique/take-profit.html">take profit</a> de 50 pips, ton risk/reward est de 1:0.25. Tu dois gagner 4 trades sur 5 juste pour être à l'équilibre. C'est insoutenable.</p>
+
+      <p><strong>Erreur 4 : Pas de SL du tout.</strong> "Je surveille mes trades, je n'ai pas besoin de SL." Jusqu'au jour où ta connexion internet coupe, où tu t'endors, où un tweet fait bouger le marché de 100 pips en 30 secondes. Le 6 mai 2010, le Flash Crash a fait perdre 1000 points au Dow Jones en 10 minutes. Sans SL, des comptes entiers ont été liquidés.</p>
+
+      <p><strong>Erreur 5 : Remettre un SL après avoir été stoppé.</strong> Tu te fais stopper, tu rentres immédiatement dans le même sens avec le même SL. Re-stoppé. Tu recommences. 3 pertes identiques d'affilée. C'est du <a href="/guides/revenge-trading.html">revenge trading</a> déguisé. Si ton SL est touché, analyse pourquoi AVANT de reprendre un trade.</p>
+
+      <!-- ======================== -->
+      <h2 id="sl-par-instrument" style="font-style: normal;">Stop loss par instrument</h2>
+
+      <p>Chaque marché a ses spécificités. Un SL de 20 pips sur l'EUR/USD n'a rien à voir avec un SL de 20 ticks sur le NQ.</p>
+
+      <p><strong>Forex</strong> : les paires majeures (EUR/USD, GBP/USD) ont des ATR typiques de 10-20 pips en H1. Un SL de 15-30 pips est standard en day trading. Les paires exotiques (USD/TRY, EUR/ZAR) sont beaucoup plus volatiles — adapte ton SL en conséquence. N'oublie pas : le <a href="/lexique/spread.html">spread</a> s'ajoute à ta perte, surtout sur les paires exotiques.</p>
+
+      <p><strong>Futures (ES, NQ, CL)</strong> : le NQ (Nasdaq 100 E-mini) a un tick de 0.25 = $5. Un mouvement de 20 points = $400 par contrat. Les SL typiques en day trading : ES 4-8 points, NQ 15-30 points, CL 0.20-0.50$. Ajuste selon la session (l'ouverture US est plus volatile que la session asiatique).</p>
+
+      <p><strong>Crypto</strong> : la volatilité est 3-5x supérieure au forex. Un SL de 1-3% du prix est courant en day trading sur BTC. Attention aux mèches : les cryptos sont connues pour leurs wicks violents qui chassent les stops avant de repartir. Élargis légèrement ton SL par rapport à ce que tu ferais sur le forex.</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Règle universelle</p>
+        <p>Quel que soit l'instrument, ton SL ne devrait jamais représenter plus de 1-2% de ton capital total. Si ton SL structurel est trop large pour respecter cette règle, réduis ta taille de position. Ne jamais adapter ton SL à ta taille de position — c'est l'inverse : adapte ta taille à ton SL.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="sl-prop-firms" style="font-style: normal;">Stop loss et prop firms</h2>
+
+      <p>En <a href="/guides/prop-firms.html">prop firm</a>, le stop loss n'est pas juste recommandé — il est vital. Les règles de drawdown des prop firms sont impitoyables : dépasse ta limite de perte journalière ou totale, et tu perds ton compte. Pas de seconde chance.</p>
+
+      <p>La plupart des prop firms imposent un drawdown journalier de 4-5% et un drawdown total de 8-10%. Avec un compte de 100K$, ça te laisse 4-5K$ de perte maximum par jour. Si tu prends un trade sans SL et que le marché part contre toi de 3%, tu as consommé 60-75% de ton budget de perte journalier en un seul trade.</p>
+
+      <p>Stratégie recommandée : en prop firm, limite ton risque à <strong>0.5-1% par trade maximum</strong>. Ça te laisse 4-5 trades perdants avant d'atteindre ta limite journalière. Avec un <a href="https://x-trade.ai" target="_blank" rel="noopener">risk manager comme X-Trade.ai</a>, tu peux automatiser ces limites pour ne jamais les dépasser.</p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le trailing drawdown et le stop loss</p>
+        <p>Avec un <a href="/guides/regles-drawdown-prop-firms.html">trailing drawdown</a>, chaque dollar de profit que tu fais remonte ta limite de perte. Si tu fais +2K$ puis tu places un trade sans SL qui perd 3K$, tu es sorti. Le trailing drawdown rend le stop loss encore plus critique : tu dois protéger non seulement ton capital de départ, mais aussi tes profits accumulés.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="strategies-avancees" style="font-style: normal;">Stratégies avancées de gestion du stop loss</h2>
+
+      <p><strong>Le SL en escalier (partial stop).</strong> Au lieu de déplacer tout ton SL d'un coup à break-even, fais-le progressivement. Quand le trade est à +1R, déplace ton SL à -0.5R. Quand il est à +1.5R, déplace à break-even. Quand il est à +2R, déplace à +1R. Tu protèges progressivement tes gains sans te faire sortir prématurément.</p>
+
+      <p><strong>Le SL par clôture de bougie.</strong> Au lieu d'un SL classique qui s'exécute au tick, tu ne sors que si une bougie CLÔTURE sous/au-dessus de ton niveau. Avantage : tu évites les mèches de stop hunting. Inconvénient : ta perte peut être plus grande que prévu si la bougie clôture loin de ton niveau. Cette méthode nécessite d'être devant l'écran.</p>
+
+      <p><strong>Le SL multi-timeframe.</strong> Tu prends ton entrée sur M15 mais tu places ton SL basé sur la structure H4. Pourquoi ? Parce que les niveaux H4 sont plus solides et moins susceptibles d'être cassés par le bruit. Ça donne un SL plus large, donc tu réduis ta taille de position — mais ton winrate sera nettement meilleur.</p>
+
+      <p><strong>La sortie partielle + SL élargi.</strong> Tu prends 50% de profit à ton premier objectif, puis tu élargis ton SL pour le reste de la position. Tu as déjà sécurisé du profit, donc tu peux te permettre de laisser plus de marge au trade pour atteindre un objectif plus ambitieux.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>Où placer son stop loss ?</strong></summary>
+          <p>Le stop loss doit être placé au niveau où ton scénario de trade est invalidé. En pratique : sous le dernier creux (en achat) ou au-dessus du dernier sommet (en vente), avec une marge de quelques pips/ticks. Les méthodes ATR et structure de marché sont les plus fiables. Évite les chiffres ronds et les niveaux trop évidents.</p>
+        </details>
+
+        <details>
+          <summary><strong>Faut-il toujours utiliser un stop loss ?</strong></summary>
+          <p>Oui, sans exception. Même les plus grands traders du monde utilisent des stop loss. Trader sans SL, c'est prendre un risque illimité pour un gain limité — c'est mathématiquement absurde. En prop firm, c'est la première cause d'échec. Place toujours un ordre réel, pas un "stop mental".</p>
+        </details>
+
+        <details>
+          <summary><strong>Stop loss fixe ou trailing stop ?</strong></summary>
+          <p>Le SL fixe est plus simple et adapté à la majorité des situations — trades avec objectif défini, range, marchés choppy. Le trailing stop est idéal pour capturer de grands mouvements en tendance forte sur des timeframes H1+. Commence par maîtriser le SL fixe, puis ajoute le trailing à ton arsenal.</p>
+        </details>
+      </div>
+
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#quest-ce-quun-stop-loss" class="toc__link">Qu'est-ce qu'un stop loss ?</a></li>
+          <li><a href="#types-stop-loss" class="toc__link">Les types de stop loss</a></li>
+          <li><a href="#methodes-placement" class="toc__link">Méthodes de placement</a></li>
+          <li><a href="#stop-hunting" class="toc__link">Le stop hunting</a></li>
+          <li><a href="#erreurs-courantes" class="toc__link">Erreurs fatales</a></li>
+          <li><a href="#sl-par-instrument" class="toc__link">SL par instrument</a></li>
+          <li><a href="#sl-prop-firms" class="toc__link">SL et prop firms</a></li>
+          <li><a href="#strategies-avancees" class="toc__link">Stratégies avancées</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Toujours un SL réel, jamais un SL mental</li>
+          <li>Ne déplace JAMAIS ton SL dans le sens de la perte</li>
+          <li>Place ton SL là où ton scénario est invalidé</li>
+          <li>Adapte ta taille de position au SL, pas l'inverse</li>
+          <li>1-2% de risque max par trade, 0.5-1% en prop firm</li>
+        </ul>
+      </div>
+
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/gestion-du-risque.html">Gestion du risque : guide complet</a></li>
+          <li><a href="/outils/calculateur-taille-position.html">Calculateur de taille de position</a></li>
+          <li><a href="/guides/prop-firms.html">Prop firms : guide complet</a></li>
+        </ul>
+      </div>
+    </aside>
+
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in">
+      <h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2>
+    </div>
+    <div class="grid-3">
+      <a href="/guides/gestion-du-risque.html" class="card card-article fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h3 class="card-article__title" style="font-style: normal;">La Gestion du Risque : Le Guide Essentiel</h3>
+        <p class="card-article__excerpt">Taille de position, drawdown, money management — le facteur n°1 du trading.</p>
+        <div class="card-article__meta"><span>&#9201; 14 min</span></div>
+      </a>
+      <a href="/guides/journal-de-trading.html" class="card card-article fade-in">
+        <span class="tag tag-risk">Risk Management</span>
+        <h3 class="card-article__title" style="font-style: normal;">Le Journal de Trading : L'Outil N°1 pour Progresser</h3>
+        <p class="card-article__excerpt">Tracker, analyser et optimiser ta performance trade après trade.</p>
+        <div class="card-article__meta"><span>&#9201; 12 min</span></div>
+      </a>
+      <a href="/guides/psychologie-du-trading.html" class="card card-article fade-in">
+        <span class="tag tag-psycho">Psychologie</span>
+        <h3 class="card-article__title" style="font-style: normal;">Psychologie du Trading : Maîtriser Ses Émotions</h3>
+        <p class="card-article__excerpt">FOMO, revenge trading, overtrading — le mental du trader gagnant.</p>
+        <div class="card-article__meta"><span>&#9201; 16 min</span></div>
+      </a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div><a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p></div>
+        <div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">À propos</a></li></ul></div>
+        <div><h4 class="footer__heading">Catégories</h4><ul class="footer__links"><li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li><li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li><li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li><li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li></ul></div>
+        <div><h4 class="footer__heading">Écosystème</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li></ul></div>
+      </div>
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div>
+    </div>
+  </footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>

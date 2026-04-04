@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Les Règles de Drawdown en Prop Firm : Trailing, Statique et Journalier (2026)</title>
+  <meta name="description" content="Comprends les règles de drawdown en prop firm : trailing drawdown, statique, journalier. Exemples chiffrés, pièges courants et stratégies pour ne pas les violer.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://guide-trading.fr/guides/regles-drawdown-prop-firms.html">
+  <meta property="og:title" content="Les Règles de Drawdown en Prop Firm : Trailing, Statique et Journalier">
+  <meta property="og:description" content="Trailing, statique, journalier : comprends les règles de drawdown qui éliminent 80% des traders.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://guide-trading.fr/guides/regles-drawdown-prop-firms.html">
+  <meta property="og:site_name" content="Guide Trading">
+  <meta property="og:locale" content="fr_FR">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Article","headline":"Les Règles de Drawdown en Prop Firm","description":"Comprends les règles de drawdown en prop firm : trailing, statique, journalier.","author":{"@type":"Organization","name":"Guide Trading","url":"https://guide-trading.fr"},"publisher":{"@type":"Organization","name":"Guide Trading"},"datePublished":"2026-04-04","dateModified":"2026-04-04","mainEntityOfPage":{"@type":"WebPage","@id":"https://guide-trading.fr/guides/regles-drawdown-prop-firms.html"}}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Accueil","item":"https://guide-trading.fr/"},{"@type":"ListItem","position":2,"name":"Guides","item":"https://guide-trading.fr/guides/"},{"@type":"ListItem","position":3,"name":"Règles Drawdown Prop Firms"}]}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"C'est quoi le trailing drawdown en prop firm ?","acceptedAnswer":{"@type":"Answer","text":"Le trailing drawdown (ou drawdown suiveur) est une limite de perte qui monte avec tes profits mais ne redescend jamais. Exemple : compte 50K$, trailing DD de 2 500$. Ta limite est à 47 500$. Tu fais +1 000$ (equity 51 000$) → ta limite monte à 48 500$. Si tu perds ensuite 2 500$, tu es à 48 500$ = tu as atteint ta limite et tu es éliminé. C'est beaucoup plus restrictif qu'un drawdown statique."}},
+    {"@type":"Question","name":"Drawdown statique vs trailing : lequel est le mieux ?","acceptedAnswer":{"@type":"Answer","text":"Le drawdown statique est largement préférable pour le trader. Ta limite reste fixe quel que soit ton profit — si tu fais +5K$, tu as 5K$ de marge supplémentaire. Le trailing DD est plus difficile car chaque dollar de profit réduit ta marge relative. Choisis une firm avec DD statique si possible, surtout en tant que débutant."}},
+    {"@type":"Question","name":"Comment gérer le trailing drawdown ?","acceptedAnswer":{"@type":"Answer","text":"Les stratégies clés : 1) Ne laisse jamais tes profits ouverts devenir trop gros avant de les sécuriser — chaque dollar de profit non réalisé augmente ton trailing. 2) Utilise un risk manager comme X-Trade.ai pour suivre ton DD en temps réel. 3) Réduis ta taille de position quand tu es proche de la limite. 4) Pense en termes de 'marge restante', pas de P&L absolu."}}
+  ]}
+  </script>
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <div class="reading-progress-bar" aria-hidden="true"></div>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo" aria-label="Guide Trading — Accueil"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav"><a href="/guides/" class="navbar__link navbar__link--active">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À&nbsp;propos</a></div>
+      <div class="navbar__search"><span class="navbar__search-icon" aria-hidden="true">&#128269;</span><input type="search" class="navbar__search-input" placeholder="Rechercher..." aria-label="Rechercher sur le site"></div>
+      <button class="navbar__hamburger" aria-label="Ouvrir le menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel"><a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a></div>
+  </nav>
+
+  <div class="container"><nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="/" class="breadcrumb__link">Accueil</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><a href="/guides/" class="breadcrumb__link">Guides</a><span class="breadcrumb__separator" aria-hidden="true">&#x203A;</span><span class="breadcrumb__current">Règles Drawdown Prop Firms</span></nav></div>
+
+  <div class="article-layout container">
+    <article class="article-content">
+      <header class="article-header fade-in">
+        <span class="tag tag-propfirm">Prop Firms</span>
+        <h1 style="font-style: normal;">Les Règles de Drawdown en Prop Firm : Trailing, Statique et Journalier</h1>
+        <div class="article-header__meta">
+          <span>&#x1F4D6; 12 min de lecture</span>
+          <span>&#x1F4C5; Mis à jour en avril 2026</span>
+        </div>
+      </header>
+
+      <p class="fade-in">Le <a href="/lexique/drawdown.html">drawdown</a> est le tueur n°1 des comptes prop firm. 80% des traders qui échouent ne sont pas éliminés parce qu'ils ne savent pas trader — ils sont éliminés parce qu'ils ne comprennent pas les règles de drawdown. Et le diable est dans les détails, surtout avec le trailing drawdown.</p>
+
+      <!-- ======================== -->
+      <h2 id="types-drawdown" style="font-style: normal;">Les 3 types de drawdown en prop firm</h2>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Drawdown statique (fixe)</p>
+        <p>Ta limite de perte totale est fixée par rapport à ton capital initial et ne bouge JAMAIS. Exemple : compte 100K$, DD max 10% → ta limite est à 90K$. Si ton equity descend à 90K$ ou moins, tu es éliminé. Même si tu montes à 120K$ entre-temps, ta limite reste à 90K$. C'est le type le plus favorable pour le trader.</p>
+      </div>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Drawdown trailing (suiveur)</p>
+        <p>Ta limite de perte suit tes profits à la hausse mais ne redescend jamais. Exemple : compte 50K$, trailing DD de 2 500$. Ta limite démarre à 47 500$. Tu fais +2 000$ → equity 52 000$ → ta limite monte à 49 500$. Tu perds ensuite 2 500$ → equity 49 500$ = limite atteinte = éliminé. Même si tu étais en profit de 2 000$ il y a 10 minutes.</p>
+      </div>
+
+      <div class="callout definition-box">
+        <p class="callout__title">Drawdown journalier</p>
+        <p>La perte maximale autorisée en une seule journée. Typiquement 4-5% du capital ou du solde de début de journée. Si ton solde est de 102K$ en début de journée et que le DD journalier est de 5%, ta limite du jour est à 96 900$. Attention : certaines firms calculent sur l'equity temps réel (incluant les positions ouvertes), pas sur le solde.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="trailing-detail" style="font-style: normal;">Le trailing drawdown en détail : pourquoi il est si piégeux</h2>
+
+      <p>Le trailing drawdown semble simple sur le papier. En pratique, il crée des situations contre-intuitives qui piègent même les traders expérimentés. Suivons un exemple pas à pas :</p>
+
+      <p><strong>Jour 0 :</strong> Compte 50 000$. Trailing DD = 2 500$. Limite = 47 500$. Marge disponible = 2 500$.</p>
+
+      <p><strong>Jour 1 :</strong> Tu fais un excellent trade, +1 500$. Ton equity monte à 51 500$. Le trailing suit → ta limite monte à 49 000$. Marge disponible = 51 500$ - 49 000$ = 2 500$. <em>Tu penses avoir plus de marge mais NON — ta marge est toujours de 2 500$.</em></p>
+
+      <p><strong>Jour 2 :</strong> Tu fais un autre bon trade, +1 000$. Equity = 52 500$. Limite = 50 000$. Marge = 2 500$. Toujours la même marge.</p>
+
+      <p><strong>Jour 3 :</strong> Mauvaise journée. Tu perds 2 000$. Equity = 50 500$. Limite = toujours 50 000$ (ne redescend jamais). <strong>Marge restante = seulement 500$.</strong></p>
+
+      <p>Tu vois le piège ? Tu as fait +2 500$ en 2 jours, perdu 2 000$ le 3e jour, tu es en profit de +500$ net… mais ta marge est passée de 2 500$ à 500$. Un seul trade perdant de plus et tu es éliminé. <strong>Tu es en profit mais en danger.</strong></p>
+
+      <div class="callout warning-box">
+        <p class="callout__title">Le trailing drawdown "mange" ta marge</p>
+        <p>Chaque dollar de profit que tu fais en trailing DD réduit ta marge relative. Le trailing DD te force à ne JAMAIS rendre tes profits. Un gain de 2 000$ suivi d'une perte de 2 000$ te laisse au même capital mais avec 2 000$ de marge en moins. C'est la raison pour laquelle le trailing DD est si redoutable — il punit la volatilité de ton P&L.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="trailing-vs-statique" style="font-style: normal;">Trailing vs statique : la vraie différence</h2>
+
+      <p>Reprenons le même scénario avec un DD statique :</p>
+
+      <p>Compte 50 000$. DD statique max 5% = 2 500$. Limite fixe = 47 500$.</p>
+
+      <p><strong>Jour 1 :</strong> +1 500$. Equity = 51 500$. Limite = 47 500$. Marge = 4 000$.</p>
+      <p><strong>Jour 2 :</strong> +1 000$. Equity = 52 500$. Limite = 47 500$. Marge = 5 000$.</p>
+      <p><strong>Jour 3 :</strong> -2 000$. Equity = 50 500$. Limite = 47 500$. Marge = 3 000$.</p>
+
+      <p>Avec un DD statique, ta marge a AUGMENTÉ de 2 500$ à 3 000$ malgré la perte du jour 3. Avec le trailing, elle est passée de 2 500$ à 500$. <strong>La même séquence de trades te laisse avec 6x plus de marge en DD statique.</strong></p>
+
+      <p>C'est pour ça que les firms avec DD statique sont presque toujours préférables, surtout pour les traders qui ont des journées de drawdown occasionnelles (c'est-à-dire tous les traders).</p>
+
+      <!-- ======================== -->
+      <h2 id="dd-journalier" style="font-style: normal;">Le drawdown journalier : le piège du lundi</h2>
+
+      <p>Le DD journalier est souvent celui qui élimine les traders par surprise. Voici pourquoi :</p>
+
+      <p><strong>Le calcul varie selon les firms.</strong> Certaines calculent le DD journalier à partir du solde de début de journée (balance-based). D'autres à partir de l'equity en temps réel (equity-based), ce qui inclut les profits/pertes latentes. La différence est ÉNORME.</p>
+
+      <p>Exemple equity-based : ton solde est de 100K$. Tu ouvres un trade qui monte de +2K$ (equity = 102K$). Puis le trade retourne contre toi et tu perds 3K$ (equity = 99K$). Swing total de l'equity : -5K$ (de 102K$ à 97K$). Si le DD journalier est de 5% = 5K$, <strong>tu es éliminé</strong> même si tu n'as perdu que 1K$ en net depuis le début de journée.</p>
+
+      <p>Avec le calcul balance-based : la même situation te laisse en jeu puisque ta perte nette réalisée est seulement de -1K$ (1% du capital de début de journée).</p>
+
+      <div class="callout tip-box">
+        <p class="callout__title">Vérifie TOUJOURS le mode de calcul</p>
+        <p>Avant de commencer un challenge, lis les règles attentivement et vérifie : 1) Le DD journalier est-il calculé sur le balance ou l'equity ? 2) Le DD total est-il trailing ou statique ? 3) Le trailing suit-il l'equity en temps réel ou le balance en fin de journée ? Ces détails sont critiques et varient d'une firm à l'autre.</p>
+      </div>
+
+      <!-- ======================== -->
+      <h2 id="strategies-gestion" style="font-style: normal;">Stratégies de gestion du drawdown</h2>
+
+      <p><strong>1. Connais ta marge en temps réel.</strong> À tout moment, tu dois savoir exactement combien tu peux perdre avant d'être éliminé. Pas approximativement — exactement. Un <a href="https://x-trade.ai" target="_blank" rel="noopener">risk manager comme X-Trade.ai</a> peut suivre ça automatiquement et verrouiller ta plateforme si tu approches de la limite.</p>
+
+      <p><strong>2. En trailing DD : sécurise tes profits rapidement.</strong> Ne laisse pas un trade gagnant retourner contre toi. Prends des profits partiels, déplace ton SL à break-even rapidement. Chaque dollar de profit non sécurisé augmente ton trailing sans bénéfice.</p>
+
+      <p><strong>3. La règle des 50%.</strong> Ne consomme jamais plus de 50% de ta marge de DD journalier en un seul trade. Si ton DD journalier est de 2 000$, ton risque max par trade est de 1 000$. Ça te laisse de la marge pour une erreur.</p>
+
+      <p><strong>4. Réduis après une perte.</strong> Si tu perds un trade, réduis ta taille de 50% pour le trade suivant. Ça protège ta marge et réduit la pression émotionnelle. Tu remontes à ta taille normale après un trade gagnant.</p>
+
+      <p><strong>5. Arrête tôt si ça ne va pas.</strong> Si tu perds 2% en début de session, arrête pour la journée. Ne risque pas 3% de plus en tentant de récupérer. Le <a href="/guides/revenge-trading.html">revenge trading</a> est le chemin le plus rapide vers la violation de DD.</p>
+
+      <!-- ======================== -->
+      <h2 id="pieges-courants" style="font-style: normal;">Les pièges courants</h2>
+
+      <p><strong>Piège 1 : Le gap overnight.</strong> Tu laisses une position ouverte le soir. Un gap à l'ouverture fait perdre 3% d'un coup. Tu as violé ton DD journalier sans même être devant ton écran. Solution : en prop firm, ferme TOUJOURS tes positions avant la fin de session (sauf si la firm l'autorise et que tu le gères).</p>
+
+      <p><strong>Piège 2 : L'annonce économique.</strong> NFP, CPI, décision de taux — ces annonces peuvent déplacer le marché de 50-100 pips en quelques secondes. Si tu es en position, ton SL peut être slippé bien au-delà de ton niveau. Solution : soit tu sors avant l'annonce, soit tu réduis ta taille drastiquement.</p>
+
+      <p><strong>Piège 3 : La confusion balance/equity.</strong> Tu penses que ton DD est calculé sur le balance, il l'est sur l'equity. Tu as un trade ouvert en profit de +2K$, le marché retrace de 3K$, et tu es éliminé alors que ton balance n'a pas bougé.</p>
+
+      <p><strong>Piège 4 : Le "je suis funded, je peux prendre plus de risque".</strong> Non. Les règles de DD sont souvent PLUS strictes en funded qu'en challenge (trailing DD qui commence plus tôt). Maintiens exactement la même discipline qu'en challenge.</p>
+
+      <!-- ======================== -->
+      <h2 id="faq" style="font-style: normal;">Questions fréquentes</h2>
+
+      <div class="faq-section">
+        <details>
+          <summary><strong>C'est quoi le trailing drawdown ?</strong></summary>
+          <p>C'est une limite de perte qui monte avec tes profits mais ne redescend jamais. Si tu fais +2K$ puis perds 2K$, tu es au même capital mais avec 2K$ de marge en moins. C'est beaucoup plus restrictif qu'un DD statique et c'est le type qui élimine le plus de traders en prop firm.</p>
+        </details>
+        <details>
+          <summary><strong>Statique ou trailing : lequel choisir ?</strong></summary>
+          <p>Le statique est très largement préférable. Ta limite reste fixe et chaque dollar de profit augmente ta marge. Avec le trailing, ta marge relative ne change jamais. Choisis une firm avec DD statique si possible, surtout en tant que débutant.</p>
+        </details>
+        <details>
+          <summary><strong>Comment gérer le trailing drawdown ?</strong></summary>
+          <p>Sécurise tes profits rapidement, utilise un risk manager automatisé (X-Trade.ai), ne consomme jamais plus de 50% de ta marge journalière par trade, réduis ta taille après une perte, et arrête de trader si tu perds plus de 2% en début de session.</p>
+        </details>
+      </div>
+    </article>
+
+    <aside class="article-sidebar">
+      <div class="toc">
+        <p class="toc__title">Sommaire</p>
+        <ul class="toc__list">
+          <li><a href="#types-drawdown" class="toc__link">Les 3 types de drawdown</a></li>
+          <li><a href="#trailing-detail" class="toc__link">Trailing DD en détail</a></li>
+          <li><a href="#trailing-vs-statique" class="toc__link">Trailing vs statique</a></li>
+          <li><a href="#dd-journalier" class="toc__link">Le DD journalier</a></li>
+          <li><a href="#strategies-gestion" class="toc__link">Stratégies de gestion</a></li>
+          <li><a href="#pieges-courants" class="toc__link">Pièges courants</a></li>
+          <li><a href="#faq" class="toc__link">FAQ</a></li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-accent-gold);margin-bottom:0.75rem;font-style:normal">&#x1F3AF; À retenir</h4>
+        <ul style="font-size:0.85rem;list-style:disc;padding-left:1rem;color:var(--color-text-muted);display:flex;flex-direction:column;gap:0.5rem">
+          <li>Le trailing DD mange ta marge même quand tu gagnes</li>
+          <li>DD statique > DD trailing, toujours</li>
+          <li>Vérifie si le calcul est balance-based ou equity-based</li>
+          <li>Ne consomme jamais +50% du DD journalier par trade</li>
+          <li>Utilise un risk manager automatisé</li>
+        </ul>
+      </div>
+      <div class="card" style="margin-top:var(--spacing-md)">
+        <h4 style="font-size:0.85rem;color:var(--color-text-muted);margin-bottom:0.75rem;font-style:normal">Articles liés</h4>
+        <ul style="font-size:0.85rem;display:flex;flex-direction:column;gap:0.5rem">
+          <li><a href="/guides/prop-firms.html">Prop firms : guide complet</a></li>
+          <li><a href="/guides/passer-challenge-prop-firm.html">Comment passer un challenge</a></li>
+          <li><a href="/guides/gestion-du-risque.html">Gestion du risque</a></li>
+        </ul>
+      </div>
+    </aside>
+  </div>
+
+  <section class="section container">
+    <div class="section-header fade-in"><h2 class="section-header__title" style="font-style: normal;">Continue ta lecture</h2></div>
+    <div class="grid-3">
+      <a href="/guides/prop-firms.html" class="card card-article fade-in"><span class="tag tag-propfirm">Prop Firms</span><h3 class="card-article__title" style="font-style: normal;">Prop Firms : Le Guide Complet</h3><p class="card-article__excerpt">Tout comprendre sur les prop firms et le funding.</p><div class="card-article__meta"><span>&#9201; 14 min</span></div></a>
+      <a href="/guides/passer-challenge-prop-firm.html" class="card card-article fade-in"><span class="tag tag-propfirm">Prop Firms</span><h3 class="card-article__title" style="font-style: normal;">Comment Passer un Challenge</h3><p class="card-article__excerpt">La stratégie complète pour réussir ton évaluation.</p><div class="card-article__meta"><span>&#9201; 14 min</span></div></a>
+      <a href="/guides/stop-loss-guide.html" class="card card-article fade-in"><span class="tag tag-risk">Risk Management</span><h3 class="card-article__title" style="font-style: normal;">Le Stop Loss : Guide Complet</h3><p class="card-article__excerpt">Types, placement et stratégies pour protéger ton capital.</p><div class="card-article__meta"><span>&#9201; 14 min</span></div></a>
+    </div>
+  </section>
+
+  <footer class="footer" role="contentinfo"><div class="container"><div class="footer__grid"><div><a href="/" class="navbar__logo" style="margin-bottom:0.5rem"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a><p class="footer__brand-desc">Le guide trading 100% gratuit en français. Apprends à trader intelligemment.</p></div><div><h4 class="footer__heading">Navigation</h4><ul class="footer__links"><li><a href="/guides/" class="footer__link">Guides</a></li><li><a href="/lexique/" class="footer__link">Lexique</a></li><li><a href="/outils/" class="footer__link">Outils</a></li><li><a href="/a-propos.html" class="footer__link">À propos</a></li></ul></div><div><h4 class="footer__heading">Catégories</h4><ul class="footer__links"><li><a href="/guides/debuter-en-trading.html" class="footer__link">Débuter en trading</a></li><li><a href="/guides/analyse-technique.html" class="footer__link">Analyse technique</a></li><li><a href="/guides/gestion-du-risque.html" class="footer__link">Gestion du risque</a></li><li><a href="/guides/prop-firms.html" class="footer__link">Prop Firms</a></li></ul></div><div><h4 class="footer__heading">Écosystème</h4><ul class="footer__links"><li><a href="https://hubtrading.fr" target="_blank" rel="noopener" class="footer__link">HubTrading — Communauté, IA & formations</a></li><li><a href="https://basstrading.fr" target="_blank" rel="noopener" class="footer__link">BassTrading — Formations Qualiopi</a></li><li><a href="https://x-trade.ai" target="_blank" rel="noopener" class="footer__link">X-Trade.ai — Risk manager prop firms</a></li></ul></div></div><div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div></div></footer>
+
+  <script defer src="../js/main.js"></script>
+</body>
+</html>
