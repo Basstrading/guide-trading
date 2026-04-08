@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Page introuvable — Guide Trading</title>
+  <meta name="robots" content="noindex, follow">
+  <link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="stylesheet" href="/css/style.css">
+  <style>
+    .error-page{display:flex;flex-direction:column;align-items:center;justify-content:center;min-height:60vh;text-align:center;padding:2rem 1rem}
+    .error-code{font-family:'Plus Jakarta Sans',sans-serif;font-size:clamp(4rem,10vw,8rem);font-weight:800;color:#3B82F6;line-height:1;margin-bottom:1rem}
+    .error-title{font-family:'Plus Jakarta Sans',sans-serif;font-size:1.5rem;font-weight:700;margin-bottom:1rem}
+    .error-desc{color:#9CA3AF;max-width:480px;margin-bottom:2rem}
+    .error-actions{display:flex;flex-wrap:wrap;gap:0.75rem;justify-content:center}
+  </style>
+</head>
+<body>
+  <nav class="navbar" role="navigation" aria-label="Navigation principale">
+    <div class="navbar__inner">
+      <a href="/" class="navbar__logo"><span class="navbar__logo-mark" aria-hidden="true">GT</span><span class="navbar__logo-text">Guide <span>Trading</span></span></a>
+      <div class="navbar__nav">
+        <a href="/guides/" class="navbar__link">Guides</a>
+        <a href="/lexique/" class="navbar__link">Lexique</a>
+        <a href="/outils/" class="navbar__link">Outils</a>
+        <a href="/a-propos.html" class="navbar__link">À propos</a>
+      </div>
+      <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+    <div class="navbar__mobile-panel">
+      <a href="/guides/" class="navbar__link">Guides</a><a href="/lexique/" class="navbar__link">Lexique</a><a href="/outils/" class="navbar__link">Outils</a><a href="/a-propos.html" class="navbar__link">À propos</a>
+    </div>
+  </nav>
+  <main>
+    <div class="error-page">
+      <div class="error-code">404</div>
+      <h1 class="error-title">Page introuvable</h1>
+      <p class="error-desc">La page que tu cherches n'existe pas ou a été déplacée. Pas de panique, tu peux reprendre ta lecture depuis l'une de ces sections.</p>
+      <div class="error-actions">
+        <a href="/" class="btn btn-primary">Accueil</a>
+        <a href="/guides/" class="btn btn-secondary">Guides</a>
+        <a href="/lexique/" class="btn btn-secondary">Lexique</a>
+        <a href="/outils/" class="btn btn-secondary">Outils</a>
+      </div>
+    </div>
+  </main>
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__bottom"><p class="footer__copy">&copy; 2026 Guide Trading — Tous droits réservés</p><div class="footer__legal"><a href="/mentions-legales.html">Mentions légales</a><a href="/politique-confidentialite.html">Confidentialité</a></div></div>
+    </div>
+  </footer>
+  <script defer src="/js/main.js"></script>
+</body>
+</html>
