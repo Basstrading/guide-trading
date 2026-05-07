@@ -1,0 +1,72 @@
+name: IndexNow ping
+
+on:
+  push:
+    branches: [master]
+    paths:
+      - '**.html'
+      - 'sitemap.xml'
+  workflow_dispatch:
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Build URL list
+        id: urls
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            # Manual run: submit all URLs from sitemap
+            curl -s https://www.guide-trading.fr/sitemap.xml \
+              | grep -oE 'https://www\.guide-trading\.fr/[^<]*' \
+              | sort -u > urls.txt
+          else
+            # Push: only changed HTML files
+            git diff --name-only HEAD~1 HEAD \
+              | grep -E '\.html$' \
+              | grep -v '^404\.html$' \
+              | sed 's|^|https://www.guide-trading.fr/|' \
+              | sed 's|/index\.html$|/|' > urls.txt
+          fi
+          echo "Count: $(wc -l < urls.txt)"
+          cat urls.txt
+
+      - name: Ping IndexNow
+        if: ${{ hashFiles('urls.txt') != '' }}
+        run: |
+          if [ ! -s urls.txt ]; then
+            echo "No URLs to submit"
+            exit 0
+          fi
+          # Build JSON payload
+          python3 - <<'PY'
+          import json, urllib.request
+          with open('urls.txt') as f:
+              urls = [u.strip() for u in f if u.strip()]
+          if not urls:
+              print("No URLs"); raise SystemExit(0)
+          payload = {
+              "host": "www.guide-trading.fr",
+              "key": "b4aa2f69d01677fe367219400134975d",
+              "keyLocation": "https://www.guide-trading.fr/b4aa2f69d01677fe367219400134975d.txt",
+              "urlList": urls
+          }
+          data = json.dumps(payload).encode()
+          req = urllib.request.Request(
+              "https://api.indexnow.org/IndexNow",
+              data=data,
+              headers={"Content-Type": "application/json; charset=utf-8"},
+              method="POST"
+          )
+          try:
+              with urllib.request.urlopen(req, timeout=30) as r:
+                  print(f"IndexNow response: {r.status} {r.reason}")
+          except Exception as e:
+              print(f"IndexNow error: {e}")
+              raise
+          PY

@@ -1,0 +1,75 @@
+# Guide Trading
+
+> Encyclopédie trading 100% gratuite en français : guides complets, lexique de 200+ termes et calculateurs gratuits. Couvre l'analyse technique, la price action, l'order flow, la gestion du risque, la psychologie et les prop firms.
+
+Guide Trading est édité par BassTrading, organisme de formation spécialisé en trading depuis plusieurs années. Le contenu est conçu pour les débutants et traders intermédiaires francophones, avec un parti pris pédagogique : pas de promesses irréalistes, focus sur la méthode et la gestion du risque.
+
+## Piliers (commencer ici)
+
+- [Débuter en Trading](https://www.guide-trading.fr/guides/debuter-en-trading.html) : guide complet pour bien démarrer (marchés, ordres, premiers pas)
+- [Analyse Technique](https://www.guide-trading.fr/guides/analyse-technique.html) : méthodes graphiques et indicateurs
+- [Price Action](https://www.guide-trading.fr/guides/price-action.html) : lecture pure du prix sans indicateur
+- [Order Flow](https://www.guide-trading.fr/guides/order-flow.html) : carnet d'ordres, volume profile, footprint
+- [Gestion du Risque](https://www.guide-trading.fr/guides/gestion-du-risque.html) : taille de position, stop-loss, R:R
+- [Psychologie du Trading](https://www.guide-trading.fr/guides/psychologie-du-trading.html) : biais cognitifs, discipline
+- [Prop Firms](https://www.guide-trading.fr/guides/prop-firms.html) : challenges de trading financés
+- [Fiscalité Trading France](https://www.guide-trading.fr/guides/fiscalite-trading-france.html) : flat tax, déclaration
+
+## Articles approfondis
+
+### Analyse technique
+- [Chandeliers japonais](https://www.guide-trading.fr/guides/chandeliers-japonais.html)
+- [RSI](https://www.guide-trading.fr/guides/rsi-indicateur.html)
+- [MACD](https://www.guide-trading.fr/guides/macd-indicateur.html)
+- [Bandes de Bollinger](https://www.guide-trading.fr/guides/bandes-bollinger.html)
+- [Fibonacci](https://www.guide-trading.fr/guides/fibonacci-trading.html)
+- [Moyennes mobiles](https://www.guide-trading.fr/guides/moyennes-mobiles.html)
+- [Support et résistance](https://www.guide-trading.fr/guides/support-resistance.html)
+
+### Order flow
+- [Volume Profile](https://www.guide-trading.fr/guides/volume-profile-trading.html)
+- [VWAP](https://www.guide-trading.fr/guides/vwap-trading.html)
+- [Footprint chart](https://www.guide-trading.fr/guides/footprint-chart.html)
+- [Tape reading](https://www.guide-trading.fr/guides/tape-reading.html)
+
+### Gestion du risque
+- [Guide du stop-loss](https://www.guide-trading.fr/guides/stop-loss-guide.html)
+- [Types d'ordres](https://www.guide-trading.fr/guides/types-ordres.html)
+- [Journal de trading](https://www.guide-trading.fr/guides/journal-de-trading.html)
+
+### Psychologie
+- [Erreurs du débutant](https://www.guide-trading.fr/guides/erreurs-debutant.html)
+- [FOMO trading](https://www.guide-trading.fr/guides/fomo-trading.html)
+- [Overtrading](https://www.guide-trading.fr/guides/overtrading.html)
+- [Revenge trading](https://www.guide-trading.fr/guides/revenge-trading.html)
+- [Routine du trader](https://www.guide-trading.fr/guides/routine-trader.html)
+
+### Prop firms
+- [Meilleures prop firms](https://www.guide-trading.fr/guides/meilleures-prop-firms.html)
+- [Passer un challenge prop firm](https://www.guide-trading.fr/guides/passer-challenge-prop-firm.html)
+- [Règles drawdown prop firms](https://www.guide-trading.fr/guides/regles-drawdown-prop-firms.html)
+
+### Marchés
+- [Marchés financiers](https://www.guide-trading.fr/guides/marches-financiers.html)
+
+## Outils gratuits
+
+- [Calculateur de taille de position](https://www.guide-trading.fr/outils/calculateur-taille-position.html)
+- [Calculateur Risk/Reward](https://www.guide-trading.fr/outils/calculateur-risk-reward.html)
+- [Calculateur de pip](https://www.guide-trading.fr/outils/calculateur-pip.html)
+- [Simulateur de drawdown](https://www.guide-trading.fr/outils/simulateur-drawdown.html)
+
+## Lexique
+
+- [Lexique de 200+ termes trading](https://www.guide-trading.fr/lexique/) : définitions claires et concises de tout le vocabulaire trading
+
+## À propos
+
+- [À propos de Guide Trading](https://www.guide-trading.fr/a-propos.html)
+
+## Optional
+
+- [Sitemap XML](https://www.guide-trading.fr/sitemap.xml)
+- [Robots.txt](https://www.guide-trading.fr/robots.txt)
+- [Mentions légales](https://www.guide-trading.fr/mentions-legales.html)
+- [Politique de confidentialité](https://www.guide-trading.fr/politique-confidentialite.html)
