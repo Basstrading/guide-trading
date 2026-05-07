@@ -69,4 +69,66 @@
   <!-- Pages légales -->
   <url><loc>https://www.guide-trading.fr/mentions-legales.html</loc><lastmod>2026-05-07</lastmod><priority>0.3</priority></url>
   <url><loc>https://www.guide-trading.fr/politique-confidentialite.html</loc><lastmod>2026-05-07</lastmod><priority>0.3</priority></url>
+
+  <!-- Lexique : pages individuelles par terme -->
+  <url><loc>https://www.guide-trading.fr/lexique/analyse-fondamentale.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/analyse-technique.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/ask.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/backtesting.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/bid.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/bollinger.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/breakout.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/broker.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/chandelier-japonais.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/cfd.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/challenge.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/correction.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/cvd.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/day-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/delta.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/divergence.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/dom.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/drawdown.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/effet-de-levier.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/fibonacci.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/fomo.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/footprint-chart.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/forex.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/funded.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/futures.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/gap.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/hedging.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/ichimoku.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/levier.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/liquidite.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/lot.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/macd.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/marge.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/market-profile.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/momentum.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/money-management.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/moyenne-mobile.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/order-flow.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/overtrading.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/pip.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/poc.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/price-action.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/prop-firm.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/pullback.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/range.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/resistance.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/revenge-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/rsi.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/risk-reward.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/scalping.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/spread.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/stop-loss.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/support.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/swing-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/take-profit.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/tape-reading.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/tendance.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/volatilite.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/volume-profile.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/vwap.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
 </urlset>
