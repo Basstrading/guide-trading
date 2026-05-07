@@ -1,42 +1,64 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <!-- Pages principales -->
-  <url><loc>https://guide-trading.fr/</loc><lastmod>2026-04-08</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/</loc><lastmod>2026-04-08</lastmod></url>
-  <url><loc>https://guide-trading.fr/lexique/</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/outils/</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/a-propos.html</loc><lastmod>2026-04-03</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/</loc><lastmod>2026-05-07</lastmod><priority>1.0</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/lexique/</loc><lastmod>2026-05-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.guide-trading.fr/outils/</loc><lastmod>2026-05-07</lastmod><priority>0.8</priority></url>
+  <url><loc>https://www.guide-trading.fr/a-propos.html</loc><lastmod>2026-05-07</lastmod><priority>0.5</priority></url>
 
   <!-- Pages piliers -->
-  <url><loc>https://guide-trading.fr/guides/debuter-en-trading.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/analyse-technique.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/price-action.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/order-flow.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/gestion-du-risque.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/psychologie-du-trading.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/prop-firms.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/fiscalite-trading-france.html</loc><lastmod>2026-04-03</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/guides/debuter-en-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/analyse-technique.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/price-action.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/order-flow.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/gestion-du-risque.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/psychologie-du-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/prop-firms.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/fiscalite-trading-france.html</loc><lastmod>2026-05-07</lastmod><priority>0.9</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/marches-financiers.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
 
   <!-- Articles sous-clusters : Price Action -->
-  <url><loc>https://guide-trading.fr/guides/support-resistance.html</loc><lastmod>2026-04-08</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/guides/support-resistance.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
 
   <!-- Articles sous-clusters : Analyse Technique -->
-  <url><loc>https://guide-trading.fr/guides/chandeliers-japonais.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/rsi-indicateur.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/macd-indicateur.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/bandes-bollinger.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/fibonacci-trading.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/moyennes-mobiles.html</loc><lastmod>2026-04-03</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/guides/chandeliers-japonais.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/rsi-indicateur.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/macd-indicateur.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/bandes-bollinger.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/fibonacci-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/moyennes-mobiles.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
 
   <!-- Articles sous-clusters : Order Flow -->
-  <url><loc>https://guide-trading.fr/guides/volume-profile-trading.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/vwap-trading.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/footprint-chart.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/guides/tape-reading.html</loc><lastmod>2026-04-03</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/guides/volume-profile-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/vwap-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/footprint-chart.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/tape-reading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+
+  <!-- Articles sous-clusters : Gestion du risque -->
+  <url><loc>https://www.guide-trading.fr/guides/stop-loss-guide.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/types-ordres.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/journal-de-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+
+  <!-- Articles sous-clusters : Psychologie -->
+  <url><loc>https://www.guide-trading.fr/guides/erreurs-debutant.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/fomo-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/overtrading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/revenge-trading.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/routine-trader.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+
+  <!-- Articles sous-clusters : Prop Firms -->
+  <url><loc>https://www.guide-trading.fr/guides/meilleures-prop-firms.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/passer-challenge-prop-firm.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
+  <url><loc>https://www.guide-trading.fr/guides/regles-drawdown-prop-firms.html</loc><lastmod>2026-05-07</lastmod><priority>0.7</priority></url>
 
   <!-- Outils -->
-  <url><loc>https://guide-trading.fr/outils/calculateur-taille-position.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/outils/calculateur-risk-reward.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/outils/calculateur-pip.html</loc><lastmod>2026-04-03</lastmod></url>
-  <url><loc>https://guide-trading.fr/outils/simulateur-drawdown.html</loc><lastmod>2026-04-03</lastmod></url>
+  <url><loc>https://www.guide-trading.fr/outils/calculateur-taille-position.html</loc><lastmod>2026-05-07</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.guide-trading.fr/outils/calculateur-risk-reward.html</loc><lastmod>2026-05-07</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.guide-trading.fr/outils/calculateur-pip.html</loc><lastmod>2026-05-07</lastmod><priority>0.6</priority></url>
+  <url><loc>https://www.guide-trading.fr/outils/simulateur-drawdown.html</loc><lastmod>2026-05-07</lastmod><priority>0.6</priority></url>
+
+  <!-- Pages légales -->
+  <url><loc>https://www.guide-trading.fr/mentions-legales.html</loc><lastmod>2026-05-07</lastmod><priority>0.3</priority></url>
+  <url><loc>https://www.guide-trading.fr/politique-confidentialite.html</loc><lastmod>2026-05-07</lastmod><priority>0.3</priority></url>
 </urlset>
